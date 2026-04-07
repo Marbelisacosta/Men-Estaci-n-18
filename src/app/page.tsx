@@ -5,8 +5,9 @@ import { useState } from 'react';
 import { MenuItemCard } from '@/components/menu/MenuItemCard';
 import { BCVRate } from '@/components/menu/BCVRate';
 import { CategoryTabs } from '@/components/menu/CategoryTabs';
+import { OrderForm } from '@/components/menu/OrderForm';
 import { menuItems, BRAND_MOTTO } from '@/lib/menu-data';
-import { MapPin, Clock, Phone, Instagram, Facebook, Mail } from 'lucide-react';
+import { MapPin, Clock, Phone, Instagram, Facebook, Mail, MessageSquare } from 'lucide-react';
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -43,9 +44,7 @@ export default function Home() {
 
           <div className="flex items-center gap-4">
              <a 
-              href={`https://wa.me/${phoneNumber}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#order-section"
               className="bg-secondary text-secondary-foreground font-headline text-sm font-bold px-5 py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg border border-secondary/20"
              >
                PEDIR AHORA
@@ -104,7 +103,7 @@ export default function Home() {
         </div>
 
         {/* Menu Section */}
-        <section id="menu">
+        <section id="menu" className="mb-24">
           <div className="text-center mb-8">
             <h2 className="font-headline text-3xl md:text-4xl font-bold mb-3">Nuestro Menú</h2>
             <div className="h-1 w-20 bg-primary mx-auto rounded-full mb-4" />
@@ -125,8 +124,21 @@ export default function Home() {
           )}
         </section>
 
+        {/* Order Section */}
+        <section id="order-section" className="py-16 bg-primary/5 rounded-[3rem] border border-primary/10 mb-24 scroll-mt-24">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="font-headline text-3xl md:text-4xl font-bold mb-3">Ordena Ahora</h2>
+              <p className="text-muted-foreground max-w-lg mx-auto">
+                Muestra lo que deseas de forma ordenada y envíanos tu pedido directamente.
+              </p>
+            </div>
+            <OrderForm />
+          </div>
+        </section>
+
         {/* Info Grid */}
-        <section className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-card p-8 rounded-3xl border border-border/40 flex flex-col items-center text-center">
             <div className="bg-primary/10 p-4 rounded-full mb-6">
               <MapPin className="h-6 w-6 text-primary" />

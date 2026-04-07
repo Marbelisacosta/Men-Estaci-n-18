@@ -6,7 +6,7 @@ import { MenuItemCard } from '@/components/menu/MenuItemCard';
 import { BCVRate } from '@/components/menu/BCVRate';
 import { CategoryTabs } from '@/components/menu/CategoryTabs';
 import { menuItems, BRAND_MOTTO } from '@/lib/menu-data';
-import { MapPin, Clock, Phone, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Clock, Phone, Instagram, Facebook, Mail } from 'lucide-react';
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -14,6 +14,9 @@ export default function Home() {
   const filteredItems = selectedCategory === 'all' 
     ? menuItems 
     : menuItems.filter(item => item.category === selectedCategory);
+
+  const phoneNumber = "584143683914";
+  const emailAddress = "Estacion18fastfood@gmail.com";
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -39,9 +42,14 @@ export default function Home() {
           </div>
 
           <div className="flex items-center gap-4">
-             <button className="bg-secondary text-secondary-foreground font-headline text-sm font-bold px-5 py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg border border-secondary/20">
+             <a 
+              href={`https://wa.me/${phoneNumber}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-secondary text-secondary-foreground font-headline text-sm font-bold px-5 py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg border border-secondary/20"
+             >
                PEDIR AHORA
-             </button>
+             </a>
           </div>
         </div>
       </header>
@@ -148,7 +156,14 @@ export default function Home() {
               <Phone className="h-6 w-6 text-primary" />
             </div>
             <h4 className="font-headline text-xl font-bold mb-3">Contacto</h4>
-            <p className="text-muted-foreground text-sm">+58 (412) 123-4567<br />estacion18@info.com</p>
+            <div className="flex flex-col gap-3">
+              <a href={`tel:+${phoneNumber}`} className="text-foreground font-bold hover:text-primary transition-colors">
+                +58 414-3683914
+              </a>
+              <a href={`mailto:${emailAddress}`} className="text-muted-foreground text-xs font-medium hover:text-primary transition-colors break-all">
+                {emailAddress}
+              </a>
+            </div>
           </div>
         </section>
       </main>
@@ -164,8 +179,9 @@ export default function Home() {
             </div>
             
             <div className="flex gap-6">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram /></a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Facebook /></a>
+              <a href={`mailto:${emailAddress}`} className="text-muted-foreground hover:text-primary transition-colors" title="Email"><Mail /></a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" title="Instagram"><Instagram /></a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" title="Facebook"><Facebook /></a>
             </div>
 
             <div className="text-center md:text-right">

@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "pasteles",
+      "description": "Golden fried pasteles",
+      "imageUrl": "https://picsum.photos/seed/pasteles/600/400",
+      "imageHint": "fried pastry"
+    },
+    {
+      "id": "tequenos",
+      "description": "Cheese sticks tequeños",
+      "imageUrl": "https://picsum.photos/seed/tequenos/600/400",
+      "imageHint": "cheese sticks"
+    },
+    {
+      "id": "combo-1",
+      "description": "Fast food combo with soda",
+      "imageUrl": "https://picsum.photos/seed/combo1/800/600",
+      "imageHint": "food combo"
+    },
+    {
+      "id": "combo-2",
+      "description": "Premium fast food combo",
+      "imageUrl": "https://picsum.photos/seed/combo2/800/600",
+      "imageHint": "hamburger meal"
+    }
+  ]
 }

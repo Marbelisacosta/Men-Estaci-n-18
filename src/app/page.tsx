@@ -131,10 +131,16 @@ export default function Home() {
               <Clock className="h-6 w-6 text-primary" />
             </div>
             <h4 className="font-headline text-xl font-bold mb-3">Horario</h4>
-            <div className="text-muted-foreground text-sm flex flex-col gap-1">
-              <p className="font-bold text-foreground">Lunes a Sábado</p>
-              <p>Desde la mañana: <span className="text-primary font-bold">6:30 am</span></p>
-              <p>Hasta la tarde: <span className="text-primary font-bold">5:30 pm</span></p>
+            <div className="text-muted-foreground text-sm flex flex-col gap-4 w-full">
+              <p className="font-bold text-foreground text-base border-b border-border/40 pb-2">Lunes a Sábado</p>
+              <div className="flex flex-col gap-1">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-secondary">Jornada Mañanera</span>
+                <p className="text-foreground font-medium">Desde las <span className="text-primary font-bold">6:30 am</span></p>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-secondary">Jornada Vespertina</span>
+                <p className="text-foreground font-medium">Hasta las <span className="text-primary font-bold">5:30 pm</span></p>
+              </div>
             </div>
           </div>
           <div className="bg-card p-8 rounded-3xl border border-border/40 flex flex-col items-center text-center">

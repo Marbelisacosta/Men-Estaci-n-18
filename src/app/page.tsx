@@ -134,11 +134,11 @@ export default function Home() {
             <div className="text-muted-foreground text-sm flex flex-col gap-4 w-full">
               <p className="font-bold text-foreground text-base border-b border-border/40 pb-2">Lunes a Sábado</p>
               <div className="flex flex-col gap-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-secondary">Jornada Mañanera</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-secondary">Turno Mañana</span>
                 <p className="text-foreground font-medium">Desde las <span className="text-primary font-bold">6:30 am</span></p>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-secondary">Jornada Vespertina</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-secondary">Turno Tarde</span>
                 <p className="text-foreground font-medium">Hasta las <span className="text-primary font-bold">5:30 pm</span></p>
               </div>
             </div>

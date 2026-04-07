@@ -1,20 +1,35 @@
 
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MenuItemCard } from '@/components/menu/MenuItemCard';
 import { BCVRate } from '@/components/menu/BCVRate';
 import { CategoryTabs } from '@/components/menu/CategoryTabs';
 import { OrderForm } from '@/components/menu/OrderForm';
-import { menuItems, BRAND_MOTTO } from '@/lib/menu-data';
-import { MapPin, Clock, Phone, Instagram, Facebook, Mail, MessageSquare } from 'lucide-react';
+import { menuItems, BRAND_MOTTO, MenuItem } from '@/lib/menu-data';
+import { MapPin, Clock, Phone, Instagram, Facebook, Mail, ClipboardCheck, Trash2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedItems, setSelectedItems] = useState<MenuItem[]>([]);
 
   const filteredItems = selectedCategory === 'all' 
     ? menuItems 
     : menuItems.filter(item => item.category === selectedCategory);
+
+  const toggleItemSelection = (item: MenuItem) => {
+    setSelectedItems(prev => {
+      const isSelected = prev.find(i => i.id === item.id);
+      if (isSelected) {
+        return prev.filter(i => i.id !== item.id);
+      } else {
+        return [...prev, item];
+      }
+    });
+  };
+
+  const clearSelection = () => setSelectedItems([]);
 
   const phoneNumber = "584143683914";
   const emailAddress = "Estacion18fastfood@gmail.com";
@@ -47,7 +62,7 @@ export default function Home() {
               href="#order-section"
               className="bg-secondary text-secondary-foreground font-headline text-sm font-bold px-5 py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg border border-secondary/20"
              >
-               PEDIR AHORA
+               VER PEDIDO ({selectedItems.length})
              </a>
           </div>
         </div>
@@ -63,25 +78,26 @@ export default function Home() {
             <div className="flex-1 text-center md:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-widest mb-6">
                 <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-                Nueva Tasa de Cambio Integrada
+                Menú Check-list Interactivo
               </div>
               <h2 className="font-headline text-4xl md:text-6xl font-bold mb-6 leading-[1.1]">
                 {BRAND_MOTTO}
               </h2>
               <p className="text-muted-foreground text-lg mb-8 max-w-xl">
-                Disfruta de los mejores pasteles y tequeños de la zona. 
-                Precios claros, sabor inigualable y atención de primera.
+                ¡Arma tu pedido mientras navegas! Marca lo que desees y muéstralo al personal o envíalo por WhatsApp.
               </p>
-              <div className="flex flex-wrap justify-center md:justify-start gap-4">
-                <div className="flex flex-col items-center md:items-start p-4 rounded-2xl bg-background/50 border border-border/40 backdrop-blur-sm min-w-[140px]">
-                  <span className="text-secondary font-headline text-2xl font-bold">$0.70</span>
-                  <span className="text-xs uppercase tracking-wider text-muted-foreground">Pasteles/Tequeños</span>
+              
+              {selectedItems.length > 0 && (
+                <div className="mt-4 p-4 rounded-2xl bg-primary/5 border border-primary/20 flex items-center justify-between animate-in fade-in slide-in-from-bottom-2">
+                  <div className="flex items-center gap-2">
+                    <ClipboardCheck className="text-primary h-5 w-5" />
+                    <span className="text-sm font-bold text-foreground">{selectedItems.length} ítems marcados</span>
+                  </div>
+                  <Button variant="ghost" size="sm" onClick={clearSelection} className="text-xs text-muted-foreground hover:text-destructive">
+                    <Trash2 className="h-4 w-4 mr-1" /> Limpiar
+                  </Button>
                 </div>
-                <div className="flex flex-col items-center md:items-start p-4 rounded-2xl bg-background/50 border border-border/40 backdrop-blur-sm min-w-[140px]">
-                  <span className="text-primary font-headline text-2xl font-bold">$2.50</span>
-                  <span className="text-xs uppercase tracking-wider text-muted-foreground">Combos + Refresco</span>
-                </div>
-              </div>
+              )}
             </div>
             
             <div className="flex-1 w-full max-w-sm hidden md:block">
@@ -106,6 +122,7 @@ export default function Home() {
         <section id="menu" className="mb-24">
           <div className="text-center mb-8">
             <h2 className="font-headline text-3xl md:text-4xl font-bold mb-3">Nuestro Menú</h2>
+            <p className="text-muted-foreground text-sm mb-4">Toca un producto para marcarlo en tu lista</p>
             <div className="h-1 w-20 bg-primary mx-auto rounded-full mb-4" />
           </div>
 
@@ -113,7 +130,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map(item => (
-              <MenuItemCard key={item.id} item={item} />
+              <MenuItemCard 
+                key={item.id} 
+                item={item} 
+                isSelected={selectedItems.some(i => i.id === item.id)}
+                onSelect={() => toggleItemSelection(item)}
+              />
             ))}
           </div>
 
@@ -128,12 +150,14 @@ export default function Home() {
         <section id="order-section" className="py-16 bg-primary/5 rounded-[3rem] border border-primary/10 mb-24 scroll-mt-24">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="font-headline text-3xl md:text-4xl font-bold mb-3">Ordena Ahora</h2>
+              <h2 className="font-headline text-3xl md:text-4xl font-bold mb-3">Tu Pedido</h2>
               <p className="text-muted-foreground max-w-lg mx-auto">
-                Muestra lo que deseas de forma ordenada y envíanos tu pedido directamente.
+                {selectedItems.length > 0 
+                  ? "Hemos organizado tus selecciones abajo. Solo completa tus datos." 
+                  : "Selecciona productos arriba para verlos aquí automáticamente."}
               </p>
             </div>
-            <OrderForm />
+            <OrderForm selectedItems={selectedItems} />
           </div>
         </section>
 

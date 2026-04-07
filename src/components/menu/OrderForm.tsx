@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -25,7 +25,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Send, ClipboardList, MapPin, Phone, User } from 'lucide-react';
+import { Send, ClipboardList, MapPin, Phone, User, ShoppingBag } from 'lucide-react';
+import { MenuItem } from '@/lib/menu-data';
 
 const formSchema = z.object({
   fullName: z.string().min(3, { message: "El nombre debe tener al menos 3 caracteres." }),
@@ -35,7 +36,11 @@ const formSchema = z.object({
   orderDetails: z.string().min(5, { message: "Por favor, detalla lo que deseas pedir." }),
 });
 
-export function OrderForm() {
+interface OrderFormProps {
+  selectedItems?: MenuItem[];
+}
+
+export function OrderForm({ selectedItems = [] }: OrderFormProps) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -47,14 +52,24 @@ export function OrderForm() {
     },
   });
 
+  // Actualizar automáticamente los detalles cuando cambian los items seleccionados
+  useEffect(() => {
+    if (selectedItems.length > 0) {
+      const itemsList = selectedItems.map(item => `- ${item.name} ($${item.price.toFixed(2)})`).join('\n');
+      const totalPrice = selectedItems.reduce((acc, item) => acc + item.price, 0);
+      form.setValue('orderDetails', `He seleccionado:\n${itemsList}\n\nTotal estimado: $${totalPrice.toFixed(2)}`);
+    } else {
+      form.setValue('orderDetails', '');
+    }
+  }, [selectedItems, form]);
+
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Generar mensaje de WhatsApp
     const message = `*NUEVO PEDIDO - ESTACIÓN 18*%0A%0A` +
       `*Cliente:* ${values.fullName}%0A` +
       `*Teléfono:* ${values.phone}%0A` +
       `*Tipo:* ${values.orderType === 'delivery' ? 'A Domicilio 🛵' : 'Para Retirar 🛍️'}%0A` +
       `${values.address ? `*Dirección:* ${values.address}%0A` : ''}` +
-      `%0A*DETALLE DEL PEDIDO:*%0A${values.orderDetails}`;
+      `%0A*DETALLE DEL PEDIDO:*%0A${encodeURIComponent(values.orderDetails)}`;
     
     const whatsappUrl = `https://wa.me/584143683914?text=${message}`;
     window.open(whatsappUrl, '_blank');
@@ -63,14 +78,24 @@ export function OrderForm() {
   const orderType = form.watch("orderType");
 
   return (
-    <Card className="w-full max-w-2xl mx-auto bg-card border-primary/20 shadow-2xl overflow-hidden">
+    <Card className="w-full max-w-2xl mx-auto bg-card border-primary/20 shadow-2xl overflow-hidden relative">
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary" />
+      
+      {selectedItems.length > 0 && (
+        <div className="bg-secondary/10 p-3 flex items-center justify-center gap-2 border-b border-secondary/20">
+          <ShoppingBag className="h-4 w-4 text-secondary" />
+          <span className="text-xs font-bold text-secondary uppercase tracking-wider">
+            {selectedItems.length} Items seleccionados del menú
+          </span>
+        </div>
+      )}
+
       <CardHeader className="text-center pb-2">
         <div className="mx-auto bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 rotate-3">
           <ClipboardList className="h-8 w-8 text-primary" />
         </div>
-        <CardTitle className="font-headline text-3xl font-bold">Haz tu Pedido</CardTitle>
-        <CardDescription>Completa los datos para enviarnos tu solicitud por WhatsApp de forma organizada.</CardDescription>
+        <CardTitle className="font-headline text-3xl font-bold">Resumen de Pedido</CardTitle>
+        <CardDescription>Confirma tus datos para enviarnos tu solicitud organizada.</CardDescription>
       </CardHeader>
       <CardContent className="p-6 md:p-8">
         <Form {...form}>
@@ -153,16 +178,18 @@ export function OrderForm() {
               name="orderDetails"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Tu Pedido</FormLabel>
+                  <FormLabel>Tu Selección</FormLabel>
                   <FormControl>
                     <Textarea 
                       placeholder="Ej. 2 pasteles de carne, 1 combo Estación 18 con Pepsi..." 
-                      className="min-h-[120px] rounded-xl border-border/60 resize-none"
+                      className="min-h-[150px] rounded-xl border-border/60 resize-none font-medium text-sm"
                       {...field} 
                     />
                   </FormControl>
                   <FormDescription>
-                    Detalla productos, sabores y cualquier observación.
+                    {selectedItems.length > 0 
+                      ? "Puedes editar o añadir notas adicionales aquí." 
+                      : "Marca productos arriba para que aparezcan aquí automáticamente."}
                   </FormDescription>
                   <FormMessage />
                 </FormItem>

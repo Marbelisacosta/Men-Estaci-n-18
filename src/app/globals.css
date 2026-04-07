@@ -1,34 +1,34 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 5 17% 12%;
+    /* Basado en el rojo del logo "18" y el naranja de la llama */
+    --background: 0 0% 7%;
     --foreground: 0 0% 98%;
-    --card: 5 20% 15%;
+    --card: 0 0% 10%;
     --card-foreground: 0 0% 98%;
-    --popover: 5 20% 15%;
+    --popover: 0 0% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 2 100% 52%;
+    --primary: 358 84% 45%; /* Rojo Estación 18 */
     --primary-foreground: 0 0% 100%;
-    --secondary: 52 90% 50%;
-    --secondary-foreground: 5 17% 12%;
-    --muted: 5 10% 25%;
-    --muted-foreground: 5 10% 70%;
-    --accent: 52 90% 50%;
-    --accent-foreground: 5 17% 12%;
+    --secondary: 24 95% 53%; /* Naranja Llama */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 24 95% 53%; /* Naranja Llama */
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 5 15% 25%;
-    --input: 5 15% 25%;
-    --ring: 2 100% 52%;
-    --chart-1: 2 100% 52%;
-    --chart-2: 52 90% 50%;
-    --chart-3: 15 80% 45%;
-    --chart-4: 45 95% 60%;
-    --chart-5: 10 90% 55%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 358 84% 45%;
+    --chart-1: 358 84% 45%;
+    --chart-2: 24 95% 53%;
+    --chart-3: 0 0% 30%;
+    --chart-4: 358 84% 65%;
+    --chart-5: 24 95% 70%;
     --radius: 0.75rem;
   }
 }
@@ -46,10 +46,19 @@
 }
 
 .bg-texture {
-  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
-  background-size: 24px 24px;
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 32px 32px;
 }
 
 .gradient-overlay {
-  background: linear-gradient(to top, rgba(50, 37, 36, 0.9) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(18, 18, 18, 0.9) 0%, transparent 100%);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
 }

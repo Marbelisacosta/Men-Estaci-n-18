@@ -9,7 +9,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Sparkles, Utensils, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Utensils, CheckCircle2, Square } from 'lucide-react';
 
 interface MenuItemCardProps {
   item: MenuItem;
@@ -57,12 +57,20 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
         
-        <div className="absolute top-3 left-3 flex flex-col gap-2">
-          {isSelected && (
-            <div className="bg-primary text-white p-1.5 rounded-full shadow-lg animate-in zoom-in-50">
-              <CheckCircle2 className="h-5 w-5" />
+        {/* Checkbox Visual */}
+        <div className="absolute top-4 right-4 z-20">
+          {isSelected ? (
+            <div className="bg-primary text-white p-1 rounded-lg shadow-lg animate-in zoom-in-50">
+              <CheckCircle2 className="h-6 w-6" />
+            </div>
+          ) : (
+            <div className="bg-black/40 backdrop-blur-md text-white/80 p-1 rounded-lg border border-white/20">
+              <Square className="h-6 w-6" />
             </div>
           )}
+        </div>
+
+        <div className="absolute top-3 left-3 flex flex-col gap-2">
           {isCombo && (
             <Badge className="bg-primary text-white font-headline border-none shadow-lg animate-pulse-subtle">
               OFERTA ESPECIAL
@@ -111,8 +119,8 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
           <div className="flex items-center text-[10px] text-primary font-bold uppercase tracking-tighter">
             <Utensils className="h-3 w-3 mr-1" /> Estación 18
           </div>
-          <div className="text-xs font-bold text-secondary uppercase">
-            {isSelected ? '¡Marcado!' : 'Tocar para elegir'}
+          <div className={`text-xs font-bold uppercase ${isSelected ? 'text-primary' : 'text-muted-foreground'}`}>
+            {isSelected ? '¡Añadido!' : 'Tocar para añadir'}
           </div>
         </div>
       </CardContent>

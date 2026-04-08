@@ -1,207 +1,123 @@
 
 "use client";
 
-import { useState, useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Send, ClipboardList, MapPin, Phone, User, ShoppingBag } from 'lucide-react';
+import { Send, ShoppingBag, CheckCircle2, Trash2, ReceiptText, User } from 'lucide-react';
 import { MenuItem } from '@/lib/menu-data';
-
-const formSchema = z.object({
-  fullName: z.string().min(3, { message: "El nombre debe tener al menos 3 caracteres." }),
-  phone: z.string().min(10, { message: "Ingresa un número de teléfono válido." }),
-  orderType: z.enum(["delivery", "pickup"]),
-  address: z.string().optional(),
-  orderDetails: z.string().min(5, { message: "Por favor, detalla lo que deseas pedir." }),
-});
 
 interface OrderFormProps {
   selectedItems?: MenuItem[];
 }
 
 export function OrderForm({ selectedItems = [] }: OrderFormProps) {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      fullName: "",
-      phone: "",
-      orderType: "pickup",
-      address: "",
-      orderDetails: "",
-    },
-  });
+  const [userName, setUserName] = useState('');
+  
+  const totalPrice = selectedItems.reduce((acc, item) => acc + item.price, 0);
 
-  // Actualizar automáticamente los detalles cuando cambian los items seleccionados
-  useEffect(() => {
-    if (selectedItems.length > 0) {
-      const itemsList = selectedItems.map(item => `- ${item.name} ($${item.price.toFixed(2)})`).join('\n');
-      const totalPrice = selectedItems.reduce((acc, item) => acc + item.price, 0);
-      form.setValue('orderDetails', `He seleccionado:\n${itemsList}\n\nTotal estimado: $${totalPrice.toFixed(2)}`);
-    } else {
-      form.setValue('orderDetails', '');
-    }
-  }, [selectedItems, form]);
+  function handleSendWhatsApp() {
+    if (selectedItems.length === 0) return;
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    const message = `*NUEVO PEDIDO - ESTACIÓN 18*%0A%0A` +
-      `*Cliente:* ${values.fullName}%0A` +
-      `*Teléfono:* ${values.phone}%0A` +
-      `*Tipo:* ${values.orderType === 'delivery' ? 'A Domicilio 🛵' : 'Para Retirar 🛍️'}%0A` +
-      `${values.address ? `*Dirección:* ${values.address}%0A` : ''}` +
-      `%0A*DETALLE DEL PEDIDO:*%0A${encodeURIComponent(values.orderDetails)}`;
+    const itemsList = selectedItems.map(item => `- ${item.name} ($${item.price.toFixed(2)})`).join('%0A');
+    const message = `*PEDIDO DESDE EL MENÚ DIGITAL*%0A%0A` +
+      `*Cliente:* ${userName || 'No especificado'}%0A` +
+      `*Items:*%0A${itemsList}%0A%0A` +
+      `*Total Estimado:* $${totalPrice.toFixed(2)}%0A%0A` +
+      `¡Hola! Tengo mi selección lista desde la web.`;
     
     const whatsappUrl = `https://wa.me/584143683914?text=${message}`;
     window.open(whatsappUrl, '_blank');
   }
 
-  const orderType = form.watch("orderType");
-
   return (
-    <Card className="w-full max-w-2xl mx-auto bg-card border-primary/20 shadow-2xl overflow-hidden relative">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary" />
+    <Card className="w-full max-w-xl mx-auto bg-card border-primary/20 shadow-2xl overflow-hidden relative border-2">
+      <div className="absolute top-0 left-0 w-full h-2 bg-primary" />
       
-      {selectedItems.length > 0 && (
-        <div className="bg-secondary/10 p-3 flex items-center justify-center gap-2 border-b border-secondary/20">
-          <ShoppingBag className="h-4 w-4 text-secondary" />
-          <span className="text-xs font-bold text-secondary uppercase tracking-wider">
-            {selectedItems.length} Items seleccionados del menú
-          </span>
+      <CardHeader className="text-center pt-10 pb-6 border-b border-dashed border-border/60">
+        <div className="mx-auto bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center mb-4 shadow-lg shadow-primary/20">
+          <ReceiptText className="h-7 w-7" />
         </div>
-      )}
-
-      <CardHeader className="text-center pb-2">
-        <div className="mx-auto bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 rotate-3">
-          <ClipboardList className="h-8 w-8 text-primary" />
-        </div>
-        <CardTitle className="font-headline text-3xl font-bold">Resumen de Pedido</CardTitle>
-        <CardDescription>Confirma tus datos para enviarnos tu solicitud organizada.</CardDescription>
+        <CardTitle className="font-headline text-3xl font-bold tracking-tight">Mi Check-list</CardTitle>
+        <CardDescription className="text-muted-foreground">
+          {selectedItems.length > 0 
+            ? "Muestra esta pantalla al personal o envía el pedido." 
+            : "Selecciona platos en el menú para armar tu lista."}
+        </CardDescription>
       </CardHeader>
-      <CardContent className="p-6 md:p-8">
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <FormField
-                control={form.control}
-                name="fullName"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="flex items-center gap-2">
-                      <User className="h-4 w-4 text-primary" /> Nombre Completo
-                    </FormLabel>
-                    <FormControl>
-                      <Input placeholder="Ej. Juan Pérez" {...field} className="rounded-xl border-border/60 focus:ring-primary" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="flex items-center gap-2">
-                      <Phone className="h-4 w-4 text-primary" /> Teléfono
-                    </FormLabel>
-                    <FormControl>
-                      <Input placeholder="Ej. 04141234567" {...field} className="rounded-xl border-border/60" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+
+      <CardContent className="p-0">
+        {selectedItems.length > 0 ? (
+          <div className="divide-y divide-dashed divide-border/60">
+            {/* User Info (Optional but helpful) */}
+            <div className="p-6 bg-muted/30">
+              <label className="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 block">Nombre del Cliente</label>
+              <div className="relative">
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input 
+                  placeholder="Tu nombre (opcional)" 
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
+                  className="pl-10 rounded-xl bg-background border-border/40 focus:ring-primary h-12"
+                />
+              </div>
             </div>
 
-            <FormField
-              control={form.control}
-              name="orderType"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>¿Cómo lo deseas?</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger className="rounded-xl border-border/60">
-                        <SelectValue placeholder="Selecciona una opción" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="pickup">Para Retirar (Local)</SelectItem>
-                      <SelectItem value="delivery">A Domicilio (Delivery)</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            {/* Checklist Items */}
+            <div className="p-6 space-y-4">
+              <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">Productos Marcados</h4>
+              {selectedItems.map((item) => (
+                <div key={item.id} className="flex items-center justify-between group animate-in fade-in slide-in-from-left-2">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-primary/10 text-primary p-1.5 rounded-lg border border-primary/20">
+                      <CheckCircle2 className="h-5 w-5" />
+                    </div>
+                    <span className="font-headline font-bold text-foreground">{item.name}</span>
+                  </div>
+                  <span className="font-mono text-primary font-bold">${item.price.toFixed(2)}</span>
+                </div>
+              ))}
+            </div>
 
-            {orderType === "delivery" && (
-              <FormField
-                control={form.control}
-                name="address"
-                render={({ field }) => (
-                  <FormItem className="animate-in fade-in slide-in-from-top-2">
-                    <FormLabel className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-primary" /> Dirección de Entrega
-                    </FormLabel>
-                    <FormControl>
-                      <Input placeholder="Indica calle, casa o punto de referencia" {...field} className="rounded-xl border-border/60" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            )}
-
-            <FormField
-              control={form.control}
-              name="orderDetails"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Tu Selección</FormLabel>
-                  <FormControl>
-                    <Textarea 
-                      placeholder="Ej. 2 pasteles de carne, 1 combo Estación 18 con Pepsi..." 
-                      className="min-h-[150px] rounded-xl border-border/60 resize-none font-medium text-sm"
-                      {...field} 
-                    />
-                  </FormControl>
-                  <FormDescription>
-                    {selectedItems.length > 0 
-                      ? "Puedes editar o añadir notas adicionales aquí." 
-                      : "Marca productos arriba para que aparezcan aquí automáticamente."}
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <Button type="submit" className="w-full h-14 rounded-xl text-lg font-headline font-bold bg-primary hover:bg-primary/90 shadow-xl transition-all hover:scale-[1.01] active:scale-[0.99] gap-2">
-              <Send className="h-5 w-5" /> ENVIAR PEDIDO POR WHATSAPP
-            </Button>
-          </form>
-        </Form>
+            {/* Total Section */}
+            <div className="p-8 bg-primary/5">
+              <div className="flex justify-between items-end">
+                <div className="flex flex-col">
+                  <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Total Estimado</span>
+                  <span className="text-[10px] text-primary/60 font-medium italic">Sujeto a tasa BCV del día</span>
+                </div>
+                <div className="text-4xl font-headline font-bold text-primary">
+                  ${totalPrice.toFixed(2)}
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="p-16 text-center">
+            <div className="bg-muted w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 opacity-40">
+              <ShoppingBag className="h-10 w-10 text-muted-foreground" />
+            </div>
+            <p className="text-muted-foreground font-medium">No has marcado ningún producto todavía.</p>
+            <p className="text-xs text-muted-foreground/60 mt-2">Explora el menú arriba y toca el plato que desees.</p>
+          </div>
+        )}
       </CardContent>
+
+      {selectedItems.length > 0 && (
+        <CardFooter className="p-6 flex flex-col gap-4 bg-background border-t border-border/40">
+          <Button 
+            onClick={handleSendWhatsApp}
+            className="w-full h-16 rounded-2xl text-lg font-headline font-bold bg-primary hover:bg-primary/90 shadow-xl transition-all hover:scale-[1.02] active:scale-[0.98] gap-3"
+          >
+            <Send className="h-6 w-6" /> ENVIAR POR WHATSAPP
+          </Button>
+          <p className="text-[10px] text-center text-muted-foreground uppercase tracking-tighter">
+            También puedes mostrar este resumen directamente a tu mesero(a)
+          </p>
+        </CardFooter>
+      )}
     </Card>
   );
 }

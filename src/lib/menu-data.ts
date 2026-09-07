@@ -8,6 +8,7 @@ export interface MenuItem {
   isSpecial?: boolean;
   pieces?: number;
   description?: string;
+  isAvailable?: boolean;
 }
 
 export const menuItems: MenuItem[] = [
@@ -16,70 +17,80 @@ export const menuItems: MenuItem[] = [
     name: 'Pasteles de Carne',
     price: 0.70,
     category: 'individual',
-    image: 'pasteles'
+    image: 'pasteles',
+    isAvailable: false
   },
   {
     id: 'pasteles-2',
     name: 'Pasteles de Pollo',
     price: 0.70,
     category: 'individual',
-    image: 'pasteles'
+    image: 'pasteles',
+    isAvailable: false
   },
   {
     id: 'tequenos-1',
     name: 'Tequeños Tradicionales',
     price: 0.70,
     category: 'individual',
-    image: 'tequenos'
+    image: 'tequenos',
+    isAvailable: false
   },
   {
     id: 'fast-1',
     name: 'AREPA CON PROTEÍNA',
     price: 1.50,
     category: 'fast-food',
-    image: 'arepa'
+    image: 'arepa',
+    isAvailable: true
   },
   {
     id: 'fast-2',
     name: 'WHOPPER',
     price: 4.00,
     category: 'fast-food',
-    image: 'burger'
+    image: 'burger',
+    isAvailable: true
   },
   {
     id: 'fast-3',
     name: 'JUNIOR',
     price: 2.00,
     category: 'fast-food',
-    image: 'burger'
+    image: 'burger',
+    isAvailable: true
   },
   {
     id: 'fast-4',
     name: 'SALCHIQUESO',
     price: 2.00,
     category: 'fast-food',
-    image: 'hotdog'
+    image: 'hotdog',
+    isAvailable: true
   },
   {
     id: 'fast-5',
     name: 'PATACON PERSONAL',
     price: 3.00,
     category: 'fast-food',
-    image: 'patacon'
+    image: 'patacon',
+    isAvailable: true
   },
   {
     id: 'fast-6',
     name: 'MINI PATACÓN',
     price: 3.00,
     category: 'fast-food',
-    image: 'patacon'
+    image: 'patacon',
+    isAvailable: true
   },
   {
     id: 'fast-7',
     name: 'PAN DE SALCHICHA',
     price: 1.50,
     category: 'fast-food',
-    image: 'hotdog'
+    image: 'hotdog',
+    isAvailable: true
   },
   {
     id: 'combo-duo',
@@ -88,7 +99,8 @@ export const menuItems: MenuItem[] = [
     price: 7.00,
     category: 'combo',
     image: 'combo-1',
-    isSpecial: true
+    isSpecial: true,
+    isAvailable: true
   },
   {
     id: 'combo-callejero',
@@ -97,7 +109,8 @@ export const menuItems: MenuItem[] = [
     price: 5.00,
     category: 'combo',
     image: 'combo-2',
-    isSpecial: true
+    isSpecial: true,
+    isAvailable: true
   },
   {
     id: 'combo-junior',
@@ -106,7 +119,8 @@ export const menuItems: MenuItem[] = [
     price: 12.00,
     category: 'combo',
     image: 'combo-1',
-    isSpecial: true
+    isSpecial: true,
+    isAvailable: true
   },
   {
     id: 'combo-estacion',
@@ -115,7 +129,8 @@ export const menuItems: MenuItem[] = [
     price: 10.00,
     category: 'combo',
     image: 'combo-2',
-    isSpecial: true
+    isSpecial: true,
+    isAvailable: true
   },
   {
     id: 'combo-personal',
@@ -124,7 +139,8 @@ export const menuItems: MenuItem[] = [
     price: 3.50,
     category: 'combo',
     image: 'combo-1',
-    isSpecial: true
+    isSpecial: true,
+    isAvailable: true
   },
   {
     id: 'combo-boom',
@@ -133,7 +149,8 @@ export const menuItems: MenuItem[] = [
     price: 12.00,
     category: 'combo',
     image: 'combo-2',
-    isSpecial: true
+    isSpecial: true,
+    isAvailable: true
   },
   {
     id: 'combo-resuelve',
@@ -142,7 +159,8 @@ export const menuItems: MenuItem[] = [
     price: 10.00,
     category: 'combo',
     image: 'combo-1',
-    isSpecial: true
+    isSpecial: true,
+    isAvailable: true
   }
 ];
 

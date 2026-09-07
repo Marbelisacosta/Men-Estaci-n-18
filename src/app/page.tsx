@@ -57,7 +57,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hidden sm:block">
+          <div className="block">
              <BCVRate />
           </div>
 
@@ -78,8 +78,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-texture opacity-20" />
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent pointer-events-none" />
           
-          <div className="relative z-10 p-8 md:p-16 flex flex-col md:flex-row items-center gap-10">
-            <div className="flex-1 text-center md:text-left">
+          <div className="relative z-10 p-8 md:p-16 flex flex-row items-center gap-10">
+            <div className="flex-1 text-left">
               <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-widest mb-6">
                 <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
                 El punto exacto del sabor
@@ -104,7 +104,7 @@ export default function Home() {
               )}
             </div>
             
-            <div className="flex-1 w-full max-w-sm hidden md:block">
+            <div className="flex-1 w-full max-w-sm block">
               <div className="relative group">
                 <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity" />
                 <img 
@@ -116,11 +116,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Dynamic BCV for Mobile */}
-        <div className="sm:hidden mb-8 flex justify-center">
-          <BCVRate />
-        </div>
 
         {/* Menu Section */}
         <section id="menu" className="mb-24">
@@ -217,7 +212,7 @@ export default function Home() {
 
       <footer className="bg-card border-t border-border/40 py-12 mt-20">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-3">
               <div className="bg-primary p-1.5 rounded-lg">
                 <span className="font-headline font-bold text-lg text-white">18</span>
@@ -238,8 +233,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="text-center md:text-right">
-              <p className="text-xs text-muted-foreground">© 2024 Estacion 18 Fast Food. Todos los derechos reservados.</p>
+            <div className="text-right">
+              <p className="text-xs text-muted-foreground">© 2024 Estacion 18 Fast Food.</p>
               <p className="text-[10px] text-muted-foreground/60 mt-1 uppercase tracking-widest">El punto exacto del sabor</p>
             </div>
           </div>

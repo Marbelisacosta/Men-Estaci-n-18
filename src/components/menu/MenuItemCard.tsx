@@ -118,7 +118,7 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
 
       <CardContent className="p-5">
         <div className="flex justify-between items-start mb-3">
-          <h3 className={`font-headline text-lg md:text-xl font-bold tracking-tight transition-colors uppercase ${!isAvailable ? 'text-muted-foreground' : isSelected ? 'text-primary' : 'text-foreground group-hover:text-primary'}`}>
+          <h3 className={`font-headline text-lg font-bold tracking-tight transition-colors uppercase ${!isAvailable ? 'text-muted-foreground' : isSelected ? 'text-primary' : 'text-foreground group-hover:text-primary'}`}>
             {item.name}
           </h3>
         </div>

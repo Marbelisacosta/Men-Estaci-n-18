@@ -4,10 +4,9 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input';
-import { Send, ShoppingBag, CheckCircle2, Trash2, ReceiptText, User } from 'lucide-react';
-import { MenuItem } from '@/lib/menu-data';
+import { Send, ShoppingBag, CheckCircle2, ReceiptText, User } from 'lucide-react';
+import { MenuItem, EXCHANGE_RATE } from '@/lib/menu-data';
 
 interface OrderFormProps {
   selectedItems?: MenuItem[];
@@ -17,6 +16,7 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
   const [userName, setUserName] = useState('');
   
   const totalPrice = selectedItems.reduce((acc, item) => acc + item.price, 0);
+  const totalBs = totalPrice * EXCHANGE_RATE;
 
   function handleSendWhatsApp() {
     if (selectedItems.length === 0) return;
@@ -25,7 +25,7 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
     const message = `*PEDIDO DESDE EL MENÚ DIGITAL*%0A%0A` +
       `*Cliente:* ${userName || 'No especificado'}%0A` +
       `*Items:*%0A${itemsList}%0A%0A` +
-      `*Total Estimado:* $${totalPrice.toFixed(2)}%0A%0A` +
+      `*Total Estimado:* $${totalPrice.toFixed(2)} (Bs. ${totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })})%0A%0A` +
       `¡Hola! Tengo mi selección lista desde la web.`;
     
     const whatsappUrl = `https://wa.me/584143683914?text=${message}`;
@@ -51,7 +51,6 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
       <CardContent className="p-0">
         {selectedItems.length > 0 ? (
           <div className="divide-y divide-dashed divide-border/60">
-            {/* User Info (Optional but helpful) */}
             <div className="p-6 bg-muted/30">
               <label className="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 block">Nombre del Cliente</label>
               <div className="relative">
@@ -65,7 +64,6 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
               </div>
             </div>
 
-            {/* Checklist Items */}
             <div className="p-6 space-y-4">
               <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">Productos Marcados</h4>
               {selectedItems.map((item) => (
@@ -74,19 +72,23 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
                     <div className="bg-primary/10 text-primary p-1.5 rounded-lg border border-primary/20">
                       <CheckCircle2 className="h-5 w-5" />
                     </div>
-                    <span className="font-headline font-bold text-foreground">{item.name}</span>
+                    <div className="flex flex-col">
+                      <span className="font-headline font-bold text-foreground leading-tight">{item.name}</span>
+                      <span className="text-[10px] text-muted-foreground">Bs. {(item.price * EXCHANGE_RATE).toLocaleString('es-VE', { minimumFractionDigits: 2 })}</span>
+                    </div>
                   </div>
                   <span className="font-mono text-primary font-bold">${item.price.toFixed(2)}</span>
                 </div>
               ))}
             </div>
 
-            {/* Total Section */}
             <div className="p-8 bg-primary/5">
-              <div className="flex justify-between items-end">
+              <div className="flex justify-between items-center">
                 <div className="flex flex-col">
                   <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Total Estimado</span>
-                  <span className="text-[10px] text-primary/60 font-medium italic">Sujeto a tasa BCV del día</span>
+                  <span className="text-xl font-headline font-bold text-foreground opacity-80">
+                    Bs. {totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })}
+                  </span>
                 </div>
                 <div className="text-4xl font-headline font-bold text-primary">
                   ${totalPrice.toFixed(2)}

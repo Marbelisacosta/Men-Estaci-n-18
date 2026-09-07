@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { generateFlavorDescription } from '@/ai/flows/generate-flavor-description';
-import { MenuItem, BRAND_MOTTO } from '@/lib/menu-data';
+import { MenuItem, BRAND_MOTTO, EXCHANGE_RATE } from '@/lib/menu-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -22,6 +22,7 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
   const [loading, setLoading] = useState(true);
 
   const placeholder = PlaceHolderImages.find(img => img.id === item.image);
+  const priceBs = item.price * EXCHANGE_RATE;
 
   useEffect(() => {
     async function fetchDescription() {
@@ -57,7 +58,6 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
         
-        {/* Checkbox Visual */}
         <div className="absolute top-4 right-4 z-20">
           {isSelected ? (
             <div className="bg-primary text-white p-1 rounded-lg shadow-lg animate-in zoom-in-50">
@@ -84,8 +84,9 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
         </div>
         
         <div className="absolute bottom-3 right-3">
-          <div className={`px-4 py-1 rounded-full font-headline text-lg shadow-xl border border-white/10 transition-colors ${isSelected ? 'bg-secondary text-white' : 'bg-primary text-white'}`}>
-            ${item.price.toFixed(2)}
+          <div className={`px-4 py-1.5 rounded-2xl font-headline shadow-xl border border-white/10 transition-colors flex flex-col items-end ${isSelected ? 'bg-secondary text-white' : 'bg-primary text-white'}`}>
+            <span className="text-lg font-bold leading-none">${item.price.toFixed(2)}</span>
+            <span className="text-[10px] font-bold opacity-90 leading-tight">Bs. {priceBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })}</span>
           </div>
         </div>
       </div>

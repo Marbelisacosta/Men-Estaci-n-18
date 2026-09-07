@@ -34,6 +34,7 @@ export default function Home() {
   const phoneNumberDisplay = "0414-3683914";
   const phoneNumberLink = "584143683914";
   const emailAddress = "Estacion18fastfood@gmail.com";
+  const locationAddress = "Av 49.E Calle 170 24 de Julio";
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -169,7 +170,7 @@ export default function Home() {
               <MapPin className="h-6 w-6 text-primary" />
             </div>
             <h4 className="font-headline text-xl font-bold mb-3">Ubicación</h4>
-            <p className="text-muted-foreground text-sm">Av. Principal de Estación 18,<br />Local #15, Fast Food Hub.</p>
+            <p className="text-muted-foreground text-sm">{locationAddress}</p>
           </div>
           <div className="bg-card p-8 rounded-3xl border border-border/40 flex flex-col items-center text-center">
             <div className="bg-primary/10 p-4 rounded-full mb-6">

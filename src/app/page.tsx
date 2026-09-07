@@ -7,7 +7,7 @@ import { BCVRate } from '@/components/menu/BCVRate';
 import { CategoryTabs } from '@/components/menu/CategoryTabs';
 import { OrderForm } from '@/components/menu/OrderForm';
 import { menuItems, MenuItem } from '@/lib/menu-data';
-import { MapPin, Clock, Phone, Instagram, Facebook, Mail, ClipboardCheck, Trash2 } from 'lucide-react';
+import { MapPin, Clock, Phone, Instagram, Mail, ClipboardCheck, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Home() {
@@ -35,6 +35,8 @@ export default function Home() {
   const phoneNumberLink = "584143683914";
   const emailAddress = "Estacion18fastfood@gmail.com";
   const locationAddress = "Av 49.E Calle 170 24 de Julio";
+  const instagramUrl = "https://www.instagram.com/estacion18fastfood?igsh=NTkwamhkbTA0dHc5";
+  const tiktokUrl = "https://www.tiktok.com/@estacion.18?_r=1&_t=ZS-99XLY1FJDRV";
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -227,8 +229,12 @@ export default function Home() {
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Síguenos en redes</span>
               <div className="flex gap-6">
                 <a href={`mailto:${emailAddress}`} className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/30 rounded-full" title="Email"><Mail className="h-5 w-5" /></a>
-                <a href="https://instagram.com/estacion18fastfood" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/30 rounded-full" title="Instagram"><Instagram className="h-5 w-5" /></a>
-                <a href="https://facebook.com/estacion18fastfood" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/30 rounded-full" title="Facebook"><Facebook className="h-5 w-5" /></a>
+                <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/30 rounded-full" title="Instagram"><Instagram className="h-5 w-5" /></a>
+                <a href={tiktokUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/30 rounded-full" title="TikTok">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.36-.66.41-1.03 1.14-1.1 1.92-.02.57.04 1.14.3 1.64.44.88 1.44 1.39 2.39 1.26.95-.1 1.81-.8 2.05-1.7.07-.34.1-.69.09-1.04l.01-11.97Z"/>
+                  </svg>
+                </a>
               </div>
             </div>
 

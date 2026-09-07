@@ -9,7 +9,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Sparkles, Utensils, CheckCircle2, Square } from 'lucide-react';
+import { Sparkles, Utensils, CheckCircle2, Square, Info } from 'lucide-react';
 
 interface MenuItemCardProps {
   item: MenuItem;
@@ -18,7 +18,7 @@ interface MenuItemCardProps {
 }
 
 export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) {
-  const [description, setDescription] = useState<string>('');
+  const [aiDescription, setAiDescription] = useState<string>('');
   const [loading, setLoading] = useState(true);
 
   const placeholder = PlaceHolderImages.find(img => img.id === item.image);
@@ -31,9 +31,9 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
           itemName: item.name,
           motto: BRAND_MOTTO
         });
-        setDescription(result.description);
+        setAiDescription(result.description);
       } catch (error) {
-        setDescription("¡Delicioso sabor al estilo Estación 18!");
+        setAiDescription("¡Delicioso sabor al estilo Estación 18!");
       } finally {
         setLoading(false);
       }
@@ -46,72 +46,86 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
   return (
     <Card 
       onClick={onSelect}
-      className={`group relative overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:-translate-y-1 border-border/40 ${isCombo ? 'border-primary/30' : ''} ${isSelected ? 'ring-2 ring-primary bg-primary/5' : ''}`}
+      className={`group relative overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:-translate-y-1 border-border/40 ${isCombo ? 'border-primary/30' : ''} ${isSelected ? 'ring-2 ring-primary bg-primary/5 shadow-primary/20' : ''}`}
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden">
         <Image
           src={placeholder?.imageUrl || 'https://picsum.photos/seed/food/600/400'}
           alt={item.name}
           fill
-          className={`object-cover transition-transform duration-500 group-hover:scale-110 ${isSelected ? 'scale-105' : ''}`}
+          className={`object-cover transition-transform duration-500 group-hover:scale-110 ${isSelected ? 'scale-105 brightness-75' : ''}`}
           data-ai-hint={placeholder?.imageHint || 'food'}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
         
-        <div className="absolute top-4 right-4 z-20">
-          {isSelected ? (
-            <div className="bg-primary text-white p-1 rounded-lg shadow-lg animate-in zoom-in-50">
-              <CheckCircle2 className="h-6 w-6" />
-            </div>
-          ) : (
-            <div className="bg-black/40 backdrop-blur-md text-white/80 p-1 rounded-lg border border-white/20">
-              <Square className="h-6 w-6" />
+        {/* Marcado Visual Check-list */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30">
+          {isSelected && (
+            <div className="bg-primary/90 text-white p-4 rounded-full shadow-2xl animate-in zoom-in-50 duration-300">
+              <CheckCircle2 className="h-12 w-12" />
             </div>
           )}
         </div>
 
-        <div className="absolute top-3 left-3 flex flex-col gap-2">
+        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+        
+        <div className="absolute top-4 right-4 z-20">
+          {!isSelected ? (
+            <div className="bg-black/40 backdrop-blur-md text-white/80 p-1.5 rounded-xl border border-white/20">
+              <Square className="h-5 w-5" />
+            </div>
+          ) : (
+             <div className="bg-primary text-white p-1.5 rounded-xl shadow-lg border border-primary">
+              <CheckCircle2 className="h-5 w-5" />
+            </div>
+          )}
+        </div>
+
+        <div className="absolute top-3 left-3 flex flex-col gap-2 z-20">
           {isCombo && (
-            <Badge className="bg-primary text-white font-headline border-none shadow-lg animate-pulse-subtle">
-              OFERTA ESPECIAL
+            <Badge className="bg-primary text-white font-headline border-none shadow-lg px-3 py-1 text-[10px] animate-pulse-subtle uppercase tracking-tighter">
+              Combo Ahorro
             </Badge>
           )}
           {item.isSpecial && (
-            <Badge variant="secondary" className="bg-secondary text-secondary-foreground font-headline shadow-md">
-              <Sparkles className="h-3 w-3 mr-1" /> COMBOS
+            <Badge variant="secondary" className="bg-secondary text-secondary-foreground font-headline shadow-md text-[10px] uppercase">
+              <Sparkles className="h-3 w-3 mr-1" /> Especial
             </Badge>
           )}
         </div>
         
-        <div className="absolute bottom-3 right-3">
-          <div className={`px-4 py-1.5 rounded-2xl font-headline shadow-xl border border-white/10 transition-colors flex flex-col items-end ${isSelected ? 'bg-secondary text-white' : 'bg-primary text-white'}`}>
-            <span className="text-lg font-bold leading-none">${item.price.toFixed(2)}</span>
-            <span className="text-[10px] font-bold opacity-90 leading-tight">Bs. {priceBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })}</span>
+        <div className="absolute bottom-3 right-3 z-20">
+          <div className={`px-4 py-2 rounded-2xl font-headline shadow-xl border border-white/10 transition-all flex flex-col items-end ${isSelected ? 'bg-secondary text-white scale-105' : 'bg-primary text-white'}`}>
+            <span className="text-xl font-bold leading-none">${item.price.toFixed(2)}</span>
+            <span className="text-[10px] font-bold opacity-90 leading-tight mt-0.5">Bs. {priceBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })}</span>
           </div>
         </div>
       </div>
 
       <CardContent className="p-5">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className={`font-headline text-xl font-bold tracking-tight transition-colors ${isSelected ? 'text-primary' : 'text-foreground group-hover:text-primary'}`}>
+        <div className="flex justify-between items-start mb-3">
+          <h3 className={`font-headline text-lg md:text-xl font-bold tracking-tight transition-colors uppercase ${isSelected ? 'text-primary' : 'text-foreground group-hover:text-primary'}`}>
             {item.name}
           </h3>
-          {item.pieces && (
-            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest bg-muted px-2 py-0.5 rounded">
-              {item.pieces} Piezas
-            </span>
-          )}
         </div>
         
-        <div className="min-h-[60px]">
+        {item.description && (
+          <div className="mb-4 p-3 bg-muted/50 rounded-xl border border-border/50 flex gap-2">
+            <Info className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+            <p className="text-xs font-bold text-foreground leading-snug">
+              {item.description}
+            </p>
+          </div>
+        )}
+
+        <div className="min-h-[50px]">
           {loading ? (
             <div className="space-y-2">
               <Skeleton className="h-3 w-full" />
               <Skeleton className="h-3 w-5/6" />
             </div>
           ) : (
-            <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 italic">
-              &ldquo;{description}&rdquo;
+            <p className="text-[13px] text-muted-foreground leading-relaxed italic">
+              &ldquo;{aiDescription}&rdquo;
             </p>
           )}
         </div>
@@ -120,8 +134,8 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
           <div className="flex items-center text-[10px] text-primary font-bold uppercase tracking-tighter">
             <Utensils className="h-3 w-3 mr-1" /> Estación 18
           </div>
-          <div className={`text-xs font-bold uppercase ${isSelected ? 'text-primary' : 'text-muted-foreground'}`}>
-            {isSelected ? '¡Añadido!' : 'Tocar para añadir'}
+          <div className={`text-[10px] font-bold uppercase tracking-widest ${isSelected ? 'text-primary animate-bounce' : 'text-muted-foreground/60'}`}>
+            {isSelected ? '¡EN TU LISTA!' : 'TOCA PARA MARCAR'}
           </div>
         </div>
       </CardContent>

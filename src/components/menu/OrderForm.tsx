@@ -21,12 +21,12 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
   function handleSendWhatsApp() {
     if (selectedItems.length === 0) return;
 
-    const itemsList = selectedItems.map(item => `- ${item.name} ($${item.price.toFixed(2)})`).join('%0A');
-    const message = `*PEDIDO DESDE EL MENÚ DIGITAL*%0A%0A` +
+    const itemsList = selectedItems.map(item => `- ${item.name} (${item.description || 'Individual'}) ($${item.price.toFixed(2)})`).join('%0A');
+    const message = `*MI LISTA DE PEDIDO - ESTACIÓN 18*%0A%0A` +
       `*Cliente:* ${userName || 'No especificado'}%0A` +
-      `*Items:*%0A${itemsList}%0A%0A` +
-      `*Total Estimado:* $${totalPrice.toFixed(2)} (Bs. ${totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })})%0A%0A` +
-      `¡Hola! Tengo mi selección lista desde la web.`;
+      `*Productos:*%0A${itemsList}%0A%0A` +
+      `*Total a Pagar:*%0A$${totalPrice.toFixed(2)} (Bs. ${totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })})%0A%0A` +
+      `¡Hola! Estos son los productos que marqué en el menú digital.`;
     
     const whatsappUrl = `https://wa.me/584143683914?text=${message}`;
     window.open(whatsappUrl, '_blank');
@@ -67,17 +67,20 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
             <div className="p-6 space-y-4">
               <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">Productos Marcados</h4>
               {selectedItems.map((item) => (
-                <div key={item.id} className="flex items-center justify-between group animate-in fade-in slide-in-from-left-2">
+                <div key={`${item.id}-${Math.random()}`} className="flex items-center justify-between group animate-in fade-in slide-in-from-left-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-primary/10 text-primary p-1.5 rounded-lg border border-primary/20">
                       <CheckCircle2 className="h-5 w-5" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="font-headline font-bold text-foreground leading-tight">{item.name}</span>
-                      <span className="text-[10px] text-muted-foreground">Bs. {(item.price * EXCHANGE_RATE).toLocaleString('es-VE', { minimumFractionDigits: 2 })}</span>
+                      <span className="font-headline font-bold text-foreground leading-tight uppercase text-sm">{item.name}</span>
+                      <span className="text-[10px] text-muted-foreground italic">{item.description || 'Porción individual'}</span>
                     </div>
                   </div>
-                  <span className="font-mono text-primary font-bold">${item.price.toFixed(2)}</span>
+                  <div className="text-right">
+                    <div className="font-mono text-primary font-bold">${item.price.toFixed(2)}</div>
+                    <div className="text-[9px] text-muted-foreground">Bs. {(item.price * EXCHANGE_RATE).toLocaleString('es-VE', { minimumFractionDigits: 2 })}</div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -85,8 +88,8 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
             <div className="p-8 bg-primary/5">
               <div className="flex justify-between items-center">
                 <div className="flex flex-col">
-                  <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Total Estimado</span>
-                  <span className="text-xl font-headline font-bold text-foreground opacity-80">
+                  <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Total Estimado</span>
+                  <span className="text-lg font-headline font-bold text-foreground opacity-80">
                     Bs. {totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })}
                   </span>
                 </div>

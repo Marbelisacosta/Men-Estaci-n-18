@@ -7,6 +7,7 @@ export interface MenuItem {
   image: string;
   isSpecial?: boolean;
   pieces?: number;
+  description?: string;
 }
 
 export const menuItems: MenuItem[] = [
@@ -81,21 +82,66 @@ export const menuItems: MenuItem[] = [
     image: 'hotdog'
   },
   {
-    id: 'combo-popular',
-    name: 'Combo Estación 18',
-    price: 2.50,
+    id: 'combo-duo',
+    name: 'COMBO DUO',
+    description: '2 WHOPPER + 2 VASO REFRESCO',
+    price: 10.00,
     category: 'combo',
-    pieces: 3,
     image: 'combo-1',
     isSpecial: true
   },
   {
-    id: 'combo-premium',
-    name: 'Combo Sabor Extremo',
-    price: 2.70,
+    id: 'combo-callejero',
+    name: 'COMBO CALLEJERO',
+    description: '4 PANES DE SALCHICHA',
+    price: 12.00,
     category: 'combo',
-    pieces: 3,
     image: 'combo-2',
+    isSpecial: true
+  },
+  {
+    id: 'combo-junior',
+    name: 'COMBO JUNIOR',
+    description: "8 JUNIOR'S",
+    price: 3.50,
+    category: 'combo',
+    image: 'combo-1',
+    isSpecial: true
+  },
+  {
+    id: 'combo-estacion',
+    name: 'COMBO ESTACIÓN',
+    description: '2 PANES DE SALCHICHA + 2 JUNIOR + 2 AREPAS + REFRESCO',
+    price: 10.00,
+    category: 'combo',
+    image: 'combo-2',
+    isSpecial: true
+  },
+  {
+    id: 'combo-personal',
+    name: 'COMBO PERSONAL',
+    description: '2 AREPAS + 1 VASO REFRESCO',
+    price: 12.00,
+    category: 'combo',
+    image: 'combo-1',
+    isSpecial: true
+  },
+  {
+    id: 'combo-boom',
+    name: 'COMBO BOOM',
+    description: '3 WHOPPER + REFRESCO DE LITRO',
+    price: 5.00,
+    category: 'combo',
+    image: 'combo-2',
+    isSpecial: true
+  },
+  {
+    id: 'combo-resuelve',
+    name: 'COMBO RESUELVE',
+    description: '8 PANES DE SALCHICHA',
+    price: 7.00,
+    category: 'combo',
+    image: 'combo-1',
     isSpecial: true
   }
 ];

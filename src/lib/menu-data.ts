@@ -3,7 +3,7 @@ export interface MenuItem {
   id: string;
   name: string;
   price: number;
-  category: 'individual' | 'combo' | 'fast-food';
+  category: 'individual' | 'combo' | 'fast-food' | 'drinks';
   image: string;
   isSpecial?: boolean;
   pieces?: number;
@@ -90,6 +90,22 @@ export const menuItems: MenuItem[] = [
     price: 1.50,
     category: 'fast-food',
     image: 'hotdog',
+    isAvailable: true
+  },
+  {
+    id: 'drink-1',
+    name: 'REFRESCO 1 LITRO',
+    price: 1.50,
+    category: 'drinks',
+    image: 'soda',
+    isAvailable: true
+  },
+  {
+    id: 'drink-2',
+    name: 'REFRESCO 1.5 LITROS',
+    price: 2.50,
+    category: 'drinks',
+    image: 'soda',
     isAvailable: true
   },
   {

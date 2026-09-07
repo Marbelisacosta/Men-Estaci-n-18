@@ -37,6 +37,12 @@
       "imageHint": "hot dog"
     },
     {
+      "id": "soda",
+      "description": "Refreshing cold soda",
+      "imageUrl": "https://picsum.photos/seed/soda/600/400",
+      "imageHint": "soda bottle"
+    },
+    {
       "id": "combo-1",
       "description": "Fast food combo with soda",
       "imageUrl": "https://picsum.photos/seed/combo1/800/600",

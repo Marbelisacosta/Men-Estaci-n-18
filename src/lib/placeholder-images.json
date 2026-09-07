@@ -13,6 +13,30 @@
       "imageHint": "cheese sticks"
     },
     {
+      "id": "arepa",
+      "description": "Venezuelan arepa",
+      "imageUrl": "https://picsum.photos/seed/arepa/600/400",
+      "imageHint": "corn meal"
+    },
+    {
+      "id": "burger",
+      "description": "Delicious big burger",
+      "imageUrl": "https://picsum.photos/seed/burger/600/400",
+      "imageHint": "hamburger meal"
+    },
+    {
+      "id": "patacon",
+      "description": "Fried plantain sandwich",
+      "imageUrl": "https://picsum.photos/seed/patacon/600/400",
+      "imageHint": "fried plantain"
+    },
+    {
+      "id": "hotdog",
+      "description": "Hot dog with toppings",
+      "imageUrl": "https://picsum.photos/seed/hotdog/600/400",
+      "imageHint": "hot dog"
+    },
+    {
       "id": "combo-1",
       "description": "Fast food combo with soda",
       "imageUrl": "https://picsum.photos/seed/combo1/800/600",

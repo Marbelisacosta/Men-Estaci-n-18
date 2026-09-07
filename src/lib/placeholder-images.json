@@ -43,6 +43,12 @@
       "imageHint": "soda bottle"
     },
     {
+      "id": "fries",
+      "description": "French fries with ketchup",
+      "imageUrl": "https://picsum.photos/seed/fries/600/400",
+      "imageHint": "french fries"
+    },
+    {
       "id": "combo-1",
       "description": "Fast food combo with soda",
       "imageUrl": "https://picsum.photos/seed/combo1/800/600",

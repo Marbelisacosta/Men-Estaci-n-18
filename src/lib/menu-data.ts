@@ -93,6 +93,14 @@ export const menuItems: MenuItem[] = [
     isAvailable: true
   },
   {
+    id: 'fast-8',
+    name: 'SERVICIO DE PAPAS FRITAS + SALSA',
+    price: 1.00,
+    category: 'fast-food',
+    image: 'fries',
+    isAvailable: true
+  },
+  {
     id: 'drink-1',
     name: 'REFRESCO 1 LITRO',
     price: 1.50,
@@ -106,6 +114,16 @@ export const menuItems: MenuItem[] = [
     price: 2.50,
     category: 'drinks',
     image: 'soda',
+    isAvailable: true
+  },
+  {
+    id: 'combo-whopper-papas',
+    name: 'COMBO WHOPPER + PAPAS',
+    description: 'WHOPPER + SERVICIO DE PAPAS',
+    price: 5.00,
+    category: 'combo',
+    image: 'combo-1',
+    isSpecial: true,
     isAvailable: true
   },
   {

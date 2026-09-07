@@ -176,15 +176,22 @@ export default function Home() {
               <Clock className="h-6 w-6 text-primary" />
             </div>
             <h4 className="font-headline text-xl font-bold mb-3">Horario</h4>
-            <div className="text-muted-foreground text-sm flex flex-col gap-4 w-full">
-              <p className="font-bold text-foreground text-base border-b border-border/40 pb-2">Lunes a Sábado</p>
-              <div className="flex flex-col gap-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-secondary">Turno Mañana</span>
-                <p className="text-foreground font-medium">Desde las <span className="text-primary font-bold">6:30 am</span></p>
+            <div className="text-muted-foreground text-sm flex flex-col gap-3 w-full">
+              <div className="flex justify-between items-center border-b border-border/40 pb-2">
+                <span className="font-bold text-foreground">Jueves</span>
+                <span className="text-primary font-bold">6:00pm - 11:00pm</span>
               </div>
-              <div className="flex flex-col gap-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-secondary">Turno Tarde</span>
-                <p className="text-foreground font-medium">Hasta las <span className="text-primary font-bold">5:30 pm</span></p>
+              <div className="flex justify-between items-center border-b border-border/40 pb-2">
+                <span className="font-bold text-foreground">Viernes</span>
+                <span className="text-primary font-bold">6:00pm - 12:00pm</span>
+              </div>
+              <div className="flex justify-between items-center border-b border-border/40 pb-2">
+                <span className="font-bold text-foreground">Sábado</span>
+                <span className="text-primary font-bold">6:00pm - 12:00pm</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="font-bold text-foreground">Domingo</span>
+                <span className="text-primary font-bold">6:00pm - 11:00pm</span>
               </div>
             </div>
           </div>

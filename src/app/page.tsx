@@ -78,13 +78,13 @@ export default function Home() {
             <div className="flex-1 text-center md:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-widest mb-6">
                 <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-                Menú Check-list Interactivo
+                El punto exacto del sabor
               </div>
               <h2 className="font-headline text-4xl md:text-6xl font-bold mb-6 leading-[1.1]">
-                {BRAND_MOTTO}
+                El punto<br />exacto del<br />sabor
               </h2>
               <p className="text-muted-foreground text-lg mb-8 max-w-xl">
-                ¡Arma tu pedido mientras navegas! Marca lo que desees y muéstralo al personal o envíalo por WhatsApp.
+                Disfruta de la mejor comida rápida de la zona. Precios claros, sabor inigualable y atención de primera.
               </p>
               
               {selectedItems.length > 0 && (

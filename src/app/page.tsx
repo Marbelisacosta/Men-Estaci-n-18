@@ -41,30 +41,30 @@ export default function Home() {
   return (
     <div className="min-w-[1024px] min-h-screen flex flex-col">
       {/* Header - Fixed layout */}
-      <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-lg border-b border-primary/10">
-        <div className="container mx-auto px-4 h-20 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3 shrink-0">
-            <div className="bg-primary p-2 rounded-xl rotate-3 shadow-lg">
-              <span className="font-headline font-bold text-2xl text-white">18</span>
+      <header className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur-xl border-b border-primary/20 shadow-sm">
+        <div className="container mx-auto px-6 h-24 flex items-center justify-between gap-6">
+          <div className="flex items-center gap-4 shrink-0">
+            <div className="bg-primary p-3 rounded-2xl rotate-3 shadow-xl ring-2 ring-white/10">
+              <span className="font-headline font-bold text-3xl text-white">18</span>
             </div>
             <div className="flex flex-col">
-              <h1 className="font-headline text-2xl font-bold tracking-tight text-foreground leading-tight">
+              <h1 className="font-headline text-3xl font-bold tracking-tighter text-foreground leading-none">
                 ESTACION <span className="text-primary">18</span>
               </h1>
-              <p className="text-xs font-medium text-secondary uppercase tracking-[0.2em]">
+              <p className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] mt-1">
                 Fast Food
               </p>
             </div>
           </div>
 
-          <div className="flex-1 flex justify-center">
+          <div className="flex-1 flex justify-center scale-110">
              <BCVRate />
           </div>
 
           <div className="flex items-center gap-4 shrink-0">
              <a 
               href="#order-section"
-              className="bg-secondary text-secondary-foreground font-headline text-sm font-bold px-5 py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg border border-secondary/20"
+              className="bg-secondary text-secondary-foreground font-headline text-sm font-black px-8 py-3.5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl border-2 border-white/20 uppercase tracking-tight"
              >
                VER PEDIDO ({selectedItems.length})
              </a>
@@ -72,45 +72,45 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="flex-1 container mx-auto px-4 py-12">
+      <main className="flex-1 container mx-auto px-8 py-16">
         {/* Hero / Promo Section - Forced horizontal layout */}
-        <section className="relative rounded-[2.5rem] bg-card overflow-hidden mb-16 shadow-2xl border border-border/40">
-          <div className="absolute inset-0 bg-texture opacity-20" />
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent pointer-events-none" />
+        <section className="relative rounded-[3.5rem] bg-card overflow-hidden mb-20 shadow-2xl border-2 border-border/60">
+          <div className="absolute inset-0 bg-texture opacity-30" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent pointer-events-none" />
           
-          <div className="relative z-10 p-16 flex flex-row items-center gap-10">
+          <div className="relative z-10 p-20 flex flex-row items-center gap-16">
             <div className="flex-1 text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-widest mb-6">
-                <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
+              <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/10 border-2 border-primary/30 text-primary font-black text-sm uppercase tracking-[0.2em] mb-8">
+                <span className="flex h-3 w-3 rounded-full bg-primary animate-pulse" />
                 El punto exacto del sabor
               </div>
-              <h2 className="font-headline text-6xl font-bold mb-6 leading-[1.1]">
+              <h2 className="font-headline text-7xl font-bold mb-8 leading-[1.05] tracking-tighter">
                 El punto<br />exacto del<br />sabor
               </h2>
-              <p className="text-muted-foreground text-lg mb-8 max-w-xl">
+              <p className="text-muted-foreground text-xl mb-10 max-w-xl leading-relaxed font-medium">
                 Disfruta de la mejor comida rápida de la zona. Precios claros, sabor inigualable y atención de primera.
               </p>
               
               {selectedItems.length > 0 && (
-                <div className="mt-4 p-4 rounded-2xl bg-primary/5 border border-primary/20 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <ClipboardCheck className="text-primary h-5 w-5" />
-                    <span className="text-sm font-bold text-foreground">{selectedItems.length} ítems marcados</span>
+                <div className="mt-6 p-6 rounded-[2rem] bg-primary/5 border-2 border-primary/20 flex items-center justify-between shadow-inner">
+                  <div className="flex items-center gap-3">
+                    <ClipboardCheck className="text-primary h-7 w-7" />
+                    <span className="text-lg font-bold text-foreground">{selectedItems.length} ítems marcados en tu lista</span>
                   </div>
-                  <Button variant="ghost" size="sm" onClick={clearSelection} className="text-xs text-muted-foreground hover:text-destructive">
-                    <Trash2 className="h-4 w-4 mr-1" /> Limpiar
+                  <Button variant="ghost" size="lg" onClick={clearSelection} className="text-sm font-bold text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-xl px-6">
+                    <Trash2 className="h-5 w-5 mr-2" /> Limpiar Lista
                   </Button>
                 </div>
               )}
             </div>
             
-            <div className="flex-1 w-full max-w-sm">
+            <div className="flex-1 w-full max-w-md">
               <div className="relative group">
-                <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-50" />
+                <div className="absolute -inset-6 bg-primary/30 rounded-full blur-3xl opacity-60 animate-pulse-subtle" />
                 <img 
                   src="https://picsum.photos/seed/promo/600/600" 
                   alt="Special Offer" 
-                  className="relative rounded-3xl shadow-2xl border-4 border-card"
+                  className="relative rounded-[3rem] shadow-2xl border-8 border-card group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
             </div>
@@ -118,16 +118,18 @@ export default function Home() {
         </section>
 
         {/* Menu Section - Forced 2-column grid */}
-        <section id="menu" className="mb-24">
-          <div className="text-center mb-8">
-            <h2 className="font-headline text-4xl font-bold mb-3">Nuestro Menú</h2>
-            <p className="text-muted-foreground text-sm mb-4">Toca un producto para marcarlo en tu lista</p>
-            <div className="h-1 w-20 bg-primary mx-auto rounded-full mb-4" />
+        <section id="menu" className="mb-28">
+          <div className="text-center mb-12">
+            <h2 className="font-headline text-5xl font-bold mb-4 tracking-tight">Nuestro Menú</h2>
+            <p className="text-muted-foreground text-lg font-medium mb-6">Toca un producto para marcarlo en tu lista de pedido</p>
+            <div className="h-1.5 w-32 bg-primary mx-auto rounded-full mb-8 shadow-sm shadow-primary/40" />
           </div>
 
-          <CategoryTabs onCategoryChange={setSelectedCategory} />
+          <div className="scale-110 mb-16">
+            <CategoryTabs onCategoryChange={setSelectedCategory} />
+          </div>
 
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 gap-10">
             {filteredItems.map(item => (
               <MenuItemCard 
                 key={item.id} 
@@ -139,21 +141,21 @@ export default function Home() {
           </div>
 
           {filteredItems.length === 0 && (
-            <div className="text-center py-20 bg-card rounded-3xl border border-dashed border-border">
-              <p className="text-muted-foreground">No hay items en esta categoría por el momento.</p>
+            <div className="text-center py-28 bg-card rounded-[3rem] border-2 border-dashed border-border/60">
+              <p className="text-muted-foreground text-xl font-medium">No hay productos en esta categoría por el momento.</p>
             </div>
           )}
         </section>
 
         {/* Order Section - Fixed size */}
-        <section id="order-section" className="py-16 bg-primary/5 rounded-[3rem] border border-primary/10 mb-24 scroll-mt-24">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="font-headline text-4xl font-bold mb-3">Tu Pedido</h2>
-              <p className="text-muted-foreground max-w-lg mx-auto">
+        <section id="order-section" className="py-20 bg-primary/[0.03] rounded-[4rem] border-2 border-primary/10 mb-28 shadow-xl scroll-mt-24">
+          <div className="container mx-auto px-8">
+            <div className="text-center mb-16">
+              <h2 className="font-headline text-5xl font-bold mb-4 tracking-tighter">Tu Pedido</h2>
+              <p className="text-muted-foreground text-lg max-w-xl mx-auto font-medium">
                 {selectedItems.length > 0 
-                  ? "Hemos organizado tus selecciones abajo. Solo completa tus datos." 
-                  : "Selecciona productos arriba para verlos aquí automáticamente."}
+                  ? "Hemos organizado tus selecciones abajo. Revisa y envía tu pedido por WhatsApp." 
+                  : "Explora el menú arriba y selecciona tus productos favoritos para armar tu lista."}
               </p>
             </div>
             <OrderForm selectedItems={selectedItems} />
@@ -161,48 +163,48 @@ export default function Home() {
         </section>
 
         {/* Info Grid - Forced 3-column row */}
-        <section className="grid grid-cols-3 gap-8">
-          <div className="bg-card p-8 rounded-3xl border border-border/40 flex flex-col items-center text-center">
-            <div className="bg-primary/10 p-4 rounded-full mb-6">
-              <MapPin className="h-6 w-6 text-primary" />
+        <section className="grid grid-cols-3 gap-10">
+          <div className="bg-card p-10 rounded-[3rem] border-2 border-border/60 flex flex-col items-center text-center shadow-lg hover:border-primary/40 transition-colors">
+            <div className="bg-primary/10 p-6 rounded-3xl mb-8 ring-2 ring-primary/20">
+              <MapPin className="h-8 w-8 text-primary" />
             </div>
-            <h4 className="font-headline text-xl font-bold mb-3">Ubicación</h4>
-            <p className="text-muted-foreground text-sm">{locationAddress}</p>
+            <h4 className="font-headline text-2xl font-bold mb-4">Ubicación</h4>
+            <p className="text-muted-foreground text-base leading-relaxed font-medium">{locationAddress}</p>
           </div>
-          <div className="bg-card p-8 rounded-3xl border border-border/40 flex flex-col items-center text-center">
-            <div className="bg-primary/10 p-4 rounded-full mb-6">
-              <Clock className="h-6 w-6 text-primary" />
+          <div className="bg-card p-10 rounded-[3rem] border-2 border-border/60 flex flex-col items-center text-center shadow-lg hover:border-primary/40 transition-colors">
+            <div className="bg-primary/10 p-6 rounded-3xl mb-8 ring-2 ring-primary/20">
+              <Clock className="h-8 w-8 text-primary" />
             </div>
-            <h4 className="font-headline text-xl font-bold mb-3">Horario</h4>
-            <div className="text-muted-foreground text-sm flex flex-col gap-3 w-full">
-              <div className="flex justify-between items-center border-b border-border/40 pb-2">
+            <h4 className="font-headline text-2xl font-bold mb-6">Horario</h4>
+            <div className="text-muted-foreground text-base flex flex-col gap-4 w-full">
+              <div className="flex justify-between items-center border-b border-border/40 pb-3">
                 <span className="font-bold text-foreground">Jueves</span>
-                <span className="text-primary font-bold">6:00pm - 11:00pm</span>
+                <span className="text-primary font-black">6:00pm - 11:00pm</span>
               </div>
-              <div className="flex justify-between items-center border-b border-border/40 pb-2">
+              <div className="flex justify-between items-center border-b border-border/40 pb-3">
                 <span className="font-bold text-foreground">Viernes</span>
-                <span className="text-primary font-bold">6:00pm - 12:00pm</span>
+                <span className="text-primary font-black">6:00pm - 12:00pm</span>
               </div>
-              <div className="flex justify-between items-center border-b border-border/40 pb-2">
+              <div className="flex justify-between items-center border-b border-border/40 pb-3">
                 <span className="font-bold text-foreground">Sábado</span>
-                <span className="text-primary font-bold">6:00pm - 12:00pm</span>
+                <span className="text-primary font-black">6:00pm - 12:00pm</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="font-bold text-foreground">Domingo</span>
-                <span className="text-primary font-bold">6:00pm - 11:00pm</span>
+                <span className="text-primary font-black">6:00pm - 11:00pm</span>
               </div>
             </div>
           </div>
-          <div className="bg-card p-8 rounded-3xl border border-border/40 flex flex-col items-center text-center">
-            <div className="bg-primary/10 p-4 rounded-full mb-6">
-              <Phone className="h-6 w-6 text-primary" />
+          <div className="bg-card p-10 rounded-[3rem] border-2 border-border/60 flex flex-col items-center text-center shadow-lg hover:border-primary/40 transition-colors">
+            <div className="bg-primary/10 p-6 rounded-3xl mb-8 ring-2 ring-primary/20">
+              <Phone className="h-8 w-8 text-primary" />
             </div>
-            <h4 className="font-headline text-xl font-bold mb-3">Contacto</h4>
-            <div className="flex flex-col gap-3">
-              <a href={`tel:+${phoneNumberLink}`} className="text-foreground font-bold hover:text-primary transition-colors text-lg">
+            <h4 className="font-headline text-2xl font-bold mb-4">Contacto</h4>
+            <div className="flex flex-col gap-4">
+              <a href={`tel:+${phoneNumberLink}`} className="text-foreground font-black hover:text-primary transition-colors text-2xl tracking-tighter">
                 {phoneNumberDisplay}
               </a>
-              <a href={`mailto:${emailAddress}`} className="text-muted-foreground text-xs font-medium hover:text-primary transition-colors break-all">
+              <a href={`mailto:${emailAddress}`} className="text-muted-foreground text-sm font-bold hover:text-primary transition-colors break-all">
                 {emailAddress}
               </a>
             </div>
@@ -210,23 +212,26 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-card border-t border-border/40 py-12 mt-20">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-3">
-              <div className="bg-primary p-1.5 rounded-lg">
-                <span className="font-headline font-bold text-lg text-white">18</span>
+      <footer className="bg-card border-t-2 border-border/60 py-16 mt-24">
+        <div className="container mx-auto px-8">
+          <div className="flex flex-row justify-between items-center gap-12">
+            <div className="flex items-center gap-4">
+              <div className="bg-primary p-2.5 rounded-xl">
+                <span className="font-headline font-bold text-2xl text-white">18</span>
               </div>
-              <span className="font-headline text-lg font-bold">Estacion 18</span>
+              <div className="flex flex-col">
+                <span className="font-headline text-2xl font-bold tracking-tight">Estacion 18</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground/60">Fast Food</span>
+              </div>
             </div>
             
-            <div className="flex flex-col items-center gap-2">
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Síguenos en redes</span>
-              <div className="flex gap-6">
-                <a href={`mailto:${emailAddress}`} className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/30 rounded-full" title="Email"><Mail className="h-5 w-5" /></a>
-                <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/30 rounded-full" title="Instagram"><Instagram className="h-5 w-5" /></a>
-                <a href={tiktokUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/30 rounded-full" title="TikTok">
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+            <div className="flex flex-col items-center gap-4">
+              <span className="text-xs font-black uppercase tracking-[0.3em] text-muted-foreground">Conecta con nosotros</span>
+              <div className="flex gap-8">
+                <a href={`mailto:${emailAddress}`} className="text-muted-foreground hover:text-primary transition-all hover:scale-110 p-3 bg-muted/40 rounded-2xl border border-border/50" title="Email"><Mail className="h-6 w-6" /></a>
+                <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all hover:scale-110 p-3 bg-muted/40 rounded-2xl border border-border/50" title="Instagram"><Instagram className="h-6 w-6" /></a>
+                <a href={tiktokUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all hover:scale-110 p-3 bg-muted/40 rounded-2xl border border-border/50" title="TikTok">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
                     <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.36-.66.41-1.03 1.14-1.1 1.92-.02.57.04 1.14.3 1.64.44.88 1.44 1.39 2.39 1.26.95-.1 1.81-.8 2.05-1.7.07-.34.1-.69.09-1.04l.01-11.97Z"/>
                   </svg>
                 </a>
@@ -234,8 +239,8 @@ export default function Home() {
             </div>
 
             <div className="text-right">
-              <p className="text-xs text-muted-foreground">© 2024 Estacion 18 Fast Food.</p>
-              <p className="text-[10px] text-muted-foreground/60 mt-1 uppercase tracking-widest">El punto exacto del sabor</p>
+              <p className="text-sm font-bold text-muted-foreground">© 2024 Estacion 18 Fast Food.</p>
+              <p className="text-[10px] font-black text-muted-foreground/40 mt-2 uppercase tracking-[0.3em]">El punto exacto del sabor</p>
             </div>
           </div>
         </div>

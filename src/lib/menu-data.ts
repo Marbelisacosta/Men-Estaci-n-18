@@ -85,7 +85,7 @@ export const menuItems: MenuItem[] = [
     id: 'combo-duo',
     name: 'COMBO DUO',
     description: '2 WHOPPER + 2 VASO REFRESCO',
-    price: 10.00,
+    price: 7.00,
     category: 'combo',
     image: 'combo-1',
     isSpecial: true
@@ -94,7 +94,7 @@ export const menuItems: MenuItem[] = [
     id: 'combo-callejero',
     name: 'COMBO CALLEJERO',
     description: '4 PANES DE SALCHICHA',
-    price: 12.00,
+    price: 5.00,
     category: 'combo',
     image: 'combo-2',
     isSpecial: true
@@ -103,7 +103,7 @@ export const menuItems: MenuItem[] = [
     id: 'combo-junior',
     name: 'COMBO JUNIOR',
     description: "8 JUNIOR'S",
-    price: 3.50,
+    price: 12.00,
     category: 'combo',
     image: 'combo-1',
     isSpecial: true
@@ -121,7 +121,7 @@ export const menuItems: MenuItem[] = [
     id: 'combo-personal',
     name: 'COMBO PERSONAL',
     description: '2 AREPAS + 1 VASO REFRESCO',
-    price: 12.00,
+    price: 3.50,
     category: 'combo',
     image: 'combo-1',
     isSpecial: true
@@ -130,7 +130,7 @@ export const menuItems: MenuItem[] = [
     id: 'combo-boom',
     name: 'COMBO BOOM',
     description: '3 WHOPPER + REFRESCO DE LITRO',
-    price: 5.00,
+    price: 12.00,
     category: 'combo',
     image: 'combo-2',
     isSpecial: true
@@ -139,7 +139,7 @@ export const menuItems: MenuItem[] = [
     id: 'combo-resuelve',
     name: 'COMBO RESUELVE',
     description: '8 PANES DE SALCHICHA',
-    price: 7.00,
+    price: 10.00,
     category: 'combo',
     image: 'combo-1',
     isSpecial: true

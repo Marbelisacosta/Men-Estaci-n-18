@@ -42,42 +42,42 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-2',
     name: 'WHOPPER',
-    price: 3.00,
+    price: 4.00,
     category: 'fast-food',
     image: 'burger'
   },
   {
     id: 'fast-3',
     name: 'JUNIOR',
-    price: 1.50,
+    price: 2.00,
     category: 'fast-food',
     image: 'burger'
   },
   {
     id: 'fast-4',
     name: 'SALCHIQUESO',
-    price: 1.50,
+    price: 2.00,
     category: 'fast-food',
     image: 'hotdog'
   },
   {
     id: 'fast-5',
     name: 'PATACON PERSONAL',
-    price: 2.00,
+    price: 3.00,
     category: 'fast-food',
     image: 'patacon'
   },
   {
     id: 'fast-6',
     name: 'MINI PATACÓN',
-    price: 2.00,
+    price: 3.00,
     category: 'fast-food',
     image: 'patacon'
   },
   {
     id: 'fast-7',
     name: 'PAN DE SALCHICHA',
-    price: 4.00,
+    price: 1.50,
     category: 'fast-food',
     image: 'hotdog'
   },

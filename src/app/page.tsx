@@ -117,7 +117,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Menu Section - Forced 3-column grid */}
+        {/* Menu Section - Forced 2-column grid */}
         <section id="menu" className="mb-24">
           <div className="text-center mb-8">
             <h2 className="font-headline text-4xl font-bold mb-3">Nuestro Menú</h2>
@@ -127,7 +127,7 @@ export default function Home() {
 
           <CategoryTabs onCategoryChange={setSelectedCategory} />
 
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 gap-8">
             {filteredItems.map(item => (
               <MenuItemCard 
                 key={item.id} 

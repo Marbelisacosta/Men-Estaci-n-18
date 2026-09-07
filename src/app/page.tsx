@@ -6,7 +6,7 @@ import { MenuItemCard } from '@/components/menu/MenuItemCard';
 import { BCVRate } from '@/components/menu/BCVRate';
 import { CategoryTabs } from '@/components/menu/CategoryTabs';
 import { OrderForm } from '@/components/menu/OrderForm';
-import { menuItems, BRAND_MOTTO, MenuItem } from '@/lib/menu-data';
+import { menuItems, MenuItem } from '@/lib/menu-data';
 import { MapPin, Clock, Phone, Instagram, Facebook, Mail, ClipboardCheck, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -31,7 +31,8 @@ export default function Home() {
 
   const clearSelection = () => setSelectedItems([]);
 
-  const phoneNumber = "584143683914";
+  const phoneNumberDisplay = "0414-3683914";
+  const phoneNumberLink = "584143683914";
   const emailAddress = "Estacion18fastfood@gmail.com";
 
   return (
@@ -193,8 +194,8 @@ export default function Home() {
             </div>
             <h4 className="font-headline text-xl font-bold mb-3">Contacto</h4>
             <div className="flex flex-col gap-3">
-              <a href={`tel:+${phoneNumber}`} className="text-foreground font-bold hover:text-primary transition-colors">
-                +58 414-3683914
+              <a href={`tel:+${phoneNumberLink}`} className="text-foreground font-bold hover:text-primary transition-colors text-lg">
+                {phoneNumberDisplay}
               </a>
               <a href={`mailto:${emailAddress}`} className="text-muted-foreground text-xs font-medium hover:text-primary transition-colors break-all">
                 {emailAddress}
@@ -214,10 +215,13 @@ export default function Home() {
               <span className="font-headline text-lg font-bold">Estacion 18</span>
             </div>
             
-            <div className="flex gap-6">
-              <a href={`mailto:${emailAddress}`} className="text-muted-foreground hover:text-primary transition-colors" title="Email"><Mail /></a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" title="Instagram"><Instagram /></a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" title="Facebook"><Facebook /></a>
+            <div className="flex flex-col items-center gap-2">
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Síguenos en redes</span>
+              <div className="flex gap-6">
+                <a href={`mailto:${emailAddress}`} className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/30 rounded-full" title="Email"><Mail className="h-5 w-5" /></a>
+                <a href="https://instagram.com/estacion18fastfood" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/30 rounded-full" title="Instagram"><Instagram className="h-5 w-5" /></a>
+                <a href="https://facebook.com/estacion18fastfood" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/30 rounded-full" title="Facebook"><Facebook className="h-5 w-5" /></a>
+              </div>
             </div>
 
             <div className="text-center md:text-right">

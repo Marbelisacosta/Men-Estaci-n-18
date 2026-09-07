@@ -17,6 +17,7 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
   
   const totalPrice = selectedItems.reduce((acc, item) => acc + item.price, 0);
   const totalBs = totalPrice * EXCHANGE_RATE;
+  const phoneNumber = "584143683914";
 
   function handleSendWhatsApp() {
     if (selectedItems.length === 0) return;
@@ -28,7 +29,7 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
       `*Total a Pagar:*%0A$${totalPrice.toFixed(2)} (Bs. ${totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })})%0A%0A` +
       `¡Hola! Estos son los productos que marqué en el menú digital.`;
     
-    const whatsappUrl = `https://wa.me/584143683914?text=${message}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   }
 

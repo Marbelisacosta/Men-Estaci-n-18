@@ -10,9 +10,9 @@ interface CategoryTabsProps {
 
 export function CategoryTabs({ onCategoryChange }: CategoryTabsProps) {
   return (
-    <div className="w-full flex justify-center mb-10 overflow-x-auto pb-2 px-4">
+    <div className="w-full flex justify-center mb-10 px-4">
       <Tabs defaultValue="all" className="w-auto" onValueChange={onCategoryChange}>
-        <TabsList className="bg-card border border-border/40 p-1 h-14 rounded-2xl shadow-xl flex flex-nowrap min-w-max">
+        <TabsList className="bg-card border border-border/40 p-1 h-14 rounded-2xl shadow-xl flex flex-nowrap overflow-hidden">
           <TabsTrigger 
             value="all" 
             className="rounded-xl px-6 h-full data-[state=active]:bg-primary data-[state=active]:text-white transition-all font-headline whitespace-nowrap"

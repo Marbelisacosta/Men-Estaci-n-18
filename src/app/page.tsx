@@ -81,12 +81,19 @@ export default function Home() {
                 <span className="flex h-3 w-3 rounded-full bg-primary animate-pulse" />
                 El punto exacto del sabor
               </div>
-              <h2 className="font-headline text-7xl font-bold mb-8 leading-[0.9] tracking-tighter">
-                Sabor que <br/> <span className="text-primary italic">enciende</span> <br/> tu paladar
+              
+              <h2 className="font-headline text-8xl font-bold mb-8 leading-[0.85] tracking-tighter uppercase">
+                El punto <br/> 
+                <span className="text-primary italic">exacto</span> <br/> 
+                del sabor
               </h2>
               
+              <p className="text-xl text-muted-foreground font-medium max-w-lg mb-10 leading-relaxed">
+                Disfruta de la mejor comida rápida de la zona. Precios claros, sabor inigualable y atención de primera.
+              </p>
+              
               {selectedItems.length > 0 && (
-                <div className="mt-12 p-8 bg-background/50 backdrop-blur-md rounded-[2.5rem] border-2 border-primary/20 shadow-2xl flex items-center justify-between gap-8 animate-in slide-in-from-left-10 duration-500">
+                <div className="p-8 bg-background/50 backdrop-blur-md rounded-[2.5rem] border-2 border-primary/20 shadow-2xl flex items-center justify-between gap-8 animate-in slide-in-from-left-10 duration-500">
                   <div className="flex items-center gap-3">
                     <ClipboardCheck className="text-primary h-7 w-7" />
                     <span className="text-lg font-bold text-foreground">{selectedItems.length} ítems marcados en tu lista</span>

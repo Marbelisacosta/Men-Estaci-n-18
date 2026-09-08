@@ -18,18 +18,22 @@ export default function Home() {
     ? menuItems 
     : menuItems.filter(item => item.category === selectedCategory);
 
-  const toggleItemSelection = (item: MenuItem) => {
+  function toggleItemSelection(item: MenuItem) {
+    if (!item.isAvailable) return;
+    
     setSelectedItems(prev => {
-      const isSelected = prev.find(i => i.id === item.id);
-      if (isSelected) {
+      const isAlreadySelected = prev.some(i => i.id === item.id);
+      if (isAlreadySelected) {
         return prev.filter(i => i.id !== item.id);
       } else {
         return [...prev, item];
       }
     });
-  };
+  }
 
-  const clearSelection = () => setSelectedItems([]);
+  function clearSelection() {
+    setSelectedItems([]);
+  }
 
   const phoneNumberDisplay = "0414-3683914";
   const phoneNumberLink = "584143683914";
@@ -48,23 +52,16 @@ export default function Home() {
               <span className="font-headline font-bold text-3xl text-white">18</span>
             </div>
             <div className="flex flex-col">
-              <h1 className="font-headline text-3xl font-bold tracking-tighter text-foreground leading-none">
-                ESTACION <span className="text-primary">18</span>
-              </h1>
-              <p className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] mt-1">
-                Fast Food
-              </p>
+              <h1 className="font-headline font-bold text-2xl tracking-tighter text-foreground leading-none">Estación 18</h1>
+              <span className="text-[10px] uppercase tracking-[0.3em] font-black text-primary">Fast Food</span>
             </div>
           </div>
-
-          <div className="flex-1 flex justify-center scale-110">
+          
+          <div className="flex items-center gap-6">
              <BCVRate />
-          </div>
-
-          <div className="flex items-center gap-4 shrink-0">
              <a 
-              href="#order-section"
-              className="bg-secondary text-secondary-foreground font-headline text-sm font-black px-8 py-3.5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl border-2 border-white/20 uppercase tracking-tight"
+               href="#order-section" 
+               className="bg-primary text-white px-8 py-3.5 text-sm font-black rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl border-2 border-white/20 uppercase tracking-tight"
              >
                VER PEDIDO ({selectedItems.length})
              </a>
@@ -84,15 +81,12 @@ export default function Home() {
                 <span className="flex h-3 w-3 rounded-full bg-primary animate-pulse" />
                 El punto exacto del sabor
               </div>
-              <h2 className="font-headline text-7xl font-bold mb-8 leading-[1.05] tracking-tighter">
-                El punto<br />exacto del<br />sabor
+              <h2 className="font-headline text-7xl font-bold mb-8 leading-[0.9] tracking-tighter">
+                Sabor que <br/> <span className="text-primary italic">enciende</span> <br/> tu paladar
               </h2>
-              <p className="text-muted-foreground text-xl mb-10 max-w-xl leading-relaxed font-medium">
-                Disfruta de la mejor comida rápida de la zona. Precios claros, sabor inigualable y atención de primera.
-              </p>
               
               {selectedItems.length > 0 && (
-                <div className="mt-6 p-6 rounded-[2rem] bg-primary/5 border-2 border-primary/20 flex items-center justify-between shadow-inner">
+                <div className="mt-12 p-8 bg-background/50 backdrop-blur-md rounded-[2.5rem] border-2 border-primary/20 shadow-2xl flex items-center justify-between gap-8 animate-in slide-in-from-left-10 duration-500">
                   <div className="flex items-center gap-3">
                     <ClipboardCheck className="text-primary h-7 w-7" />
                     <span className="text-lg font-bold text-foreground">{selectedItems.length} ítems marcados en tu lista</span>
@@ -120,17 +114,13 @@ export default function Home() {
         {/* Menu Section - Forced 2-column grid */}
         <section id="menu" className="mb-28">
           <div className="text-center mb-12">
-            <h2 className="font-headline text-5xl font-bold mb-4 tracking-tight">Nuestro Menú</h2>
-            <p className="text-muted-foreground text-lg font-medium mb-6">Toca un producto para marcarlo en tu lista de pedido</p>
-            <div className="h-1.5 w-32 bg-primary mx-auto rounded-full mb-8 shadow-sm shadow-primary/40" />
-          </div>
-
-          <div className="scale-110 mb-16">
+            <h3 className="font-headline text-4xl font-bold mb-4">Nuestro Menú</h3>
+            <div className="w-24 h-1.5 bg-primary mx-auto rounded-full mb-12" />
             <CategoryTabs onCategoryChange={setSelectedCategory} />
           </div>
 
           <div className="grid grid-cols-2 gap-10">
-            {filteredItems.map(item => (
+            {filteredItems.map((item) => (
               <MenuItemCard 
                 key={item.id} 
                 item={item} 
@@ -158,11 +148,13 @@ export default function Home() {
                   : "Explora el menú arriba y selecciona tus productos favoritos para armar tu lista."}
               </p>
             </div>
-            <OrderForm selectedItems={selectedItems} />
+            <div className="max-w-2xl mx-auto">
+              <OrderForm selectedItems={selectedItems} />
+            </div>
           </div>
         </section>
 
-        {/* Info Grid - Forced 3-column row */}
+        {/* Info Grid - Fixed 3 columns */}
         <section className="grid grid-cols-3 gap-10">
           <div className="bg-card p-10 rounded-[3rem] border-2 border-border/60 flex flex-col items-center text-center shadow-lg hover:border-primary/40 transition-colors">
             <div className="bg-primary/10 p-6 rounded-3xl mb-8 ring-2 ring-primary/20">
@@ -183,11 +175,11 @@ export default function Home() {
               </div>
               <div className="flex justify-between items-center border-b border-border/40 pb-3">
                 <span className="font-bold text-foreground">Viernes</span>
-                <span className="text-primary font-black">6:00pm - 12:00pm</span>
+                <span className="text-primary font-black">6:00pm - 12:00am</span>
               </div>
               <div className="flex justify-between items-center border-b border-border/40 pb-3">
                 <span className="font-bold text-foreground">Sábado</span>
-                <span className="text-primary font-black">6:00pm - 12:00pm</span>
+                <span className="text-primary font-black">6:00pm - 12:00am</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="font-bold text-foreground">Domingo</span>
@@ -219,20 +211,16 @@ export default function Home() {
               <div className="bg-primary p-2.5 rounded-xl">
                 <span className="font-headline font-bold text-2xl text-white">18</span>
               </div>
-              <div className="flex flex-col">
-                <span className="font-headline text-2xl font-bold tracking-tight">Estacion 18</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground/60">Fast Food</span>
-              </div>
+              <p className="font-headline font-bold text-xl text-foreground">Estación 18 Fast Food</p>
             </div>
-            
-            <div className="flex flex-col items-center gap-4">
-              <span className="text-xs font-black uppercase tracking-[0.3em] text-muted-foreground">Conecta con nosotros</span>
-              <div className="flex gap-8">
+
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-3">
                 <a href={`mailto:${emailAddress}`} className="text-muted-foreground hover:text-primary transition-all hover:scale-110 p-3 bg-muted/40 rounded-2xl border border-border/50" title="Email"><Mail className="h-6 w-6" /></a>
                 <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all hover:scale-110 p-3 bg-muted/40 rounded-2xl border border-border/50" title="Instagram"><Instagram className="h-6 w-6" /></a>
                 <a href={tiktokUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all hover:scale-110 p-3 bg-muted/40 rounded-2xl border border-border/50" title="TikTok">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
-                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.36-.66.41-1.03 1.14-1.1 1.92-.02.57.04 1.14.3 1.64.44.88 1.44 1.39 2.39 1.26.95-.1 1.81-.8 2.05-1.7.07-.34.1-.69.09-1.04l.01-11.97Z"/>
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-.95-.35-1.3-.4-.4-.05-.81-.03-1.2.09-.4.12-.73.35-.92.67-.19.32-.28.71-.25 1.1.03.39.18.75.43 1.05.25.3.58.52.96.63 1.28.35 2.29 1.48 2.26 2.81-.03 1.33-1.09 2.41-2.42 2.38-1.33-.03-2.38-1.12-2.35-2.45.01-.26.06-.52.15-.76l-4.42-1.1c-.5.52-.89 1.17-1.1 1.9-1.12 3.72-2.58 4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.36-.66.41-1.03 1.14-1.1 1.92-.02.57.04 1.14.3 1.64.44.88 1.44 1.39 2.39 1.26.95-.1 1.81-.8 2.05-1.7.07-.34.1-.69.09-1.04l.01-11.97Z"/>
                   </svg>
                 </a>
               </div>

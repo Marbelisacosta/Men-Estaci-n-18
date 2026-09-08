@@ -13,27 +13,51 @@ export interface MenuItem {
 
 export const menuItems: MenuItem[] = [
   {
-    id: 'pasteles-1',
-    name: 'Pasteles de Carne',
-    price: 0.70,
+    id: 'past-1',
+    name: 'PASTEL DE POLLO',
+    price: 0.50,
     category: 'individual',
     image: 'pasteles',
-    isAvailable: false
+    isAvailable: true
   },
   {
-    id: 'pasteles-2',
-    name: 'Pasteles de Pollo',
-    price: 0.70,
+    id: 'past-2',
+    name: 'PASTEL DE CARNE',
+    price: 0.50,
     category: 'individual',
     image: 'pasteles',
-    isAvailable: false
+    isAvailable: true
   },
   {
-    id: 'tequenos-1',
-    name: 'Tequeños Tradicionales',
-    price: 0.70,
+    id: 'past-3',
+    name: 'PASTEL DE QUESO',
+    price: 0.50,
     category: 'individual',
-    image: 'tequenos',
+    image: 'pasteles',
+    isAvailable: true
+  },
+  {
+    id: 'past-4',
+    name: 'PASTEL DE PAPA CON QUESO',
+    price: 0.50,
+    category: 'individual',
+    image: 'pasteles',
+    isAvailable: true
+  },
+  {
+    id: 'past-5',
+    name: 'MANDOCA',
+    price: 0.50,
+    category: 'individual',
+    image: 'pasteles',
+    isAvailable: true
+  },
+  {
+    id: 'past-6',
+    name: 'TEQUEÑO',
+    price: 0.50,
+    category: 'individual',
+    image: 'pasteles',
     isAvailable: false
   },
   {
@@ -85,16 +109,9 @@ export const menuItems: MenuItem[] = [
     isAvailable: true
   },
   {
-    id: 'fast-7',
-    name: 'PAN DE SALCHICHA',
-    price: 1.50,
-    category: 'fast-food',
-    image: 'hotdog',
-    isAvailable: true
-  },
-  {
-    id: 'fast-8',
-    name: 'SERVICIO DE PAPAS FRITAS + SALSA',
+    id: 'fast-papas',
+    name: 'SERVICIO DE PAPAS FRITAS',
+    description: 'Papas fritas + salsa de tomate',
     price: 1.00,
     category: 'fast-food',
     image: 'fries',
@@ -102,8 +119,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'drink-1',
-    name: 'REFRESCO 1 LITRO',
-    price: 1.50,
+    name: 'VASO DE REFRESCO',
+    price: 0.50,
     category: 'drinks',
     image: 'soda',
     isAvailable: true
@@ -141,26 +158,6 @@ export const menuItems: MenuItem[] = [
     name: 'COMBO CALLEJERO',
     description: '4 PANES DE SALCHICHA',
     price: 5.00,
-    category: 'combo',
-    image: 'combo-2',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-junior',
-    name: 'COMBO JUNIOR',
-    description: "8 JUNIOR'S",
-    price: 12.00,
-    category: 'combo',
-    image: 'combo-1',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-estacion',
-    name: 'COMBO ESTACIÓN',
-    description: '2 PANES DE SALCHICHA + 2 JUNIOR + 2 AREPAS + REFRESCO',
-    price: 10.00,
     category: 'combo',
     image: 'combo-2',
     isSpecial: true,

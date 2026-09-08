@@ -2,14 +2,14 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import { MenuItem, EXCHANGE_RATE, BRAND_MOTTO } from '@/lib/menu-data';
 import { generateFlavorDescription } from '@/ai/flows/generate-flavor-description';
-import { MenuItem, BRAND_MOTTO, EXCHANGE_RATE } from '@/lib/menu-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Sparkles, Utensils, CheckCircle2, Square, Info, Ban } from 'lucide-react';
+import Image from 'next/image';
 
 interface MenuItemCardProps {
   item: MenuItem;
@@ -45,7 +45,7 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
   const isCombo = item.category === 'combo';
 
   const handleCardClick = () => {
-    if (isAvailable && onSelect) {
+    if (onSelect && isAvailable) {
       onSelect();
     }
   };
@@ -53,10 +53,10 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
   return (
     <Card 
       onClick={handleCardClick}
-      className={`group relative overflow-hidden transition-all duration-300 ${isAvailable ? 'cursor-pointer hover:shadow-2xl hover:-translate-y-1' : 'cursor-not-allowed opacity-75'} border-border/60 ${isCombo ? 'border-primary/40' : ''} ${isSelected && isAvailable ? 'ring-4 ring-primary bg-primary/5 shadow-primary/20' : ''}`}
+      className={`group relative overflow-hidden transition-all duration-500 cursor-pointer border-2 shadow-2xl rounded-[2.5rem] bg-card ${!isAvailable ? 'opacity-60 grayscale-[0.5] border-border/40' : isSelected ? 'border-primary ring-4 ring-primary/20 scale-[1.02] bg-primary/[0.02]' : 'border-border/60 hover:border-primary/40'}`}
     >
-      <div className="relative aspect-[16/10] w-full overflow-hidden">
-        <Image
+      <div className="relative aspect-[16/10] overflow-hidden">
+        <Image 
           src={placeholder?.imageUrl || 'https://picsum.photos/seed/food/600/400'}
           alt={item.name}
           fill
@@ -79,17 +79,17 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
           )}
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
-        
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
+
         {isAvailable && (
           <div className="absolute top-4 right-4 z-20">
-            {!isSelected ? (
-              <div className="bg-black/50 backdrop-blur-md text-white/90 p-2 rounded-xl border border-white/20">
-                <Square className="h-6 w-6" />
+            {isSelected ? (
+              <div className="bg-primary text-white p-2.5 rounded-xl shadow-xl animate-in zoom-in-50">
+                <CheckCircle2 className="h-6 w-6" />
               </div>
             ) : (
-               <div className="bg-primary text-white p-2 rounded-xl shadow-lg border border-primary ring-2 ring-white/20">
-                <CheckCircle2 className="h-6 w-6" />
+              <div className="bg-white/10 backdrop-blur-md text-white/80 p-2.5 rounded-xl border border-white/20 group-hover:bg-white/20 transition-colors">
+                <Square className="h-6 w-6" />
               </div>
             )}
           </div>
@@ -111,20 +111,25 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
         <div className="absolute bottom-4 right-4 z-20">
           <div className={`px-5 py-2.5 rounded-2xl font-headline shadow-2xl border border-white/10 transition-all flex flex-col items-end ${!isAvailable ? 'bg-muted text-muted-foreground' : isSelected ? 'bg-secondary text-white scale-110' : 'bg-primary text-white'}`}>
             <span className="text-2xl font-bold leading-none">${item.price.toFixed(2)}</span>
-            <span className="text-xs font-bold opacity-90 leading-tight mt-1">Bs. {priceBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })}</span>
+            <span className="text-[10px] font-black uppercase opacity-80 tracking-tighter mt-1">Ref: {item.price.toFixed(2)}</span>
           </div>
         </div>
       </div>
 
-      <CardContent className="p-6">
-        <div className="flex justify-between items-start mb-4">
-          <h3 className={`font-headline text-2xl font-bold tracking-tight transition-colors uppercase ${!isAvailable ? 'text-muted-foreground' : isSelected ? 'text-primary' : 'text-foreground group-hover:text-primary'}`}>
+      <CardContent className="p-8">
+        <div className="flex justify-between items-start mb-4 gap-4">
+          <h4 className={`font-headline text-2xl font-bold tracking-tight uppercase leading-none ${isSelected && isAvailable ? 'text-primary' : 'text-foreground'}`}>
             {item.name}
-          </h3>
+          </h4>
+          <div className="text-right shrink-0">
+            <p className="text-2xl font-black text-foreground/90 tracking-tighter leading-none">
+              Bs. {priceBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })}
+            </p>
+          </div>
         </div>
-        
+
         {item.description && (
-          <div className="mb-5 p-4 bg-muted/60 rounded-2xl border border-border/50 flex gap-3 shadow-inner">
+          <div className="mb-5 p-4 bg-muted/40 rounded-2xl border border-border/50 flex gap-3 shadow-inner">
             <Info className={`h-5 w-5 shrink-0 mt-0.5 ${isAvailable ? 'text-primary' : 'text-muted-foreground'}`} />
             <p className={`text-sm font-bold leading-relaxed ${isAvailable ? 'text-foreground' : 'text-muted-foreground'}`}>
               {item.description}
@@ -139,7 +144,7 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
               <Skeleton className="h-4 w-4/5" />
             </div>
           ) : (
-            <p className={`text-[15px] font-medium leading-relaxed italic ${isAvailable ? 'text-muted-foreground' : 'text-muted-foreground/60'}`}>
+            <p className={`text-base font-medium leading-relaxed italic ${isAvailable ? 'text-muted-foreground' : 'text-muted-foreground/60'}`}>
               &ldquo;{aiDescription}&rdquo;
             </p>
           )}
@@ -149,9 +154,11 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
           <div className={`flex items-center text-xs font-bold uppercase tracking-widest ${isAvailable ? 'text-primary' : 'text-muted-foreground'}`}>
             <Utensils className="h-4 w-4 mr-2" /> Estación 18
           </div>
-          <div className={`text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full ${!isAvailable ? 'text-red-500 bg-red-500/10' : isSelected ? 'text-primary bg-primary/10 animate-pulse' : 'text-muted-foreground/80 bg-muted'}`}>
-            {!isAvailable ? 'AGOTADO' : isSelected ? '¡EN TU LISTA!' : 'TOCA PARA MARCAR'}
-          </div>
+          {isSelected && (
+            <Badge variant="outline" className="text-[10px] font-black uppercase tracking-widest border-primary/40 text-primary bg-primary/5 px-3">
+              En lista de pedido
+            </Badge>
+          )}
         </div>
       </CardContent>
     </Card>

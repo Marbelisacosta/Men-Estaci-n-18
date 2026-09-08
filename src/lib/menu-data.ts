@@ -199,4 +199,4 @@ export const menuItems: MenuItem[] = [
 ];
 
 export const BRAND_MOTTO = "El punto exacto del sabor";
-export const EXCHANGE_RATE = 945.65;
+export const EXCHANGE_RATE = 947.29;

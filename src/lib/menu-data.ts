@@ -1,4 +1,3 @@
-
 export interface MenuItem {
   id: string;
   name: string;
@@ -73,7 +72,7 @@ export const menuItems: MenuItem[] = [
     name: 'JUNIOR',
     price: 2.00,
     category: 'fast-food',
-    image: 'burger',
+    image: 'burger-junior',
     isAvailable: true
   },
   {

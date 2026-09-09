@@ -87,7 +87,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-4',
     name: 'SALCHIQUESO',
-    description: 'Salchicha con queso cebú',
+    description: 'SALCHICHA MAS QUESO CEBÚ',
     price: 2.00,
     category: 'fast-food',
     image: 'hotdog',
@@ -96,7 +96,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-5',
     name: 'PATACON PERSONAL',
-    description: 'Plátano frito con todo el sabor',
+    description: 'PLÁTANO FRITO CON TODO EL SABOR',
     price: 3.00,
     category: 'fast-food',
     image: 'patacon',

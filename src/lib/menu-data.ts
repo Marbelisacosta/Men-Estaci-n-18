@@ -14,7 +14,7 @@ export interface MenuItem {
 export const menuItems: MenuItem[] = [
   {
     id: 'past-1',
-    name: 'PASTEL DE POLLO',
+    name: 'PASTELITO DE POLLO',
     price: 0.50,
     category: 'individual',
     image: 'pasteles',
@@ -22,7 +22,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'past-2',
-    name: 'PASTEL DE CARNE',
+    name: 'PASTELITO DE CARNE',
     price: 0.50,
     category: 'individual',
     image: 'pasteles',
@@ -30,7 +30,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'past-3',
-    name: 'PASTEL DE QUESO',
+    name: 'PASTELITO DE QUESO',
     price: 0.50,
     category: 'individual',
     image: 'pasteles',
@@ -38,7 +38,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'past-4',
-    name: 'PASTEL DE PAPA CON QUESO',
+    name: 'PASTELITO DE PAPA CON QUESO',
     price: 0.50,
     category: 'individual',
     image: 'pasteles',

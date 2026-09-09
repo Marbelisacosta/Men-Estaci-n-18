@@ -25,7 +25,7 @@ export function CategoryTabs({ onCategoryChange }: CategoryTabsProps) {
             className="rounded-xl px-6 h-full data-[state=active]:bg-primary data-[state=active]:text-white transition-all font-headline whitespace-nowrap"
           >
             <Zap className="h-4 w-4 mr-2" />
-            Pasteles
+            Pastelitos
           </TabsTrigger>
           <TabsTrigger 
             value="fast-food" 

@@ -66,9 +66,7 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
           src={placeholder?.imageUrl || 'https://picsum.photos/seed/food/600/400'}
           alt={item.name}
           fill
-          // Solo cargar con prioridad los platos especiales para mejorar el LCP
           priority={item.isSpecial}
-          loading={item.isSpecial ? "eager" : "lazy"}
           className={`object-cover transition-transform duration-500 ${isAvailable ? 'group-hover:scale-105' : 'grayscale'} ${isSelected && isAvailable ? 'scale-102 brightness-75' : ''}`}
           data-ai-hint={placeholder?.imageHint || 'food'}
         />
@@ -112,9 +110,8 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
         </div>
         
         <div className="absolute bottom-2 right-2 z-20">
-          <div className={`px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-lg font-headline shadow-2xl border border-white/10 transition-all flex flex-col items-end ${!isAvailable ? 'bg-muted text-muted-foreground' : isSelected ? 'bg-secondary text-white' : 'bg-primary text-white'}`}>
-            <span className="text-[10px] sm:text-lg font-bold leading-none">${item.price.toFixed(2)}</span>
-            <span className="text-[5px] sm:text-[7px] font-black uppercase opacity-80 tracking-tighter mt-0.5">Ref: {item.price.toFixed(2)}</span>
+          <div className={`px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg font-headline shadow-2xl border border-white/10 transition-all flex flex-col items-center justify-center ${!isAvailable ? 'bg-muted text-muted-foreground' : isSelected ? 'bg-secondary text-white' : 'bg-primary text-white'}`}>
+            <span className="text-[10px] sm:text-lg font-bold leading-none uppercase tracking-tighter">Ref: {item.price.toFixed(2)}</span>
           </div>
         </div>
       </div>

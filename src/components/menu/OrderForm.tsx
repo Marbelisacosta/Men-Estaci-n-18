@@ -22,11 +22,11 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
   function handleSendWhatsApp() {
     if (selectedItems.length === 0) return;
 
-    const itemsList = selectedItems.map(item => `- ${item.name} (${item.description || 'Individual'}) ($${item.price.toFixed(2)})`).join('%0A');
+    const itemsList = selectedItems.map(item => `- ${item.name} (${item.description || 'Individual'}) (Ref: ${item.price.toFixed(2)})`).join('%0A');
     const message = `*MI LISTA DE PEDIDO - ESTACIÓN 18*%0A%0A` +
       `*Cliente:* ${userName || 'No especificado'}%0A` +
       `*Productos:*%0A${itemsList}%0A%0A` +
-      `*Total a Pagar:*%0A$${totalPrice.toFixed(2)} (Bs. ${totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })})%0A%0A` +
+      `*Total a Pagar:*%0ARef: ${totalPrice.toFixed(2)} (Bs. ${totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })})%0A%0A` +
       `¡Hola! Estos son los productos que marqué en el menú digital.`;
     
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
@@ -79,7 +79,7 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="font-mono text-primary font-bold">${item.price.toFixed(2)}</div>
+                    <div className="font-mono text-primary font-bold">Ref: {item.price.toFixed(2)}</div>
                     <div className="text-[9px] text-muted-foreground">Bs. {(item.price * EXCHANGE_RATE).toLocaleString('es-VE', { minimumFractionDigits: 2 })}</div>
                   </div>
                 </div>
@@ -95,7 +95,7 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
                   </span>
                 </div>
                 <div className="text-4xl font-headline font-bold text-primary">
-                  ${totalPrice.toFixed(2)}
+                  Ref: {totalPrice.toFixed(2)}
                 </div>
               </div>
             </div>

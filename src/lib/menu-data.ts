@@ -33,7 +33,7 @@ export const menuItems: MenuItem[] = [
     name: 'PASTELITO DE QUESO',
     price: 0.50,
     category: 'individual',
-    image: 'pasteles',
+    image: 'past-queso',
     isAvailable: false
   },
   {

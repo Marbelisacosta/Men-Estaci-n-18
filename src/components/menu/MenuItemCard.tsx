@@ -61,7 +61,6 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
           src={placeholder?.imageUrl || 'https://picsum.photos/seed/food/600/400'}
           alt={item.name}
           fill
-          unoptimized
           className={`object-cover transition-transform duration-500 ${isAvailable ? 'group-hover:scale-110' : 'grayscale'} ${isSelected && isAvailable ? 'scale-105 brightness-75' : ''}`}
           data-ai-hint={placeholder?.imageHint || 'food'}
         />
@@ -158,7 +157,6 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
               alt="Estación 18 Fuego" 
               width={16} 
               height={16} 
-              unoptimized
               className={`mr-2 object-contain ${!isAvailable ? 'grayscale opacity-50' : ''}`}
             />
             Estación 18

@@ -20,15 +20,15 @@ export function CategoryTabs({ onCategoryChange }: CategoryTabsProps) {
             value="all" 
             className="rounded-xl px-6 h-full data-[state=active]:bg-primary data-[state=active]:text-white transition-all font-headline whitespace-nowrap"
           >
-            <Image 
-              src={flameLogoUrl} 
-              alt="Todos" 
-              width={16} 
-              height={16} 
-              unoptimized
-              className="mr-2 object-contain brightness-0 invert data-[state=active]:filter-none group-data-[state=active]:filter-none"
-              style={{ filter: 'var(--tw-brightness) var(--tw-invert)' }}
-            />
+            <div className="relative w-4 h-4 mr-2">
+              <Image 
+                src={flameLogoUrl} 
+                alt="Todos" 
+                fill
+                className="object-contain brightness-0 invert data-[state=active]:filter-none"
+                style={{ filter: 'var(--tw-brightness) var(--tw-invert)' }}
+              />
+            </div>
             Todos
           </TabsTrigger>
           <TabsTrigger 

@@ -48,7 +48,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
-      {/* Header - Responsive layout */}
+      {/* Header - Optimized with priority logo */}
       <header className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur-xl border-b border-primary/20 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-4">
           <div className="flex items-center shrink-0">
@@ -57,7 +57,7 @@ export default function Home() {
               alt="Estación 18 Logo" 
               width={140}
               height={56}
-              unoptimized
+              priority
               className="h-10 sm:h-14 w-auto object-contain"
             />
           </div>
@@ -77,7 +77,7 @@ export default function Home() {
       </header>
 
       <main className="flex-1 container mx-auto px-4 sm:px-8 py-4 sm:py-8">
-        {/* Hero / Promo Section - Responsive layout */}
+        {/* Hero Section - Optimized with priority and removed unoptimized */}
         <section className="relative rounded-[1.5rem] sm:rounded-[2.5rem] bg-card overflow-hidden mb-6 sm:mb-10 shadow-2xl border-2 border-border/60">
           <div className="absolute inset-0 bg-texture opacity-30" />
           <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent pointer-events-none" />
@@ -115,7 +115,7 @@ export default function Home() {
                   alt="Estación 18 Promo" 
                   width={500}
                   height={500}
-                  unoptimized
+                  priority
                   className="relative rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl border-4 border-card group-hover:scale-105 transition-transform duration-700 w-full aspect-square object-cover"
                   data-ai-hint={heroImageData?.imageHint || "restaurant promo"}
                 />
@@ -124,7 +124,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Menu Section - Responsive grid */}
+        {/* Menu Section */}
         <section id="menu" className="mb-12 sm:mb-20">
           <div className="text-center mb-6 sm:mb-8">
             <h3 className="font-headline text-2xl sm:text-3xl font-bold mb-3">Nuestro Menú</h3>
@@ -150,7 +150,7 @@ export default function Home() {
           )}
         </section>
 
-        {/* Order Section - Responsive size */}
+        {/* Order Section */}
         <section id="order-section" className="py-8 sm:py-12 bg-primary/[0.03] rounded-[1.5rem] sm:rounded-[2.5rem] border-2 border-primary/10 mb-12 sm:mb-20 shadow-xl scroll-mt-20">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-6 sm:mb-10">
@@ -167,7 +167,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Info Grid - Responsive columns */}
+        {/* Info Grid */}
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           <div className="bg-card p-5 sm:p-6 rounded-[1.25rem] sm:rounded-[2rem] border-2 border-border/60 flex flex-col items-center text-center shadow-lg hover:border-primary/40 transition-colors">
             <div className="bg-primary/10 p-3 sm:p-4 rounded-xl sm:rounded-2xl mb-3 sm:mb-4 ring-2 ring-primary/20">
@@ -226,7 +226,6 @@ export default function Home() {
                 alt="Estación 18 Logo" 
                 width={100}
                 height={40}
-                unoptimized
                 className="h-8 sm:h-12 w-auto object-contain"
               />
             </div>

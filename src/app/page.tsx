@@ -8,7 +8,7 @@ import { CategoryTabs } from '@/components/menu/CategoryTabs';
 import { OrderForm } from '@/components/menu/OrderForm';
 import { menuItems, MenuItem } from '@/lib/menu-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { MapPin, Clock, Phone, Instagram, Mail, ClipboardCheck, Trash2 } from 'lucide-react';
+import { MapPin, Clock, Phone, Instagram, Mail, ClipboardCheck, Trash2, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
@@ -41,6 +41,7 @@ export default function Home() {
   const phoneNumberLink = "584143683914";
   const emailAddress = "Estacion18fastfood@gmail.com";
   const locationAddress = "Av 49.E Calle 170 24 de Julio";
+  const locationMapUrl = "https://maps.app.goo.gl/ee6o5UxMLZL21VTJ6";
   const instagramUrl = "https://www.instagram.com/estacion18fastfood?igsh=NTkwamhkbTA0dHc5";
   const tiktokUrl = "https://www.tiktok.com/@estacion.18?_r=1&_t=ZS-99XLY1FJDRV";
   const logoUrl = "https://i.postimg.cc/GhJbp1QW/Post-Estacion-18-(2).png";
@@ -77,7 +78,7 @@ export default function Home() {
       </header>
 
       <main className="flex-1 container mx-auto px-4 sm:px-8 py-8 sm:py-12">
-        {/* Hero Section - Fixed horizontal on mobile */}
+        {/* Hero Section - Horizontal Layout Fixed for Mobile */}
         <section className="relative rounded-[2rem] sm:rounded-[4rem] bg-card overflow-hidden mb-12 sm:mb-20 shadow-2xl border border-white/5">
           <div className="absolute inset-0 bg-texture opacity-20" />
           
@@ -179,13 +180,21 @@ export default function Home() {
 
         {/* Info Grid */}
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div className="bg-card p-10 rounded-[3rem] border border-white/5 flex flex-col items-center text-center shadow-2xl hover:border-primary/40 transition-all duration-300 group">
+          <a 
+            href={locationMapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-card p-10 rounded-[3rem] border border-white/5 flex flex-col items-center text-center shadow-2xl hover:border-primary/40 transition-all duration-300 group"
+          >
             <div className="bg-primary/10 p-6 rounded-[2rem] mb-8 ring-2 ring-primary/10 group-hover:scale-110 transition-transform">
               <MapPin className="h-10 w-10 text-primary" />
             </div>
             <h4 className="font-headline text-3xl font-bold mb-4 uppercase">Ubicación</h4>
-            <p className="text-muted-foreground text-base leading-relaxed font-medium">{locationAddress}</p>
-          </div>
+            <p className="text-muted-foreground text-base leading-relaxed font-medium mb-4">{locationAddress}</p>
+            <div className="flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest mt-auto">
+              Ver Mapa <ExternalLink className="h-3 w-3" />
+            </div>
+          </a>
           
           <div className="bg-card p-10 rounded-[3rem] border border-white/5 flex flex-col items-center text-center shadow-2xl hover:border-primary/40 transition-all duration-300 group">
             <div className="bg-primary/10 p-6 rounded-[2rem] mb-8 ring-2 ring-primary/10 group-hover:scale-110 transition-transform">

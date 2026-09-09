@@ -48,27 +48,27 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header - Sticky as requested in the image */}
-      <header className="sticky top-0 z-[100] w-full bg-[#0a0a0a] border-b border-primary/30 shadow-2xl transition-all duration-300">
-        <div className="container mx-auto px-4 h-24 flex items-center justify-between">
+      {/* Header - Sticky with BCV Integrated */}
+      <header className="sticky top-0 z-[100] w-full bg-[#0a0a0a]/95 backdrop-blur-md border-b border-primary/20 shadow-2xl transition-all duration-300">
+        <div className="container mx-auto px-4 h-24 flex items-center justify-between gap-4">
           <div className="flex items-center shrink-0">
             <Image 
               src={logoUrl} 
               alt="Estación 18 Logo" 
-              width={200}
-              height={80}
+              width={180}
+              height={70}
               priority
-              className="h-16 w-auto object-contain"
+              className="h-12 sm:h-16 w-auto object-contain"
             />
           </div>
           
-          <div className="flex items-center gap-6">
-             <div className="hidden lg:block">
-               <BCVRate />
-             </div>
+          <div className="flex items-center gap-3 sm:gap-6">
+             {/* BCV Rate inside Header */}
+             <BCVRate />
+             
              <a 
                href="#order-section" 
-               className="bg-primary text-white px-8 sm:px-12 py-4 text-xs sm:text-sm font-black rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(239,68,68,0.5)] border border-white/10 uppercase tracking-[0.2em]"
+               className="bg-primary text-white px-5 sm:px-10 py-3 sm:py-4 text-[10px] sm:text-xs font-black rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(239,68,68,0.4)] border border-white/10 uppercase tracking-[0.15em] shrink-0"
              >
                LISTA ({selectedItems.length})
              </a>
@@ -133,11 +133,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Info Section Mobile BCV */}
-        <div className="lg:hidden mb-10">
-           <BCVRate />
-        </div>
 
         {/* Menu Section */}
         <section id="menu" className="mb-20 sm:mb-28 scroll-mt-28">

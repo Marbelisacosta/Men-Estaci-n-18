@@ -101,6 +101,14 @@ export const menuItems: MenuItem[] = [
     isAvailable: true
   },
   {
+    id: 'fast-pan-salchicha',
+    name: 'PAN DE SALCHICHA',
+    price: 1.50,
+    category: 'fast-food',
+    image: 'pan-salchicha',
+    isAvailable: true
+  },
+  {
     id: 'fast-papas',
     name: 'SERVICIO DE PAPAS FRITAS',
     description: 'Papas fritas + salsa de tomate',

@@ -65,6 +65,12 @@
       "description": "Premium fast food combo",
       "imageUrl": "https://picsum.photos/seed/combo2/800/600",
       "imageHint": "hamburger meal"
+    },
+    {
+      "id": "pan-salchicha",
+      "description": "Pan de salchicha clásico",
+      "imageUrl": "https://i.postimg.cc/kMsw5P7M/Chat-GPT-Image-9-sept-2026-10-04-50.png",
+      "imageHint": "hot dog"
     }
   ]
 }

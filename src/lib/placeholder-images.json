@@ -7,12 +7,6 @@
       "imageHint": "chicken pastelito"
     },
     {
-      "id": "pasteles",
-      "description": "Golden fried pastelitos",
-      "imageUrl": "https://picsum.photos/seed/pasteles/600/400",
-      "imageHint": "fried pastry"
-    },
-    {
       "id": "past-carne",
       "description": "Pastelito de carne crujiente",
       "imageUrl": "https://i.postimg.cc/pdVbrhT7/Chat-GPT-Image-9-sept-2026-13-30-44.png",
@@ -109,8 +103,8 @@
       "imageHint": "hot dog"
     },
     {
-      "id": "combo-whopper-papas",
-      "description": "Combo Whopper + Papas Estación 18",
+      "id": "combo-especial",
+      "description": "Combo Especial Whopper + Papas",
       "imageUrl": "https://i.postimg.cc/j2sdMJ1c/Chat-GPT-Image-9-sept-2026-10-53-53.png",
       "imageHint": "burger combo"
     },
@@ -125,6 +119,18 @@
       "description": "Combo Callejero 4 Panes de Salchicha",
       "imageUrl": "https://i.postimg.cc/MTxvLG3b/Chat-GPT-Image-9-sept-2026-11-34-46.png",
       "imageHint": "hot dogs"
+    },
+    {
+      "id": "combo-junior",
+      "description": "Combo Junior 8 Burgers",
+      "imageUrl": "https://i.postimg.cc/8zxgnr38/imagen-2026-09-09-101514066.png",
+      "imageHint": "burgers group"
+    },
+    {
+      "id": "combo-estacion",
+      "description": "Combo Estación Mega Mix",
+      "imageUrl": "https://i.postimg.cc/rwN6JFWM/Menu-Estacion-18-(3).png",
+      "imageHint": "food combo"
     },
     {
       "id": "combo-personal",

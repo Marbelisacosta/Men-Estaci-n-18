@@ -120,7 +120,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-papas',
     name: 'SERVICIO DE PAPAS FRITAS',
-    description: 'Papas fritas + salsa de tomate',
+    description: 'Servicio de papas fritas + salsa de tomate',
     price: 1.00,
     category: 'fast-food',
     image: 'fries',
@@ -151,12 +151,12 @@ export const menuItems: MenuItem[] = [
     isAvailable: true
   },
   {
-    id: 'combo-whopper-papas',
-    name: 'COMBO WHOPPER + PAPAS',
-    description: 'WHOPPER + SERVICIO DE PAPAS',
+    id: 'combo-especial',
+    name: 'COMBO ESPECIAL',
+    description: 'Whopper + servicio de papas',
     price: 5.00,
     category: 'combo',
-    image: 'combo-whopper-papas',
+    image: 'combo-especial',
     isSpecial: true,
     isAvailable: true
   },
@@ -181,6 +181,26 @@ export const menuItems: MenuItem[] = [
     isAvailable: true
   },
   {
+    id: 'combo-junior',
+    name: 'COMBO JUNIOR',
+    description: "8 JUNIOR'S",
+    price: 14.00,
+    category: 'combo',
+    image: 'combo-junior',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-estacion',
+    name: 'COMBO ESTACIÓN',
+    description: '2 PANES DE SALCHICHA + 2 JUNIOR + 2 AREPAS + REFRESCO 1L',
+    price: 11.00,
+    category: 'combo',
+    image: 'combo-estacion',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
     id: 'combo-personal',
     name: 'COMBO PERSONAL',
     description: '2 AREPAS + 1 VASO REFRESCO',
@@ -193,7 +213,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'combo-boom',
     name: 'COMBO BOOM',
-    description: '3 WHOPPER + REFRESCO 1L',
+    description: '3 WHOPPER + REFRESCO DE LITRO',
     price: 12.00,
     category: 'combo',
     image: 'combo-boom',

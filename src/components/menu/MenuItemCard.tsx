@@ -8,7 +8,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Sparkles, Utensils, CheckCircle2, Square, Info, Ban } from 'lucide-react';
+import { Sparkles, CheckCircle2, Square, Info, Ban } from 'lucide-react';
 import Image from 'next/image';
 
 interface MenuItemCardProps {
@@ -24,6 +24,7 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
   const placeholder = PlaceHolderImages.find(img => img.id === item.image);
   const priceBs = item.price * EXCHANGE_RATE;
   const isAvailable = item.isAvailable !== false;
+  const flameLogoUrl = "https://i.postimg.cc/QMSDJgPw/Post-Estacion-18-(1).png";
 
   useEffect(() => {
     async function fetchDescription() {
@@ -152,7 +153,15 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
 
         <div className="mt-5 pt-5 border-t border-border/40 flex items-center justify-between">
           <div className={`flex items-center text-xs font-bold uppercase tracking-widest ${isAvailable ? 'text-primary' : 'text-muted-foreground'}`}>
-            <Utensils className="h-4 w-4 mr-2" /> Estación 18
+            <Image 
+              src={flameLogoUrl} 
+              alt="Estación 18 Fuego" 
+              width={16} 
+              height={16} 
+              unoptimized
+              className={`mr-2 object-contain ${!isAvailable ? 'grayscale opacity-50' : ''}`}
+            />
+            Estación 18
           </div>
           {isSelected && (
             <Badge variant="outline" className="text-[10px] font-black uppercase tracking-widest border-primary/40 text-primary bg-primary/5 px-3">

@@ -2,13 +2,16 @@
 "use client";
 
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Utensils, Zap, Package, Flame, CupSoda as Cup } from 'lucide-react';
+import { Zap, Package, Flame, CupSoda as Cup } from 'lucide-react';
+import Image from 'next/image';
 
 interface CategoryTabsProps {
   onCategoryChange: (category: string) => void;
 }
 
 export function CategoryTabs({ onCategoryChange }: CategoryTabsProps) {
+  const flameLogoUrl = "https://i.postimg.cc/QMSDJgPw/Post-Estacion-18-(1).png";
+
   return (
     <div className="w-full flex justify-center mb-10 px-4">
       <Tabs defaultValue="all" className="w-auto" onValueChange={onCategoryChange}>
@@ -17,7 +20,15 @@ export function CategoryTabs({ onCategoryChange }: CategoryTabsProps) {
             value="all" 
             className="rounded-xl px-6 h-full data-[state=active]:bg-primary data-[state=active]:text-white transition-all font-headline whitespace-nowrap"
           >
-            <Utensils className="h-4 w-4 mr-2" />
+            <Image 
+              src={flameLogoUrl} 
+              alt="Todos" 
+              width={16} 
+              height={16} 
+              unoptimized
+              className="mr-2 object-contain brightness-0 invert data-[state=active]:filter-none group-data-[state=active]:filter-none"
+              style={{ filter: 'var(--tw-brightness) var(--tw-invert)' }}
+            />
             Todos
           </TabsTrigger>
           <TabsTrigger 

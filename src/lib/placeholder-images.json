@@ -7,6 +7,12 @@
       "imageHint": "fried pastry"
     },
     {
+      "id": "past-papa-queso",
+      "description": "Pastelito de papa con queso",
+      "imageUrl": "https://i.postimg.cc/RhwBcCdG/Chat-GPT-Image-9-sept-2026-10-00-49.png",
+      "imageHint": "fried pastelito"
+    },
+    {
       "id": "tequenos",
       "description": "Cheese sticks tequeños",
       "imageUrl": "https://picsum.photos/seed/tequenos/600/400",

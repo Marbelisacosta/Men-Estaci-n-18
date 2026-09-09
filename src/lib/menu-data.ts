@@ -41,7 +41,7 @@ export const menuItems: MenuItem[] = [
     name: 'PASTELITO DE PAPA CON QUESO',
     price: 0.50,
     category: 'individual',
-    image: 'pasteles',
+    image: 'past-papa-queso',
     isAvailable: false
   },
   {

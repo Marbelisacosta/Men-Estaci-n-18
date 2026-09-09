@@ -15,7 +15,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'past-1',
     name: 'PASTELITO DE POLLO',
-    description: 'POLLO DESMECHADO CON SAZÓN DE LA CASA',
+    description: 'RELLENO DE POLLO DESMECHADO Y SABOR ÚNICO',
     price: 0.50,
     category: 'individual',
     image: 'past-pollo',
@@ -24,7 +24,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'past-2',
     name: 'PASTELITO DE CARNE',
-    description: 'CARNE MOLIDA PERFECTAMENTE ALIÑADA',
+    description: 'CARNE MOLIDA CON EL MEJOR SAZÓN',
     price: 0.50,
     category: 'individual',
     image: 'past-carne',
@@ -77,20 +77,20 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'fast-3',
-    name: 'JUNIOR',
-    description: 'VEGETALES FRESCOS',
-    price: 2.00,
+    name: 'SALCHIQUESO',
+    description: 'SALCHICHA MÁS QUESO CEBÚ',
+    price: 3.00,
     category: 'fast-food',
-    image: 'burger-junior',
+    image: 'hotdog',
     isAvailable: true
   },
   {
     id: 'fast-4',
-    name: 'SALCHIQUESO',
-    description: 'SALCHICHA MAS QUESO CEBÚ',
+    name: 'JUNIOR',
+    description: 'VEGETALES FRESCOS',
     price: 2.00,
     category: 'fast-food',
-    image: 'hotdog',
+    image: 'junior',
     isAvailable: true
   },
   {
@@ -139,17 +139,8 @@ export const menuItems: MenuItem[] = [
     isAvailable: true
   },
   {
-    id: 'drink-litro',
-    name: 'REFRESCO DE LITRO',
-    description: 'SABOR TRADICIONAL DE LA COCA-COLA',
-    price: 1.50,
-    category: 'drinks',
-    image: 'soda-litro',
-    isAvailable: true
-  },
-  {
     id: 'drink-2',
-    name: 'REFRESCO 1.5 LITROS',
+    name: 'REFRESCO 1.5 Lts',
     description: 'SABOR TRADICIONAL DE LA COCA-COLA',
     price: 2.00,
     category: 'drinks',
@@ -199,8 +190,8 @@ export const menuItems: MenuItem[] = [
   {
     id: 'combo-estacion',
     name: 'COMBO ESTACIÓN',
-    description: '2 PANES DE SALCHICHA + 2 JUNIOR + 2 AREPAS + REFRESCO 1L',
-    price: 11.00,
+    description: '2 JUNIOR + 2 PANES DE SALCHICHA + PAPAS + REFRESCO 1.5L',
+    price: 10.00,
     category: 'combo',
     image: 'combo-estacion',
     isSpecial: true,
@@ -209,7 +200,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'combo-personal',
     name: 'COMBO PERSONAL',
-    description: '2 AREPAS + 1 VASO REFRESCO',
+    description: '2 AREPAS + VASO DE REFRESCO',
     price: 3.50,
     category: 'combo',
     image: 'combo-personal',
@@ -238,5 +229,5 @@ export const menuItems: MenuItem[] = [
   }
 ];
 
-export const BRAND_MOTTO = "El punto exacto del sabor";
+export const BRAND_MOTTO = "EL PUNTO EXACTO DEL SABOR";
 export const EXCHANGE_RATE = 954.02;

@@ -1,22 +1,20 @@
 
 "use client";
 
-import { useState, useEffect } from 'react';
-import { Banknote, TrendingUp } from 'lucide-react';
+import { TrendingUp, Banknote } from 'lucide-react';
 import { EXCHANGE_RATE } from '@/lib/menu-data';
+import { useEffect, useState } from 'react';
 
 export function BCVRate() {
   const [rate, setRate] = useState<number | null>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setRate(EXCHANGE_RATE);
-    }, 500);
-    return () => clearTimeout(timer);
+    // Simular carga de tasa BCV o usar la constante definida
+    setRate(EXCHANGE_RATE);
   }, []);
 
   return (
-    <div className="flex items-center gap-2 px-2 sm:px-4 py-1.5 sm:py-2 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-all hover:bg-white/10 group animate-in fade-in duration-500">
+    <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-all hover:bg-white/10 group animate-in fade-in duration-500 flex items-center p-2 sm:p-3 gap-3">
       <div className="hidden sm:flex bg-primary/20 p-2 rounded-xl ring-1 ring-primary/30 group-hover:scale-110 transition-transform">
         <Banknote className="h-3.5 w-3.5 text-primary" />
       </div>

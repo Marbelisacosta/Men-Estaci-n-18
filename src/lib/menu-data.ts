@@ -120,7 +120,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-papas',
     name: 'SERVICIO DE PAPAS FRITAS',
-    description: 'Servicio de papas fritas + salsa de tomate',
+    description: 'SERVICIO DE PAPAS FRITAS + SALSA DE TOMATE',
     price: 1.00,
     category: 'fast-food',
     image: 'fries',
@@ -156,7 +156,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'combo-especial',
     name: 'COMBO ESPECIAL',
-    description: 'Whopper + servicio de papas',
+    description: 'WHOPPER + SERVICIO DE PAPAS',
     price: 5.00,
     category: 'combo',
     image: 'combo-especial',

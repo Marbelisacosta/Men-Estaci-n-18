@@ -18,15 +18,15 @@ export function CategoryTabs({ onCategoryChange }: CategoryTabsProps) {
         <TabsList className="bg-card border border-border/40 p-1 h-14 rounded-2xl shadow-xl flex flex-nowrap overflow-hidden">
           <TabsTrigger 
             value="all" 
-            className="rounded-xl px-6 h-full data-[state=active]:bg-primary data-[state=active]:text-white transition-all font-headline whitespace-nowrap"
+            className="rounded-xl px-6 h-full data-[state=active]:bg-primary data-[state=active]:text-white transition-all font-headline whitespace-nowrap group"
           >
-            <div className="relative w-4 h-4 mr-2">
+            <div className="relative w-5 h-5 mr-2">
               <Image 
                 src={flameLogoUrl} 
                 alt="Todos" 
                 fill
-                className="object-contain brightness-0 invert data-[state=active]:filter-none"
-                style={{ filter: 'var(--tw-brightness) var(--tw-invert)' }}
+                unoptimized
+                className="object-contain filter grayscale invert group-data-[state=active]:filter-none group-data-[state=active]:brightness-0 group-data-[state=active]:invert"
               />
             </div>
             Todos

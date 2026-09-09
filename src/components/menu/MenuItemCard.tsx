@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -60,6 +61,7 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
           src={placeholder?.imageUrl || 'https://picsum.photos/seed/food/600/400'}
           alt={item.name}
           fill
+          unoptimized
           className={`object-cover transition-transform duration-500 ${isAvailable ? 'group-hover:scale-110' : 'grayscale'} ${isSelected && isAvailable ? 'scale-105 brightness-75' : ''}`}
           data-ai-hint={placeholder?.imageHint || 'food'}
         />
@@ -146,18 +148,20 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
 
         <div className="mt-2 sm:mt-5 pt-2 sm:pt-5 border-t border-border/40 flex items-center justify-between">
           <div className={`flex items-center text-[7px] sm:text-xs font-bold uppercase tracking-widest ${isAvailable ? 'text-primary' : 'text-muted-foreground'}`}>
-            <Image 
-              src={flameLogoUrl} 
-              alt="Estación 18 Fuego" 
-              width={10} 
-              height={10} 
-              className={`mr-1 sm:mr-2 object-contain ${!isAvailable ? 'grayscale opacity-50' : ''}`}
-            />
+            <div className="relative w-4 h-4 mr-1 sm:mr-2">
+              <Image 
+                src={flameLogoUrl} 
+                alt="Estación 18 Fuego" 
+                fill
+                unoptimized
+                className={`object-contain ${!isAvailable ? 'grayscale opacity-50' : ''}`}
+              />
+            </div>
             <span className="hidden xs:inline">Estación 18</span>
           </div>
           {isSelected && (
             <Badge variant="outline" className="text-[6px] sm:text-[10px] font-black uppercase tracking-widest border-primary/40 text-primary bg-primary/5 px-1.5 sm:px-3">
-              Marcado
+              LISTO
             </Badge>
           )}
         </div>

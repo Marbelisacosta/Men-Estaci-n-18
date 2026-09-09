@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -47,7 +48,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
-      {/* Header - Optimized with priority logo */}
+      {/* Header */}
       <header className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur-xl border-b border-primary/20 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-4">
           <div className="flex items-center shrink-0">
@@ -69,14 +70,14 @@ export default function Home() {
                href="#order-section" 
                className="bg-primary text-white px-4 sm:px-6 py-2 text-[10px] sm:text-xs font-black rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl border-2 border-white/20 uppercase tracking-tight"
              >
-               PEDIDO ({selectedItems.length})
+               LISTA ({selectedItems.length})
              </a>
           </div>
         </div>
       </header>
 
       <main className="flex-1 container mx-auto px-4 sm:px-8 py-4 sm:py-8">
-        {/* Hero Section - Optimized with priority and removed unoptimized */}
+        {/* Hero Section */}
         <section className="relative rounded-[1.5rem] sm:rounded-[2.5rem] bg-card overflow-hidden mb-6 sm:mb-10 shadow-2xl border-2 border-border/60">
           <div className="absolute inset-0 bg-texture opacity-30" />
           <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent pointer-events-none" />
@@ -131,7 +132,7 @@ export default function Home() {
             <CategoryTabs onCategoryChange={setSelectedCategory} />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-3 sm:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-8">
             {filteredItems.map((item) => (
               <MenuItemCard 
                 key={item.id} 
@@ -153,11 +154,11 @@ export default function Home() {
         <section id="order-section" className="py-8 sm:py-12 bg-primary/[0.03] rounded-[1.5rem] sm:rounded-[2.5rem] border-2 border-primary/10 mb-12 sm:mb-20 shadow-xl scroll-mt-20">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-6 sm:mb-10">
-              <h2 className="font-headline text-2xl sm:text-3xl font-bold mb-3 tracking-tighter">Tu Pedido</h2>
+              <h2 className="font-headline text-2xl sm:text-3xl font-bold mb-3 tracking-tighter">Tu Selección</h2>
               <p className="text-muted-foreground text-[11px] sm:text-sm max-w-lg mx-auto font-medium">
                 {selectedItems.length > 0 
-                  ? "Hemos organizado tus selecciones abajo. Revisa y envía tu pedido por WhatsApp." 
-                  : "Explora el menú arriba y selecciona tus productos favoritos para armar tu lista."}
+                  ? "Revisa tus platos y envíalos por WhatsApp para procesar tu orden." 
+                  : "Selecciona platos del menú para armar tu pedido."}
               </p>
             </div>
             <div className="max-w-xl mx-auto">
@@ -242,8 +243,7 @@ export default function Home() {
             </div>
 
             <div className="text-center sm:text-right">
-              <p className="text-[10px] sm:text-xs font-bold text-muted-foreground">© 2024 Estacion 18 Fast Food.</p>
-              <p className="text-[8px] sm:text-[9px] font-black text-muted-foreground/40 mt-1 uppercase tracking-[0.3em]">El punto exacto del sabor</p>
+              <p className="text-[10px] sm:text-xs font-bold text-muted-foreground">© 2024 Estación 18 Fast Food.</p>
             </div>
           </div>
         </div>

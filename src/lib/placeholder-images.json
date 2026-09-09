@@ -125,6 +125,12 @@
       "description": "Combo Personal 2 Arepas + Vaso Refresco",
       "imageUrl": "https://i.postimg.cc/V6qrDtYF/Chat-GPT-Image-9-sept-2026-12-04-32.png",
       "imageHint": "arepa meal"
+    },
+    {
+      "id": "combo-resuelve",
+      "description": "Combo Resuelve 8 Panes de Salchicha",
+      "imageUrl": "https://i.postimg.cc/tTnQjd1W/Menu-Estacion-18-(4).png",
+      "imageHint": "hot dogs combo"
     }
   ]
 }

@@ -1,3 +1,4 @@
+
 export interface MenuItem {
   id: string;
   name: string;
@@ -196,7 +197,7 @@ export const menuItems: MenuItem[] = [
     description: '8 PANES DE SALCHICHA',
     price: 10.00,
     category: 'combo',
-    image: 'combo-1',
+    image: 'combo-resuelve',
     isSpecial: true,
     isAvailable: true
   }

@@ -25,7 +25,7 @@ export const menuItems: MenuItem[] = [
     name: 'PASTELITO DE CARNE',
     price: 0.50,
     category: 'individual',
-    image: 'pasteles',
+    image: 'past-carne',
     isAvailable: false
   },
   {

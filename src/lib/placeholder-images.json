@@ -7,6 +7,12 @@
       "imageHint": "fried pastry"
     },
     {
+      "id": "past-carne",
+      "description": "Pastelito de carne crujiente",
+      "imageUrl": "https://i.postimg.cc/pdVbrhT7/Chat-GPT-Image-9-sept-2026-13-30-44.png",
+      "imageHint": "meat pastelito"
+    },
+    {
       "id": "past-queso",
       "description": "Pastelito de queso",
       "imageUrl": "https://i.postimg.cc/XYrpCdFs/Chat-GPT-Image-9-sept-2026-10-25-16.png",

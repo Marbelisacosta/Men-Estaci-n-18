@@ -187,7 +187,7 @@ export const menuItems: MenuItem[] = [
     description: '3 WHOPPER + REFRESCO DE LITRO',
     price: 12.00,
     category: 'combo',
-    image: 'combo-2',
+    image: 'combo-boom',
     isSpecial: true,
     isAvailable: true
   },

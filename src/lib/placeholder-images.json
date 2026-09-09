@@ -131,6 +131,12 @@
       "description": "Combo Resuelve 8 Panes de Salchicha",
       "imageUrl": "https://i.postimg.cc/tTnQjd1W/Menu-Estacion-18-(4).png",
       "imageHint": "hot dogs combo"
+    },
+    {
+      "id": "combo-boom",
+      "description": "Combo Boom 3 Whoppers Estación 18",
+      "imageUrl": "https://i.postimg.cc/MZ03jr8V/Chat-GPT-Image-9-sept-2026-12-06-18.png",
+      "imageHint": "burger combo"
     }
   ]
 }

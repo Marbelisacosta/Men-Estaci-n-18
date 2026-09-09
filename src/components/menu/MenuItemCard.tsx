@@ -55,16 +55,16 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
       onClick={handleCardClick}
       className={`group relative overflow-hidden transition-all duration-500 cursor-pointer border-2 shadow-2xl rounded-[2.5rem] bg-card ${!isAvailable ? 'opacity-60 grayscale-[0.5] border-border/40' : isSelected ? 'border-primary ring-4 ring-primary/20 scale-[1.02] bg-primary/[0.02]' : 'border-border/60 hover:border-primary/40'}`}
     >
-      <div className="relative aspect-[16/10] overflow-hidden">
+      <div className="relative aspect-[16/10] overflow-hidden bg-muted">
         <Image 
           src={placeholder?.imageUrl || 'https://picsum.photos/seed/food/600/400'}
           alt={item.name}
           fill
+          unoptimized
           className={`object-cover transition-transform duration-500 ${isAvailable ? 'group-hover:scale-110' : 'grayscale'} ${isSelected && isAvailable ? 'scale-105 brightness-75' : ''}`}
           data-ai-hint={placeholder?.imageHint || 'food'}
         />
         
-        {/* Marcado Visual Check-list */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30">
           {isSelected && isAvailable && (
             <div className="bg-primary/95 text-white p-6 rounded-full shadow-2xl animate-in zoom-in-50 duration-300 ring-4 ring-white/20">

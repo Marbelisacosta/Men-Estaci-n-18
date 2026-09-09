@@ -18,7 +18,7 @@ export const menuItems: MenuItem[] = [
     price: 0.50,
     category: 'individual',
     image: 'pasteles',
-    isAvailable: true
+    isAvailable: false
   },
   {
     id: 'past-2',
@@ -26,7 +26,7 @@ export const menuItems: MenuItem[] = [
     price: 0.50,
     category: 'individual',
     image: 'pasteles',
-    isAvailable: true
+    isAvailable: false
   },
   {
     id: 'past-3',
@@ -34,7 +34,7 @@ export const menuItems: MenuItem[] = [
     price: 0.50,
     category: 'individual',
     image: 'pasteles',
-    isAvailable: true
+    isAvailable: false
   },
   {
     id: 'past-4',
@@ -42,22 +42,14 @@ export const menuItems: MenuItem[] = [
     price: 0.50,
     category: 'individual',
     image: 'pasteles',
-    isAvailable: true
-  },
-  {
-    id: 'past-5',
-    name: 'MANDOCA',
-    price: 0.50,
-    category: 'individual',
-    image: 'pasteles',
-    isAvailable: true
+    isAvailable: false
   },
   {
     id: 'past-6',
     name: 'TEQUEÑO',
     price: 0.50,
     category: 'individual',
-    image: 'pasteles',
+    image: 'tequenos',
     isAvailable: false
   },
   {
@@ -121,6 +113,14 @@ export const menuItems: MenuItem[] = [
     id: 'drink-1',
     name: 'VASO DE REFRESCO',
     price: 0.50,
+    category: 'drinks',
+    image: 'soda',
+    isAvailable: true
+  },
+  {
+    id: 'drink-litro',
+    name: 'REFRESCO DE LITRO',
+    price: 1.50,
     category: 'drinks',
     image: 'soda',
     isAvailable: true

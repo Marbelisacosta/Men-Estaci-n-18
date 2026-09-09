@@ -17,7 +17,7 @@ export const menuItems: MenuItem[] = [
     name: 'PASTELITO DE POLLO',
     price: 0.50,
     category: 'individual',
-    image: 'pasteles',
+    image: 'past-pollo',
     isAvailable: false
   },
   {

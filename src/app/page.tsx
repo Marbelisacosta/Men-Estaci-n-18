@@ -84,11 +84,6 @@ export default function Home() {
           
           <div className="relative z-10 p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border-2 border-primary/30 text-primary font-black text-[9px] sm:text-[10px] uppercase tracking-[0.2em] mb-3 sm:mb-4">
-                <span className="flex h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-                El punto exacto del sabor
-              </div>
-              
               <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-[0.9] tracking-tighter uppercase">
                 El punto <br/> 
                 <span className="text-primary italic">exacto</span> <br/> 

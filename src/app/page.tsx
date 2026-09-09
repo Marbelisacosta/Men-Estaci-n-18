@@ -58,17 +58,17 @@ export default function Home() {
               width={180}
               height={70}
               priority
-              className="h-12 sm:h-16 w-auto object-contain"
+              className="h-10 sm:h-16 w-auto object-contain"
             />
           </div>
           
-          <div className="flex items-center gap-3 sm:gap-6">
+          <div className="flex items-center gap-2 sm:gap-6">
              {/* BCV Rate inside Header */}
              <BCVRate />
              
              <a 
                href="#order-section" 
-               className="bg-primary text-white px-5 sm:px-10 py-3 sm:py-4 text-[10px] sm:text-xs font-black rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(239,68,68,0.4)] border border-white/10 uppercase tracking-[0.15em] shrink-0"
+               className="bg-primary text-white px-4 sm:px-10 py-3 sm:py-4 text-[10px] sm:text-xs font-black rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(239,68,68,0.4)] border border-white/10 uppercase tracking-[0.15em] shrink-0"
              >
                LISTA ({selectedItems.length})
              </a>
@@ -77,48 +77,48 @@ export default function Home() {
       </header>
 
       <main className="flex-1 container mx-auto px-4 sm:px-8 py-8 sm:py-12">
-        {/* Hero Section */}
-        <section className="relative rounded-[2.5rem] md:rounded-[4rem] bg-card overflow-hidden mb-12 sm:mb-20 shadow-2xl border border-white/5">
+        {/* Hero Section - Fixed horizontal on mobile */}
+        <section className="relative rounded-[2rem] sm:rounded-[4rem] bg-card overflow-hidden mb-12 sm:mb-20 shadow-2xl border border-white/5">
           <div className="absolute inset-0 bg-texture opacity-20" />
           
-          <div className="relative z-10 p-8 sm:p-12 md:p-20 flex flex-col md:flex-row items-center gap-10 md:gap-20">
-            <div className="flex-1 text-center md:text-left">
-              <h1 className="font-headline text-5xl sm:text-7xl lg:text-8xl font-black mb-8 leading-[0.8] tracking-tighter uppercase">
+          <div className="relative z-10 p-5 sm:p-20 flex flex-row items-center gap-5 sm:gap-20">
+            <div className="flex-[1.5] text-left">
+              <h1 className="font-headline text-2xl xs:text-4xl sm:text-7xl lg:text-8xl font-black mb-4 sm:mb-8 leading-[0.9] tracking-tighter uppercase">
                 El punto <br/> 
                 <span className="text-primary italic">exacto</span> <br/> 
                 del sabor
               </h1>
               
-              <p className="text-base sm:text-xl text-muted-foreground font-medium max-w-lg mx-auto md:mx-0 mb-10 leading-relaxed">
+              <p className="text-[10px] xs:text-sm sm:text-xl text-muted-foreground font-medium mb-6 sm:mb-10 leading-relaxed max-w-lg">
                 Disfruta de la mejor comida rápida de la zona. Los mejores precios, sabor inigualable y atención de primera.
               </p>
               
-              <div className="flex flex-col sm:flex-row items-center gap-5 justify-center md:justify-start">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <a 
                   href="#menu" 
-                  className="w-full sm:w-auto bg-primary text-white px-12 py-6 rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl hover:shadow-primary/30"
+                  className="bg-primary text-white px-6 py-3 sm:px-12 sm:py-6 rounded-xl sm:rounded-2xl font-black text-[10px] sm:text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl hover:shadow-primary/30"
                 >
                   Ver Menú
                 </a>
                 
                 {selectedItems.length > 0 && (
-                  <div className="p-4 bg-background/80 backdrop-blur-md rounded-2xl border border-primary/20 shadow-2xl flex items-center justify-between gap-6 animate-in slide-in-from-left-10 duration-500">
-                    <div className="flex items-center gap-3">
-                      <ClipboardCheck className="text-primary h-6 w-6" />
-                      <span className="text-xs font-bold text-foreground">{selectedItems.length} seleccionados</span>
+                  <div className="p-2 sm:p-4 bg-background/80 backdrop-blur-md rounded-xl sm:rounded-2xl border border-primary/20 shadow-2xl flex items-center justify-between gap-3 sm:gap-6 animate-in slide-in-from-left-10 duration-500">
+                    <div className="flex items-center gap-2">
+                      <ClipboardCheck className="text-primary h-4 w-4 sm:h-6 sm:w-6" />
+                      <span className="text-[9px] sm:text-xs font-bold text-foreground">{selectedItems.length} marcados</span>
                     </div>
-                    <Button variant="ghost" size="sm" onClick={clearSelection} className="h-9 text-[10px] font-bold text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-lg">
-                      <Trash2 className="h-4 w-4 mr-1" /> Limpiar
+                    <Button variant="ghost" size="sm" onClick={clearSelection} className="h-7 sm:h-9 text-[8px] sm:text-[10px] font-bold text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-lg">
+                      <Trash2 className="h-3 w-3 sm:h-4 sm:w-4 mr-1" /> Limpiar
                     </Button>
                   </div>
                 )}
               </div>
             </div>
             
-            <div className="flex-1 w-full max-w-[380px] md:max-w-xl">
+            <div className="flex-1 w-full max-w-[150px] xs:max-w-[250px] sm:max-w-xl">
               <div className="relative group">
-                <div className="absolute -inset-10 bg-primary/20 rounded-full blur-[100px] opacity-40 animate-pulse-subtle" />
-                <div className="relative rounded-[3rem] sm:rounded-[5rem] overflow-hidden shadow-2xl border-4 border-white/5 transition-transform duration-700 hover:scale-[1.03]">
+                <div className="absolute -inset-5 sm:-inset-10 bg-primary/20 rounded-full blur-[40px] sm:blur-[100px] opacity-40 animate-pulse-subtle" />
+                <div className="relative rounded-[2rem] sm:rounded-[5rem] overflow-hidden shadow-2xl border-2 sm:border-4 border-white/5 transition-transform duration-700 hover:scale-[1.03]">
                   <Image 
                     src={heroImageData?.imageUrl || "https://i.postimg.cc/85qhKvf2/Post-Estacion-18.png"} 
                     alt="Estación 18 Local" 

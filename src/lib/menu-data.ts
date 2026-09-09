@@ -131,7 +131,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'drink-1',
     name: 'VASO DE REFRESCO',
-    description: 'Sabor tradicional de la Coca-Cola',
+    description: 'SABOR TRADICIONAL DE LA COCA-COLA',
     price: 0.50,
     category: 'drinks',
     image: 'soda',
@@ -140,7 +140,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'drink-litro',
     name: 'REFRESCO DE LITRO',
-    description: 'Sabor tradicional de la Coca-Cola',
+    description: 'SABOR TRADICIONAL DE LA COCA-COLA',
     price: 1.50,
     category: 'drinks',
     image: 'soda-litro',
@@ -149,7 +149,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'drink-2',
     name: 'REFRESCO 1.5 LITROS',
-    description: 'Sabor tradicional de la Coca-Cola',
+    description: 'SABOR TRADICIONAL DE LA COCA-COLA',
     price: 2.00,
     category: 'drinks',
     image: 'soda-1-5',

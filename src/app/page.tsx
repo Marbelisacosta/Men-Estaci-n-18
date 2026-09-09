@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from 'react';
@@ -132,7 +131,7 @@ export default function Home() {
             <CategoryTabs onCategoryChange={setSelectedCategory} />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-3 sm:gap-8">
             {filteredItems.map((item) => (
               <MenuItemCard 
                 key={item.id} 

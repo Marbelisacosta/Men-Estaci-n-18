@@ -79,7 +79,7 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
           )}
           {!isAvailable && (
             <div className="bg-black/70 text-white px-2 py-1 rounded-lg flex items-center gap-1 border border-white/20 backdrop-blur-md">
-              <Ban className="h-3 w-3 sm:h-4 sm:w-4 text-red-500" />
+              < Ban className="h-3 w-3 sm:h-4 sm:w-4 text-red-500" />
               <span className="font-headline font-bold text-[7px] sm:text-[10px] uppercase tracking-widest">Agotado</span>
             </div>
           )}
@@ -131,7 +131,7 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
         <div className="mb-2 p-1.5 bg-muted/30 rounded-lg border border-border/40 flex gap-1.5">
           <Info className={`h-2.5 w-2.5 sm:h-3 sm:w-3 shrink-0 mt-0.5 ${isAvailable ? 'text-primary' : 'text-muted-foreground'}`} />
           <p className={`text-[8px] sm:text-[11px] font-bold leading-tight ${isAvailable ? 'text-foreground' : 'text-muted-foreground'}`}>
-            {item.description || 'Sabor tradicional de la Coca-Cola'}
+            {item.description || 'Ingredientes de calidad Estación 18'}
           </p>
         </div>
 

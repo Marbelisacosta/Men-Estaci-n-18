@@ -78,6 +78,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-3',
     name: 'JUNIOR',
+    description: 'VEGETALES FRESCOS',
     price: 2.00,
     category: 'fast-food',
     image: 'burger-junior',

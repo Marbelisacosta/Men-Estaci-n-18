@@ -41,20 +41,19 @@ export default function Home() {
   const locationAddress = "Av 49.E Calle 170 24 de Julio";
   const instagramUrl = "https://www.instagram.com/estacion18fastfood?igsh=NTkwamhkbTA0dHc5";
   const tiktokUrl = "https://www.tiktok.com/@estacion.18?_r=1&_t=ZS-99XLY1FJDRV";
+  const logoUrl = "https://i.postimg.cc/MTJLBCPC/ORIGINAL-COLOR-(2).png";
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
       {/* Header - Responsive layout */}
       <header className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur-xl border-b border-primary/20 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 h-20 sm:h-24 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-            <div className="bg-primary p-2 sm:p-3 rounded-xl sm:rounded-2xl rotate-3 shadow-xl ring-2 ring-white/10">
-              <span className="font-headline font-bold text-xl sm:text-3xl text-white">18</span>
-            </div>
-            <div className="flex flex-col">
-              <h1 className="font-headline font-bold text-lg sm:text-2xl tracking-tighter text-foreground leading-none">Estación 18</h1>
-              <span className="text-[8px] sm:text-[10px] uppercase tracking-[0.3em] font-black text-primary">Fast Food</span>
-            </div>
+          <div className="flex items-center shrink-0">
+            <img 
+              src={logoUrl} 
+              alt="Estación 18 Logo" 
+              className="h-12 sm:h-16 w-auto object-contain"
+            />
           </div>
           
           <div className="flex items-center gap-2 sm:gap-6">
@@ -216,11 +215,12 @@ export default function Home() {
       <footer className="bg-card border-t-2 border-border/60 py-12 sm:py-16 mt-16 sm:mt-24">
         <div className="container mx-auto px-4 sm:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-8 sm:gap-12 text-center sm:text-left">
-            <div className="flex items-center gap-4">
-              <div className="bg-primary p-2 rounded-lg">
-                <span className="font-headline font-bold text-xl text-white">18</span>
-              </div>
-              <p className="font-headline font-bold text-lg sm:text-xl text-foreground">Estación 18 Fast Food</p>
+            <div className="flex items-center">
+              <img 
+                src={logoUrl} 
+                alt="Estación 18 Logo" 
+                className="h-10 sm:h-12 w-auto object-contain"
+              />
             </div>
 
             <div className="flex items-center gap-4 sm:gap-6">

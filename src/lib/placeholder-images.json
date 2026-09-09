@@ -49,6 +49,12 @@
       "imageHint": "venezuelan patacon"
     },
     {
+      "id": "mini-patacon",
+      "description": "Mini Patacón crujiente",
+      "imageUrl": "https://i.postimg.cc/Nfr320FC/Chat-GPT-Image-9-sept-2026-10-28-54.png",
+      "imageHint": "mini patacon"
+    },
+    {
       "id": "hotdog",
       "description": "Salchiqueso especial",
       "imageUrl": "https://i.postimg.cc/9f2JMmw2/Chat-GPT-Image-9-sept-2026-10-17-03.png",

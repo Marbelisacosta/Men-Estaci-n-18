@@ -131,7 +131,7 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
         <div className="mb-2 p-1.5 bg-muted/30 rounded-lg border border-border/40 flex gap-1.5">
           <Info className={`h-2.5 w-2.5 sm:h-3 sm:w-3 shrink-0 mt-0.5 ${isAvailable ? 'text-primary' : 'text-muted-foreground'}`} />
           <p className={`text-[8px] sm:text-[11px] font-bold leading-tight ${isAvailable ? 'text-foreground' : 'text-muted-foreground'}`}>
-            {item.description || 'INGREDIENTES DE CALIDAD ESTACIÓN 18'}
+            {item.description || 'SALCHICHA DEL FULL SABOR'}
           </p>
         </div>
 

@@ -113,6 +113,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-pan-salchicha',
     name: 'PAN DE SALCHICHA',
+    description: 'SALCHICHA DEL FULL SABOR',
     price: 1.50,
     category: 'fast-food',
     image: 'pan-salchicha',

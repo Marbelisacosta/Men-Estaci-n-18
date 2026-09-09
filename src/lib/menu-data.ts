@@ -1,4 +1,3 @@
-
 export interface MenuItem {
   id: string;
   name: string;
@@ -147,7 +146,7 @@ export const menuItems: MenuItem[] = [
     description: 'WHOPPER + SERVICIO DE PAPAS',
     price: 5.00,
     category: 'combo',
-    image: 'combo-1',
+    image: 'combo-whopper-papas',
     isSpecial: true,
     isAvailable: true
   },

@@ -101,6 +101,12 @@
       "description": "Pan de salchicha clásico",
       "imageUrl": "https://i.postimg.cc/kMsw5P7M/Chat-GPT-Image-9-sept-2026-10-04-50.png",
       "imageHint": "hot dog"
+    },
+    {
+      "id": "combo-whopper-papas",
+      "description": "Combo Whopper + Papas Estación 18",
+      "imageUrl": "https://i.postimg.cc/j2sdMJ1c/Chat-GPT-Image-9-sept-2026-10-53-53.png",
+      "imageHint": "burger combo"
     }
   ]
 }

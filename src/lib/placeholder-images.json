@@ -113,6 +113,12 @@
       "description": "Combo Duo 2 Whoppers Estación 18",
       "imageUrl": "https://i.postimg.cc/rwN6JFWM/Menu-Estacion-18-(3).png",
       "imageHint": "burger combo"
+    },
+    {
+      "id": "combo-callejero",
+      "description": "Combo Callejero 4 Panes de Salchicha",
+      "imageUrl": "https://i.postimg.cc/MTxvLG3b/Chat-GPT-Image-9-sept-2026-11-34-46.png",
+      "imageHint": "hot dogs"
     }
   ]
 }

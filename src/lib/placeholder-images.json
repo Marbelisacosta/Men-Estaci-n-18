@@ -119,6 +119,12 @@
       "description": "Combo Callejero 4 Panes de Salchicha",
       "imageUrl": "https://i.postimg.cc/MTxvLG3b/Chat-GPT-Image-9-sept-2026-11-34-46.png",
       "imageHint": "hot dogs"
+    },
+    {
+      "id": "combo-personal",
+      "description": "Combo Personal 2 Arepas + Vaso Refresco",
+      "imageUrl": "https://i.postimg.cc/V6qrDtYF/Chat-GPT-Image-9-sept-2026-12-04-32.png",
+      "imageHint": "arepa meal"
     }
   ]
 }

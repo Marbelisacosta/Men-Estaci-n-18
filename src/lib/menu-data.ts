@@ -1,4 +1,3 @@
-
 export interface MenuItem {
   id: string;
   name: string;
@@ -177,7 +176,7 @@ export const menuItems: MenuItem[] = [
     description: '2 AREPAS + 1 VASO REFRESCO',
     price: 3.50,
     category: 'combo',
-    image: 'combo-1',
+    image: 'combo-personal',
     isSpecial: true,
     isAvailable: true
   },

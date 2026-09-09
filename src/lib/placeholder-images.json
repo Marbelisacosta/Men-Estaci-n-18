@@ -67,6 +67,12 @@
       "imageHint": "soda bottle"
     },
     {
+      "id": "soda-litro",
+      "description": "Refresco de Litro Estación 18",
+      "imageUrl": "https://i.postimg.cc/QxxRSqfb/Menu-Estacion-18.png",
+      "imageHint": "soda bottle"
+    },
+    {
       "id": "fries",
       "description": "Servicio de Papas Fritas",
       "imageUrl": "https://i.postimg.cc/Prt6TrZq/Chat-GPT-Image-9-sept-2026-10-33-49.png",

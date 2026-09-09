@@ -84,7 +84,7 @@ export default function Home() {
           
           <div className="relative z-10 p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
             <div className="flex-1 text-center lg:text-left">
-              <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-[0.9] tracking-tighter uppercase">
+              <h2 className="font-headline text-4xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-[0.85] tracking-tighter uppercase">
                 El punto <br/> 
                 <span className="text-primary italic">exacto</span> <br/> 
                 del sabor
@@ -95,7 +95,7 @@ export default function Home() {
               </p>
               
               {selectedItems.length > 0 && (
-                <div className="p-3 sm:p-4 bg-background/50 backdrop-blur-md rounded-[1rem] sm:rounded-[1.5rem] border-2 border-primary/20 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-3 animate-in slide-in-from-left-10 duration-500">
+                <div className="p-3 sm:p-4 bg-background/50 backdrop-blur-md rounded-[1rem] sm:rounded-[1.5rem] border-2 border-primary/20 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-3 animate-in slide-in-from-left-10 duration-500 max-w-sm mx-auto lg:mx-0">
                   <div className="flex items-center gap-2">
                     <ClipboardCheck className="text-primary h-4 w-4 sm:h-5 sm:w-5" />
                     <span className="text-[10px] sm:text-sm font-bold text-foreground">{selectedItems.length} ítems marcados</span>
@@ -107,18 +107,20 @@ export default function Home() {
               )}
             </div>
             
-            <div className="flex-1 w-full max-w-[240px] sm:max-w-xs">
+            <div className="flex-1 w-full max-w-[280px] sm:max-w-md">
               <div className="relative group">
-                <div className="absolute -inset-3 sm:-inset-4 bg-primary/30 rounded-full blur-xl sm:blur-2xl opacity-60 animate-pulse-subtle" />
-                <Image 
-                  src={heroImageData?.imageUrl || "https://i.postimg.cc/85qhKvf2/Post-Estacion-18.png"} 
-                  alt="Estación 18 Promo" 
-                  width={500}
-                  height={500}
-                  priority
-                  className="relative rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl border-4 border-card group-hover:scale-105 transition-transform duration-700 w-full aspect-square object-cover"
-                  data-ai-hint={heroImageData?.imageHint || "restaurant promo"}
-                />
+                <div className="absolute -inset-3 sm:-inset-6 bg-primary/20 rounded-full blur-2xl sm:blur-3xl opacity-60 animate-pulse-subtle" />
+                <div className="relative rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-card transition-transform duration-700 hover:scale-[1.02]">
+                  <Image 
+                    src={heroImageData?.imageUrl || "https://i.postimg.cc/85qhKvf2/Post-Estacion-18.png"} 
+                    alt="Estación 18 Local" 
+                    width={600}
+                    height={600}
+                    priority
+                    className="w-full aspect-square object-cover"
+                    data-ai-hint="food truck"
+                  />
+                </div>
               </div>
             </div>
           </div>

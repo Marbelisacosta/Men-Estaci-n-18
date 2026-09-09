@@ -15,6 +15,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'past-1',
     name: 'PASTELITO DE POLLO',
+    description: 'Pollo desmechado con sazón de la casa',
     price: 0.50,
     category: 'individual',
     image: 'past-pollo',
@@ -23,6 +24,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'past-2',
     name: 'PASTELITO DE CARNE',
+    description: 'Carne molida perfectamente aliñada',
     price: 0.50,
     category: 'individual',
     image: 'past-carne',
@@ -31,6 +33,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'past-3',
     name: 'PASTELITO DE QUESO',
+    description: 'Queso fundido en masa crujiente',
     price: 0.50,
     category: 'individual',
     image: 'past-queso',
@@ -39,6 +42,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'past-4',
     name: 'PASTELITO DE PAPA CON QUESO',
+    description: 'La combinación clásica y favorita',
     price: 0.50,
     category: 'individual',
     image: 'past-papa-queso',
@@ -47,6 +51,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'past-6',
     name: 'TEQUEÑO',
+    description: 'Dedo de queso tradicional',
     price: 0.50,
     category: 'individual',
     image: 'tequenos',
@@ -55,6 +60,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-1',
     name: 'AREPA CON PROTEÍNA',
+    description: 'Arepa asada rellena de sabor',
     price: 1.50,
     category: 'fast-food',
     image: 'arepa',
@@ -63,6 +69,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-2',
     name: 'WHOPPER',
+    description: 'Carne a la parrilla, vegetales frescos',
     price: 4.00,
     category: 'fast-food',
     image: 'burger',
@@ -79,6 +86,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-4',
     name: 'SALCHIQUESO',
+    description: 'Salchicha con extra queso fundido',
     price: 2.00,
     category: 'fast-food',
     image: 'hotdog',
@@ -87,6 +95,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-5',
     name: 'PATACON PERSONAL',
+    description: 'Plátano frito con todo el sabor',
     price: 3.00,
     category: 'fast-food',
     image: 'patacon',

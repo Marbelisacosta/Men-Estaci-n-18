@@ -15,7 +15,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'past-1',
     name: 'PASTELITO DE POLLO',
-    description: 'Pollo desmechado con sazón de la casa',
+    description: 'POLLO DESMECHADO CON SAZÓN DE LA CASA',
     price: 0.50,
     category: 'individual',
     image: 'past-pollo',
@@ -24,7 +24,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'past-2',
     name: 'PASTELITO DE CARNE',
-    description: 'Carne molida perfectamente aliñada',
+    description: 'CARNE MOLIDA PERFECTAMENTE ALIÑADA',
     price: 0.50,
     category: 'individual',
     image: 'past-carne',
@@ -33,7 +33,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'past-3',
     name: 'PASTELITO DE QUESO',
-    description: 'Queso fundido en masa crujiente',
+    description: 'QUESO FUNDIDO EN MASA CRUJIENTE',
     price: 0.50,
     category: 'individual',
     image: 'past-queso',
@@ -42,7 +42,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'past-4',
     name: 'PASTELITO DE PAPA CON QUESO',
-    description: 'La combinación clásica y favorita',
+    description: 'LA COMBINACIÓN CLÁSICA Y FAVORITA',
     price: 0.50,
     category: 'individual',
     image: 'past-papa-queso',
@@ -51,7 +51,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'past-6',
     name: 'TEQUEÑO',
-    description: 'Dedo de queso tradicional',
+    description: 'DEDO DE QUESO TRADICIONAL',
     price: 0.50,
     category: 'individual',
     image: 'tequenos',
@@ -105,6 +105,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-6',
     name: 'MINI PATACÓN',
+    description: 'MINI PATACÓN CRUJIENTE',
     price: 3.00,
     category: 'fast-food',
     image: 'mini-patacon',

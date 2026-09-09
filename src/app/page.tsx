@@ -8,7 +8,7 @@ import { CategoryTabs } from '@/components/menu/CategoryTabs';
 import { OrderForm } from '@/components/menu/OrderForm';
 import { menuItems, MenuItem } from '@/lib/menu-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { MapPin, Clock, Phone, Instagram, Mail, ClipboardCheck, Trash2, ShoppingCart } from 'lucide-react';
+import { MapPin, Clock, Phone, Instagram, Mail, ClipboardCheck, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
@@ -47,28 +47,28 @@ export default function Home() {
   const heroImageData = PlaceHolderImages.find(img => img.id === 'hero-promo');
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
+    <div className="min-h-screen flex flex-col">
       {/* Header - Sticky as requested in the image */}
       <header className="sticky top-0 z-[100] w-full bg-[#0a0a0a] border-b border-primary/30 shadow-2xl transition-all duration-300">
-        <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+        <div className="container mx-auto px-4 h-24 flex items-center justify-between">
           <div className="flex items-center shrink-0">
             <Image 
               src={logoUrl} 
               alt="Estación 18 Logo" 
-              width={180}
-              height={70}
+              width={200}
+              height={80}
               priority
-              className="h-12 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </div>
           
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
              <div className="hidden lg:block">
                <BCVRate />
              </div>
              <a 
                href="#order-section" 
-               className="bg-primary text-white px-6 sm:px-10 py-3 text-[10px] sm:text-xs font-black rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(239,68,68,0.4)] border border-white/10 uppercase tracking-[0.2em] flex items-center gap-2"
+               className="bg-primary text-white px-8 sm:px-12 py-4 text-xs sm:text-sm font-black rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(239,68,68,0.5)] border border-white/10 uppercase tracking-[0.2em]"
              >
                LISTA ({selectedItems.length})
              </a>
@@ -77,7 +77,7 @@ export default function Home() {
       </header>
 
       <main className="flex-1 container mx-auto px-4 sm:px-8 py-8 sm:py-12">
-        {/* Hero Section - Text and Image Side-by-Side */}
+        {/* Hero Section */}
         <section className="relative rounded-[2.5rem] md:rounded-[4rem] bg-card overflow-hidden mb-12 sm:mb-20 shadow-2xl border border-white/5">
           <div className="absolute inset-0 bg-texture opacity-20" />
           
@@ -140,7 +140,7 @@ export default function Home() {
         </div>
 
         {/* Menu Section */}
-        <section id="menu" className="mb-20 sm:mb-28 scroll-mt-24">
+        <section id="menu" className="mb-20 sm:mb-28 scroll-mt-28">
           <div className="text-center mb-12">
             <h3 className="font-headline text-4xl sm:text-6xl font-bold mb-6 uppercase tracking-tighter">Nuestro Menú</h3>
             <div className="w-24 h-2.5 bg-primary mx-auto rounded-full mb-12" />
@@ -166,7 +166,7 @@ export default function Home() {
         </section>
 
         {/* Order Section */}
-        <section id="order-section" className="py-16 sm:py-24 bg-primary/5 rounded-[3rem] sm:rounded-[5rem] border border-white/5 mb-20 sm:mb-28 shadow-2xl scroll-mt-28">
+        <section id="order-section" className="py-16 sm:py-24 bg-primary/5 rounded-[3rem] sm:rounded-[5rem] border border-white/5 mb-20 sm:mb-28 shadow-2xl scroll-mt-32">
           <div className="container mx-auto px-4">
             <div className="text-center mb-14">
               <h2 className="font-headline text-5xl sm:text-7xl font-bold mb-6 tracking-tighter uppercase">Tu Selección</h2>

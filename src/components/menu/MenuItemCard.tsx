@@ -134,17 +134,6 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
         )}
 
         <div className="min-h-[40px] sm:min-h-[70px] flex flex-col justify-center items-start gap-1 sm:gap-2 border-t border-border/20 pt-2 sm:pt-3">
-          {!loading && (
-            <div className="relative w-3 h-3 sm:w-4 sm:h-4">
-              <Image 
-                src={flameLogoUrl} 
-                alt="Llama Estación 18" 
-                fill
-                className={`object-contain ${!isAvailable ? 'grayscale opacity-50' : ''}`}
-              />
-            </div>
-          )}
-          
           {loading ? (
             <div className="space-y-1.5 w-full">
               <Skeleton className="h-1.5 sm:h-3 w-full" />

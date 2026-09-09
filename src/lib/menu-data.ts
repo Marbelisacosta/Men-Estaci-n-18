@@ -86,7 +86,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-4',
     name: 'SALCHIQUESO',
-    description: 'Salchicha con extra queso fundido',
+    description: 'Salchicha con queso cebú',
     price: 2.00,
     category: 'fast-food',
     image: 'hotdog',
@@ -129,6 +129,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'drink-1',
     name: 'VASO DE REFRESCO',
+    description: 'Sabor tradicional de la Coca-Cola',
     price: 0.50,
     category: 'drinks',
     image: 'soda',
@@ -137,6 +138,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'drink-litro',
     name: 'REFRESCO DE LITRO',
+    description: 'Sabor tradicional de la Coca-Cola',
     price: 1.50,
     category: 'drinks',
     image: 'soda-litro',
@@ -145,6 +147,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'drink-2',
     name: 'REFRESCO 1.5 LITROS',
+    description: 'Sabor tradicional de la Coca-Cola',
     price: 2.00,
     category: 'drinks',
     image: 'soda-1-5',

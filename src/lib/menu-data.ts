@@ -138,7 +138,7 @@ export const menuItems: MenuItem[] = [
     name: 'REFRESCO 1.5 LITROS',
     price: 2.50,
     category: 'drinks',
-    image: 'soda',
+    image: 'soda-1-5',
     isAvailable: true
   },
   {

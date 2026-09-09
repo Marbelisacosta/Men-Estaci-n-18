@@ -85,16 +85,10 @@
       "imageHint": "french fries"
     },
     {
-      "id": "combo-1",
-      "description": "Fast food combo with soda",
-      "imageUrl": "https://picsum.photos/seed/combo1/800/600",
-      "imageHint": "food combo"
-    },
-    {
-      "id": "combo-2",
-      "description": "Premium fast food combo",
-      "imageUrl": "https://picsum.photos/seed/combo2/800/600",
-      "imageHint": "hamburger meal"
+      "id": "hero-promo",
+      "description": "Imagen Principal Estación 18",
+      "imageUrl": "https://i.postimg.cc/85qhKvf2/Post-Estacion-18.png",
+      "imageHint": "restaurant promo"
     },
     {
       "id": "pan-salchicha",

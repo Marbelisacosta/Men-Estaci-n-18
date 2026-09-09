@@ -60,7 +60,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-1',
     name: 'AREPA CON PROTEÍNA',
-    description: 'Arepa asada rellena de sabor',
+    description: 'AREPA FRITA RELLENA CON SABOR',
     price: 1.50,
     category: 'fast-food',
     image: 'arepa',
@@ -69,7 +69,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-2',
     name: 'WHOPPER',
-    description: 'Carne a la parrilla, vegetales frescos',
+    description: 'PROTEINA DE TU PREFERENCIA',
     price: 4.00,
     category: 'fast-food',
     image: 'burger',

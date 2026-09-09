@@ -43,7 +43,7 @@ export default function Home() {
   const locationAddress = "Av 49.E Calle 170 24 de Julio";
   const instagramUrl = "https://www.instagram.com/estacion18fastfood?igsh=NTkwamhkbTA0dHc5";
   const tiktokUrl = "https://www.tiktok.com/@estacion.18?_r=1&_t=ZS-99XLY1FJDRV";
-  const logoUrl = "https://i.postimg.cc/MTJLBCPC/ORIGINAL-COLOR-(2).png";
+  const logoUrl = "https://i.postimg.cc/GhJbp1QW/Post-Estacion-18-(2).png";
   const heroImageData = PlaceHolderImages.find(img => img.id === 'hero-promo');
 
   return (
@@ -55,10 +55,10 @@ export default function Home() {
             <Image 
               src={logoUrl} 
               alt="Estación 18 Logo" 
-              width={120}
-              height={48}
+              width={140}
+              height={56}
               unoptimized
-              className="h-10 sm:h-12 w-auto object-contain"
+              className="h-10 sm:h-14 w-auto object-contain"
             />
           </div>
           
@@ -229,10 +229,10 @@ export default function Home() {
               <Image 
                 src={logoUrl} 
                 alt="Estación 18 Logo" 
-                width={90}
-                height={36}
+                width={100}
+                height={40}
                 unoptimized
-                className="h-8 sm:h-10 w-auto object-contain"
+                className="h-8 sm:h-12 w-auto object-contain"
               />
             </div>
 

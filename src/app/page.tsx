@@ -96,7 +96,7 @@ export default function Home() {
               </h2>
               
               <p className="text-xs sm:text-base text-muted-foreground font-medium max-w-md mx-auto lg:mx-0 mb-6 sm:mb-8 leading-relaxed">
-                Disfruta de la mejor comida rápida de la zona. Precios claros, sabor inigualable y atención de primera.
+                Disfruta de la mejor comida rápida de la zona. Los mejores precios, sabor inigualable y atención de primera.
               </p>
               
               {selectedItems.length > 0 && (

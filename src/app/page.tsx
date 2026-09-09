@@ -8,7 +8,7 @@ import { CategoryTabs } from '@/components/menu/CategoryTabs';
 import { OrderForm } from '@/components/menu/OrderForm';
 import { menuItems, MenuItem } from '@/lib/menu-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { MapPin, Clock, Phone, Instagram, Mail, ClipboardCheck, Trash2, Sparkles } from 'lucide-react';
+import { MapPin, Clock, Phone, Instagram, Mail, ClipboardCheck, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
@@ -77,24 +77,24 @@ export default function Home() {
       </header>
 
       <main className="flex-1 container mx-auto px-4 sm:px-8 py-4 sm:py-8">
-        {/* Hero Section - side by side layout */}
+        {/* Hero Section - side by side on md+ */}
         <section className="relative rounded-[1.5rem] sm:rounded-[2.5rem] bg-card overflow-hidden mb-6 sm:mb-10 shadow-2xl border-2 border-border/60">
           <div className="absolute inset-0 bg-texture opacity-30" />
-          <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent pointer-events-none" />
+          <div className="absolute top-0 right-0 w-full md:w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent pointer-events-none" />
           
-          <div className="relative z-10 p-6 sm:p-8 lg:p-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-            <div className="flex-1 text-center lg:text-left">
-              <h1 className="font-headline text-5xl sm:text-6xl lg:text-8xl font-black mb-6 leading-[0.85] tracking-tighter uppercase">
+          <div className="relative z-10 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-20">
+            <div className="flex-1 text-center md:text-left">
+              <h1 className="font-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-[0.85] tracking-tighter uppercase">
                 El punto <br/> 
                 <span className="text-primary italic">exacto</span> <br/> 
                 del sabor
               </h1>
               
-              <p className="text-sm sm:text-lg text-muted-foreground font-medium max-w-md mx-auto lg:mx-0 mb-8 leading-relaxed">
+              <p className="text-sm sm:text-lg text-muted-foreground font-medium max-w-md mx-auto md:mx-0 mb-8 leading-relaxed">
                 Disfruta de la mejor comida rápida de la zona. Los mejores precios, sabor inigualable y atención de primera.
               </p>
               
-              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
                 <a 
                   href="#menu" 
                   className="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-tight hover:scale-105 transition-all shadow-xl"
@@ -116,7 +116,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="flex-1 w-full max-w-[320px] sm:max-w-lg">
+            <div className="flex-1 w-full max-w-[320px] md:max-w-md lg:max-w-lg">
               <div className="relative group">
                 <div className="absolute -inset-6 bg-primary/20 rounded-full blur-3xl opacity-60 animate-pulse-subtle" />
                 <div className="relative rounded-[2.5rem] sm:rounded-[4rem] overflow-hidden shadow-2xl border-4 border-card transition-transform duration-700 hover:scale-[1.02]">

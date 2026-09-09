@@ -107,6 +107,12 @@
       "description": "Combo Whopper + Papas Estación 18",
       "imageUrl": "https://i.postimg.cc/j2sdMJ1c/Chat-GPT-Image-9-sept-2026-10-53-53.png",
       "imageHint": "burger combo"
+    },
+    {
+      "id": "combo-duo",
+      "description": "Combo Duo 2 Whoppers Estación 18",
+      "imageUrl": "https://i.postimg.cc/rwN6JFWM/Menu-Estacion-18-(3).png",
+      "imageHint": "burger combo"
     }
   ]
 }

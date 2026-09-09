@@ -156,7 +156,7 @@ export const menuItems: MenuItem[] = [
     description: '2 WHOPPER + 2 VASO REFRESCO',
     price: 7.00,
     category: 'combo',
-    image: 'combo-1',
+    image: 'combo-duo',
     isSpecial: true,
     isAvailable: true
   },

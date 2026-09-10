@@ -90,7 +90,7 @@ export const menuItems: MenuItem[] = [
     description: 'VEGETALES FRESCOS',
     price: 2.00,
     category: 'fast-food',
-    image: 'junior',
+    image: 'burger-junior',
     isAvailable: true
   },
   {

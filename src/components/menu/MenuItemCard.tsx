@@ -1,8 +1,7 @@
-
 "use client";
 
 import { useState } from 'react';
-import { MenuItem, EXCHANGE_RATE, BRAND_MOTTO } from '@/lib/menu-data';
+import { MenuItem, BRAND_MOTTO } from '@/lib/menu-data';
 import { generateFlavorDescription } from '@/ai/flows/generate-flavor-description';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
@@ -16,15 +15,16 @@ interface MenuItemCardProps {
   item: MenuItem;
   isSelected?: boolean;
   onSelect?: () => void;
+  exchangeRate: number;
 }
 
-export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) {
+export function MenuItemCard({ item, isSelected, onSelect, exchangeRate }: MenuItemCardProps) {
   const [aiDescription, setAiDescription] = useState<string>('');
   const [loading, setLoading] = useState(false);
   const [hasLoadedAi, setHasLoadedAi] = useState(false);
 
   const placeholder = PlaceHolderImages.find(img => img.id === item.image);
-  const priceBs = item.price * EXCHANGE_RATE;
+  const priceBs = item.price * exchangeRate;
   const isAvailable = item.isAvailable !== false;
   const flameLogoUrl = "https://i.postimg.cc/QMSDJgPw/Post-Estacion-18-(1).png";
 
@@ -68,7 +68,6 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
           fill
           priority={item.isSpecial}
           className={`object-cover transition-transform duration-500 ${isAvailable ? 'group-hover:scale-105' : 'grayscale'} ${isSelected && isAvailable ? 'scale-102 brightness-75' : ''}`}
-          data-ai-hint={placeholder?.imageHint || 'food'}
         />
         
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30">
@@ -82,22 +81,6 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
               < Ban className="h-3 w-3 sm:h-4 sm:w-4 text-red-500" />
               <span className="font-headline font-bold text-[7px] sm:text-[10px] uppercase tracking-widest">Agotado</span>
             </div>
-          )}
-        </div>
-
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
-
-        <div className="absolute top-2 right-2 z-20">
-          {isAvailable && (
-            isSelected ? (
-              <div className="bg-primary text-white p-1 rounded-lg shadow-xl">
-                <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4" />
-              </div>
-            ) : (
-              <div className="bg-white/10 backdrop-blur-md text-white/80 p-1 rounded-lg border border-white/20 group-hover:bg-white/20 transition-colors">
-                <Square className="h-3 w-3 sm:h-4 sm:w-4" />
-              </div>
-            )
           )}
         </div>
 
@@ -155,25 +138,6 @@ export function MenuItemCard({ item, isSelected, onSelect }: MenuItemCardProps) 
             >
               <Sparkles className="h-2.5 w-2.5" /> ¿Qué lo hace único?
             </Button>
-          )}
-        </div>
-
-        <div className="mt-2 pt-2 border-t border-border/40 flex items-center justify-between">
-          <div className={`flex items-center text-[7px] sm:text-[9px] font-bold uppercase tracking-widest ${isAvailable ? 'text-primary' : 'text-muted-foreground'}`}>
-            <div className="relative w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 mr-1.5">
-              <Image 
-                src={flameLogoUrl} 
-                alt="Estación 18 Fuego" 
-                fill
-                className={`object-contain ${!isAvailable ? 'grayscale opacity-50' : ''}`}
-              />
-            </div>
-            <span>Estación 18</span>
-          </div>
-          {isSelected && (
-            <Badge variant="outline" className="text-[6px] sm:text-[8px] font-black border-primary/40 text-primary bg-primary/5 px-1 sm:px-2">
-              LISTO
-            </Badge>
           )}
         </div>
       </CardContent>

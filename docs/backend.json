@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "ExchangeRate": {
+      "title": "ExchangeRate",
+      "description": "Información de la tasa de cambio del día (BCV).",
+      "type": "object",
+      "properties": {
+        "rate": {
+          "type": "number",
+          "description": "Valor de la tasa en Bolívares (Bs.)."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Fecha de la última actualización."
+        }
+      },
+      "required": [
+        "rate"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "google.com"
+    ]
+  },
+  "firestore": {
+    "/settings/bcv": {
+      "schema": "ExchangeRate",
+      "description": "Documento único que almacena la tasa oficial del BCV."
+    }
+  }
+}

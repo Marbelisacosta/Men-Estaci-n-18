@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from 'react';
@@ -6,17 +5,18 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Send, ShoppingBag, CheckCircle2, ReceiptText, User } from 'lucide-react';
-import { MenuItem, EXCHANGE_RATE } from '@/lib/menu-data';
+import { MenuItem } from '@/lib/menu-data';
 
 interface OrderFormProps {
   selectedItems?: MenuItem[];
+  exchangeRate: number;
 }
 
-export function OrderForm({ selectedItems = [] }: OrderFormProps) {
+export function OrderForm({ selectedItems = [], exchangeRate }: OrderFormProps) {
   const [userName, setUserName] = useState('');
   
   const totalPrice = selectedItems.reduce((acc, item) => acc + item.price, 0);
-  const totalBs = totalPrice * EXCHANGE_RATE;
+  const totalBs = totalPrice * exchangeRate;
   const phoneNumber = "584143683914";
 
   function handleSendWhatsApp() {
@@ -80,7 +80,7 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
                   </div>
                   <div className="text-right">
                     <div className="font-mono text-primary font-bold">Ref: {item.price.toFixed(2)}</div>
-                    <div className="text-[9px] text-muted-foreground">Bs. {(item.price * EXCHANGE_RATE).toLocaleString('es-VE', { minimumFractionDigits: 2 })}</div>
+                    <div className="text-[9px] text-muted-foreground">Bs. {(item.price * exchangeRate).toLocaleString('es-VE', { minimumFractionDigits: 2 })}</div>
                   </div>
                 </div>
               ))}
@@ -106,7 +106,6 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
               <ShoppingBag className="h-10 w-10 text-muted-foreground" />
             </div>
             <p className="text-muted-foreground font-medium">No has marcado ningún producto todavía.</p>
-            <p className="text-xs text-muted-foreground/60 mt-2">Explora el menú arriba y toca el plato que desees.</p>
           </div>
         )}
       </CardContent>
@@ -119,9 +118,6 @@ export function OrderForm({ selectedItems = [] }: OrderFormProps) {
           >
             <Send className="h-6 w-6" /> ENVIAR POR WHATSAPP
           </Button>
-          <p className="text-[10px] text-center text-muted-foreground uppercase tracking-tighter">
-            También puedes mostrar este resumen directamente a tu mesero(a)
-          </p>
         </CardFooter>
       )}
     </Card>

@@ -54,9 +54,10 @@ export default function Home() {
   const heroImageData = PlaceHolderImages.find(img => img.id === 'hero-promo');
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden w-full">
-      <header className="sticky top-0 z-[100] w-full bg-[#0a0a0a]/95 backdrop-blur-md border-b border-primary/20 shadow-2xl transition-all duration-300">
-        <div className="container mx-auto px-4 h-24 flex items-center justify-between gap-4">
+    <div className="min-h-screen flex flex-col overflow-x-hidden w-full bg-[#0a0a0a]">
+      {/* Header Fijo */}
+      <header className="fixed top-0 left-0 right-0 z-[100] w-full bg-[#0a0a0a] border-b border-white/5 shadow-2xl">
+        <div className="container mx-auto px-4 h-20 sm:h-24 flex items-center justify-between gap-2">
           <div className="flex items-center shrink-0">
             <Image 
               src={logoUrl} 
@@ -72,9 +73,9 @@ export default function Home() {
             <BCVRate currentRate={currentRate} loading={bcvLoading} />
             
             <a href="#order-section">
-              <Button className="bg-primary hover:bg-primary/90 text-white font-headline font-black text-[10px] sm:text-base px-4 sm:px-8 py-4 sm:py-6 rounded-xl sm:rounded-2xl shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95 flex items-center gap-2 uppercase tracking-tighter">
-                <span className="hidden sm:inline">MI</span> LISTA 
-                <span className="bg-white text-primary w-4 h-4 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-[8px] sm:text-xs">
+              <Button className="bg-primary hover:bg-primary/90 text-white font-headline font-black text-[10px] sm:text-base px-3 sm:px-8 py-3 sm:py-6 rounded-full shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95 flex items-center gap-2 uppercase tracking-tighter">
+                <span className="hidden xs:inline">MI</span> LISTA 
+                <span className="bg-white text-primary w-5 h-5 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-[10px] sm:text-sm font-bold">
                   {selectedItems.length}
                 </span>
               </Button>
@@ -82,6 +83,9 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      {/* Spacer para el header fijo */}
+      <div className="h-20 sm:h-24" />
 
       <main className="flex-1 container mx-auto px-4 sm:px-8 py-8 sm:py-12 overflow-x-hidden">
         <section className="relative rounded-[1.5rem] sm:rounded-[4rem] bg-card overflow-hidden mb-12 sm:mb-20 shadow-2xl border border-white/5">

@@ -9,20 +9,20 @@ interface BCVRateProps {
 
 export function BCVRate({ currentRate, loading }: BCVRateProps) {
   return (
-    <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-all hover:bg-white/10 group animate-in fade-in duration-500 flex items-center p-2 sm:p-3 gap-3">
-      <div className="hidden sm:flex bg-primary/20 p-2 rounded-xl ring-1 ring-primary/30 group-hover:scale-110 transition-transform">
-        <Banknote className="h-3.5 w-3.5 text-primary" />
+    <div className="bg-white/[0.03] backdrop-blur-sm rounded-2xl border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-all hover:bg-white/[0.07] group flex items-center p-2 sm:px-4 sm:py-3 gap-2 sm:gap-4">
+      <div className="bg-white/[0.05] p-1.5 sm:p-2.5 rounded-xl border border-white/10 group-hover:scale-110 transition-transform flex items-center justify-center">
+        <Banknote className="h-3.5 w-3.5 sm:h-5 sm:w-5 text-primary" />
       </div>
       <div className="flex flex-col justify-center">
         <div className="flex items-center gap-1.5">
-          <span className="text-[8px] sm:text-[9px] text-muted-foreground font-black uppercase tracking-[0.1em]">Tasa del Día</span>
+          <span className="text-[7px] sm:text-[10px] text-muted-foreground font-black uppercase tracking-[0.1em] whitespace-nowrap">Tasa del Día</span>
           <div className={`w-1 h-1 bg-green-500 rounded-full ${loading ? 'opacity-30' : 'animate-pulse'}`} />
         </div>
         <div className="flex items-baseline gap-1">
           {loading ? (
             <Loader2 className="h-3 w-3 text-primary animate-spin" />
           ) : (
-            <span className="text-[10px] sm:text-[13px] font-black text-white font-headline">
+            <span className="text-[10px] sm:text-lg font-black text-white font-headline whitespace-nowrap">
               Bs. {currentRate.toLocaleString('es-VE', { minimumFractionDigits: 2 })}
             </span>
           )}

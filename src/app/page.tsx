@@ -37,7 +37,7 @@ export default function Home() {
   }
 
   const locationAddress = "Santa Rita, Av. Pedro Lucas Urribarri, sector los Andes, al lado de la farmacia.";
-  const locationMapUrl = "https://maps.app.goo.gl/u6Y7Y7Y7Y7Y7Y7Y7";
+  const locationMapUrl = "https://maps.app.goo.gl/HdFyew635z7VvkAR6";
   const phoneContact = "584143683914";
   const emailAddress = "estacion18@gmail.com";
   const instagramUrl = "https://www.instagram.com/estacion18fastfood?igsh=NTkwamhkbTA0dHc5";
@@ -46,7 +46,7 @@ export default function Home() {
   const heroImageData = PlaceHolderImages.find(img => img.id === 'hero-promo');
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       {/* Header - Sticky with BCV Integrated */}
       <header className="sticky top-0 z-[100] w-full bg-[#0a0a0a]/95 backdrop-blur-md border-b border-primary/20 shadow-2xl transition-all duration-300">
         <div className="container mx-auto px-4 h-24 flex items-center justify-between gap-4">
@@ -90,7 +90,7 @@ export default function Home() {
               </h1>
               
               <p className="text-[10px] xs:text-sm sm:text-xl text-muted-foreground font-medium mb-6 sm:mb-10 leading-relaxed max-w-lg">
-                Disfruta de la mejor comida rápida de la zona. Los mejores precios, sabor inigualable y atención de primera.
+                DISFRUTA DE LA MEJOR COMIDA RÁPIDA DE LA ZONA. LOS MEJORES PRECIOS, SABOR INIGUALABLE Y ATENCIÓN DE PRIMERA.
               </p>
               
               <div className="flex flex-wrap gap-3 sm:gap-6 items-center">
@@ -104,10 +104,10 @@ export default function Home() {
                   <div className="bg-card/80 backdrop-blur-md px-3 sm:px-8 py-2 sm:py-4 rounded-xl sm:rounded-2xl border border-primary/20 shadow-2xl flex items-center justify-between gap-3 sm:gap-6 animate-in slide-in-from-left-10 duration-500">
                     <div className="flex items-center gap-2">
                       <ClipboardCheck className="text-primary h-4 w-4 sm:h-6 sm:w-6" />
-                      <span className="text-[9px] sm:text-xs font-bold text-foreground">{selectedItems.length} marcados</span>
+                      <span className="text-[9px] sm:text-xs font-bold text-foreground">{selectedItems.length} MARCADO(S)</span>
                     </div>
                     <Button variant="ghost" size="sm" onClick={clearSelection} className="h-7 sm:h-9 text-[8px] sm:text-[10px] font-bold text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-lg">
-                      <Trash2 className="h-3 w-3 sm:h-4 sm:w-4 mr-1" /> Limpiar
+                      <Trash2 className="h-3 w-3 sm:h-4 sm:w-4 mr-1" /> LIMPIAR
                     </Button>
                   </div>
                 )}
@@ -152,7 +152,7 @@ export default function Home() {
 
           {filteredItems.length === 0 && (
             <div className="text-center py-24 bg-card rounded-[3rem] border-2 border-dashed border-white/10">
-              <p className="text-muted-foreground text-xl font-medium">No hay productos en esta categoría por el momento.</p>
+              <p className="text-muted-foreground text-xl font-medium">NO HAY PRODUCTOS EN ESTA CATEGORÍA POR EL MOMENTO.</p>
             </div>
           )}
         </section>
@@ -165,8 +165,8 @@ export default function Home() {
               <h3 className="font-headline text-4xl sm:text-6xl font-bold mb-6 uppercase tracking-tighter">Tu Selección</h3>
               <p className="text-muted-foreground text-lg sm:text-2xl max-w-2xl mx-auto font-medium">
                 {selectedItems.length > 0 
-                  ? "Revisa tu pedido y envíalo por WhatsApp para que empecemos a prepararlo." 
-                  : "Selecciona tus platos favoritos del menú para armar tu orden."}
+                  ? "REVISA TU PEDIDO Y ENVÍALO POR WHATSAPP PARA QUE EMPECEMOS A PREPARARLO." 
+                  : "SELECCIONA TUS PLATOS FAVORITOS DEL MENÚ PARA ARMAR TU ORDEN."}
               </p>
             </div>
             <div className="max-w-2xl mx-auto">
@@ -189,7 +189,7 @@ export default function Home() {
             <h4 className="font-headline text-3xl font-bold mb-4 uppercase">Ubicación</h4>
             <p className="text-muted-foreground text-base leading-relaxed font-medium mb-4">{locationAddress}</p>
             <div className="flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest mt-auto group-hover:gap-4 transition-all">
-              Ver en el mapa <ExternalLink className="h-4 w-4" />
+              VER EN EL MAPA <ExternalLink className="h-4 w-4" />
             </div>
           </a>
 
@@ -200,10 +200,10 @@ export default function Home() {
             <h4 className="font-headline text-3xl font-bold mb-8 uppercase">Horario</h4>
             <div className="text-muted-foreground text-base flex flex-col gap-4 w-full">
               {[
-                { day: "Jueves", time: "6pm-11pm" },
-                { day: "Viernes", time: "6pm-12am" },
-                { day: "Sábado", time: "6pm-12am" },
-                { day: "Domingo", time: "6pm-11pm" }
+                { day: "JUEVES", time: "6PM-11PM" },
+                { day: "VIERNES", time: "6PM-12AM" },
+                { day: "SÁBADO", time: "6PM-12AM" },
+                { day: "DOMINGO", time: "6PM-11PM" }
               ].map((h) => (
                 <div key={h.day} className="flex justify-between items-center border-b border-white/5 pb-3">
                   <span className="font-bold text-foreground">{h.day}</span>
@@ -219,10 +219,10 @@ export default function Home() {
             </div>
             <h4 className="font-headline text-3xl font-bold mb-4 uppercase">Contacto</h4>
             <p className="text-muted-foreground text-xl font-black mb-2">+{phoneContact}</p>
-            <p className="text-muted-foreground text-base font-medium mb-8 opacity-60">INGREDIENTES DE CALIDAD ESTACIÓN 18</p>
+            <p className="text-muted-foreground text-base font-medium mb-8 opacity-60 uppercase">INGREDIENTES DE CALIDAD ESTACIÓN 18</p>
             <a href={`https://wa.me/${phoneContact}`} target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="rounded-2xl border-primary text-primary hover:bg-primary hover:text-white px-8 h-14 font-headline font-bold uppercase tracking-widest transition-all">
-                Chatear Ahora
+                CHATEAR AHORA
               </Button>
             </a>
           </div>
@@ -255,8 +255,8 @@ export default function Home() {
             </div>
 
             <div className="text-center md:text-right">
-              <p className="text-base font-bold text-muted-foreground">© 2024 Estación 18 Fast Food.</p>
-              <p className="text-sm text-muted-foreground/50 mt-2">EL PUNTO EXACTO DEL SABOR.</p>
+              <p className="text-base font-bold text-muted-foreground">© 2024 ESTACIÓN 18 FAST FOOD.</p>
+              <p className="text-sm text-muted-foreground/50 mt-2 uppercase">EL PUNTO EXACTO DEL SABOR.</p>
             </div>
           </div>
         </div>

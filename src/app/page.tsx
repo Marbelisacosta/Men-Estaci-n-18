@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -21,7 +22,6 @@ export default function Home() {
   const bcvDocRef = doc(db, 'settings', 'bcv');
   const { data: bcvData, loading: bcvLoading } = useDoc(bcvDocRef);
   
-  // Usar la tasa de Firebase si existe, de lo contrario usar la fija
   const currentRate = bcvData?.rate || FALLBACK_RATE;
 
   const filteredItems = selectedCategory === 'all' 
@@ -49,14 +49,13 @@ export default function Home() {
   const phoneContact = "584143683914";
   const emailAddress = "ESTACION18@GMAIL.COM";
   const instagramUrl = "https://www.instagram.com/estacion18fastfood?igsh=NTkwamhkbTA0dHc5";
-  const tiktokUrl = "https://www.tiktok.com/@estacion.18?_r=1&_t=ZS-99XLY1FJDRV";
   const logoUrl = "https://i.postimg.cc/GhJbp1QW/Post-Estacion-18-(2).png";
   const heroImageData = PlaceHolderImages.find(img => img.id === 'hero-promo');
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden w-full bg-[#0a0a0a]">
-      {/* Header Fijo */}
-      <header className="fixed top-0 left-0 right-0 z-[100] w-full bg-[#0a0a0a] border-b border-white/5 shadow-2xl">
+      {/* Header Fijo - Se mantiene al hacer scroll */}
+      <header className="fixed top-0 left-0 right-0 z-[100] w-full bg-[#0a0a0a] border-b border-white/5 shadow-2xl backdrop-blur-md">
         <div className="container mx-auto px-4 h-20 sm:h-24 flex items-center justify-between gap-2">
           <div className="flex items-center shrink-0">
             <Image 
@@ -84,7 +83,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Spacer para el header fijo */}
+      {/* Spacer para el header fijo - Ajustado para evitar que el contenido se tape */}
       <div className="h-20 sm:h-24" />
 
       <main className="flex-1 container mx-auto px-4 sm:px-8 py-8 sm:py-12 overflow-x-hidden">

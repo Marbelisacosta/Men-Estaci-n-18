@@ -1,4 +1,3 @@
-
 export interface MenuItem {
   id: string;
   name: string;
@@ -230,4 +229,4 @@ export const menuItems: MenuItem[] = [
 ];
 
 export const BRAND_MOTTO = "EL PUNTO EXACTO DEL SABOR";
-export const EXCHANGE_RATE = 963.21;
+export const EXCHANGE_RATE = 969.00;

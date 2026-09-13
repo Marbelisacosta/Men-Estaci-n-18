@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from 'react';
@@ -228,9 +227,9 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-[#0a0a0a] border-t border-white/5 py-8 sm:py-12 mt-12 sm:mt-20">
+      <footer className="bg-[#0a0a0a] border-t border-white/5 py-10 sm:py-16 mt-12 sm:mt-20">
         <div className="container mx-auto px-4 sm:px-8">
-          <div className="flex flex-row justify-between items-center gap-4">
+          <div className="flex flex-row justify-between items-center gap-2">
             {/* Esquina Inferior Izquierda: Logo */}
             <div className="flex-1 flex justify-start">
               <Image 
@@ -240,20 +239,28 @@ export default function Home() {
                 height={60} 
                 unoptimized
                 data-ai-hint="restaurant logo"
-                className="h-8 sm:h-12 w-auto object-contain" 
+                className="h-7 sm:h-14 w-auto object-contain" 
               />
             </div>
 
             {/* Centro: Redes Sociales */}
-            <div className="flex-1 flex justify-center gap-3 sm:gap-6">
-              <a href={`mailto:${emailAddress}`} className="text-muted-foreground hover:text-primary transition-all p-2 bg-white/5 rounded-xl border border-white/5"><Mail className="h-5 w-5 sm:h-6 sm:w-6" /></a>
-              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all p-2 bg-white/5 rounded-xl border border-white/5"><Instagram className="h-5 w-5 sm:h-6 sm:w-6" /></a>
+            <div className="flex-1 flex justify-center gap-3 sm:gap-8">
+              <a href={`mailto:${emailAddress}`} className="text-muted-foreground hover:text-primary transition-all p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-2xl border border-white/5">
+                <Mail className="h-5 w-5 sm:h-7 sm:w-7" />
+              </a>
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all p-2 sm:p-3 bg-white/5 rounded-lg sm:rounded-2xl border border-white/5">
+                <Instagram className="h-5 w-5 sm:h-7 sm:w-7" />
+              </a>
             </div>
 
             {/* Esquina Inferior Derecha: Texto */}
             <div className="flex-1 flex flex-col items-end text-right">
-              <p className="text-[7px] sm:text-[10px] font-black text-muted-foreground uppercase tracking-widest whitespace-nowrap">© 2024 ESTACIÓN 18 FAST FOOD.</p>
-              <p className="text-[6px] sm:text-[8px] text-muted-foreground/40 mt-1 uppercase tracking-[0.2em] whitespace-nowrap">EL PUNTO EXACTO DEL SABOR.</p>
+              <p className="text-[6px] sm:text-[11px] font-black text-muted-foreground uppercase tracking-widest leading-none whitespace-nowrap">
+                © 2024 ESTACIÓN 18 FAST FOOD
+              </p>
+              <p className="text-[5px] sm:text-[9px] text-muted-foreground/40 mt-1 uppercase tracking-[0.2em] leading-none whitespace-nowrap">
+                EL PUNTO EXACTO DEL SABOR
+              </p>
             </div>
           </div>
         </div>

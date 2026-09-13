@@ -87,6 +87,7 @@ export default function Home() {
       <div className="h-20 sm:h-24" />
 
       <main className="flex-1 container mx-auto px-4 sm:px-8 py-8 sm:py-12 overflow-x-hidden">
+        {/* Hero Section */}
         <section className="relative rounded-[1.5rem] sm:rounded-[4rem] bg-card overflow-hidden mb-12 sm:mb-20 shadow-2xl border border-white/5">
           <div className="absolute inset-0 bg-texture opacity-20" />
           
@@ -142,6 +143,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Menu Section */}
         <section id="menu" className="mb-20 sm:mb-28 scroll-mt-28">
           <div className="text-center mb-12">
             <h3 className="font-headline text-3xl sm:text-6xl font-bold mb-4 uppercase tracking-tighter">NUESTRO MENÚ</h3>
@@ -162,6 +164,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Order Section */}
         <section id="order-section" className="mb-20 sm:mb-28 scroll-mt-28">
           <div className="bg-card rounded-[2rem] sm:rounded-[5rem] p-6 sm:p-20 border border-white/5 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary/10 blur-[80px] sm:blur-[120px] -mr-32 -mt-32 sm:-mr-48 sm:-mt-48 rounded-full" />
@@ -174,8 +177,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Sección de información reorganizada */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10">
+        {/* Info Section - Location, Contact and Hours */}
+        <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 mb-20">
           {/* Ubicación */}
           <a 
             href={locationMapUrl}
@@ -201,7 +204,7 @@ export default function Home() {
             <h4 className="font-headline text-2xl sm:text-3xl font-bold mb-4 uppercase">CONTACTO</h4>
             <p className="text-muted-foreground text-lg sm:text-xl font-black mb-2 uppercase">+{phoneContact}</p>
             <p className="text-muted-foreground text-[10px] sm:text-base font-medium mb-6 sm:mb-8 opacity-60 uppercase tracking-[0.2em]">SALCHICHA DE FULL SABOR</p>
-            <a href={`https://wa.me/${phoneContact}`} target="_blank" rel="noopener noreferrer">
+            <a href={`https://wa.me/${phoneContact}`} target="_blank" rel="noopener noreferrer" className="mt-auto">
               <Button variant="outline" className="rounded-xl sm:rounded-2xl border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 h-12 sm:h-14 font-headline font-bold uppercase tracking-[0.3em] transition-all">
                 CHATEAR AHORA
               </Button>
@@ -231,6 +234,7 @@ export default function Home() {
         </section>
       </main>
 
+      {/* Footer */}
       <footer className="bg-[#0a0a0a] border-t border-white/5 py-10 sm:py-16 mt-12 sm:mt-20">
         <div className="container mx-auto px-4 sm:px-8">
           <div className="flex flex-row justify-between items-center gap-2">

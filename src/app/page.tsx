@@ -228,25 +228,32 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-[#0a0a0a] border-t border-white/5 py-12 sm:py-24 mt-12 sm:mt-20">
-        <div className="container mx-auto px-4 sm:px-8 text-center md:text-left">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-            <Image 
-              src={logoUrl} 
-              alt="ESTACIÓN 18 LOGO" 
-              width={200} 
-              height={80} 
-              unoptimized
-              data-ai-hint="restaurant logo"
-              className="h-12 sm:h-16 w-auto object-contain" 
-            />
-            <div className="flex items-center gap-4 sm:gap-8">
-              <a href={`mailto:${emailAddress}`} className="text-muted-foreground hover:text-primary transition-all p-3 bg-white/5 rounded-2xl border border-white/5"><Mail className="h-6 w-6" /></a>
-              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all p-3 bg-white/5 rounded-2xl border border-white/5"><Instagram className="h-6 w-6" /></a>
+      <footer className="bg-[#0a0a0a] border-t border-white/5 py-8 sm:py-12 mt-12 sm:mt-20">
+        <div className="container mx-auto px-4 sm:px-8">
+          <div className="flex flex-row justify-between items-center gap-4">
+            {/* Esquina Inferior Izquierda: Logo */}
+            <div className="flex-1 flex justify-start">
+              <Image 
+                src={logoUrl} 
+                alt="ESTACIÓN 18 LOGO" 
+                width={150} 
+                height={60} 
+                unoptimized
+                data-ai-hint="restaurant logo"
+                className="h-8 sm:h-12 w-auto object-contain" 
+              />
             </div>
-            <div className="text-center md:text-right">
-              <p className="text-xs sm:text-base font-bold text-muted-foreground uppercase tracking-widest">© 2024 ESTACIÓN 18 FAST FOOD.</p>
-              <p className="text-[10px] sm:text-sm text-muted-foreground/50 mt-2 uppercase tracking-[0.4em]">EL PUNTO EXACTO DEL SABOR.</p>
+
+            {/* Centro: Redes Sociales */}
+            <div className="flex-1 flex justify-center gap-3 sm:gap-6">
+              <a href={`mailto:${emailAddress}`} className="text-muted-foreground hover:text-primary transition-all p-2 bg-white/5 rounded-xl border border-white/5"><Mail className="h-5 w-5 sm:h-6 sm:w-6" /></a>
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all p-2 bg-white/5 rounded-xl border border-white/5"><Instagram className="h-5 w-5 sm:h-6 sm:w-6" /></a>
+            </div>
+
+            {/* Esquina Inferior Derecha: Texto */}
+            <div className="flex-1 flex flex-col items-end text-right">
+              <p className="text-[7px] sm:text-[10px] font-black text-muted-foreground uppercase tracking-widest whitespace-nowrap">© 2024 ESTACIÓN 18 FAST FOOD.</p>
+              <p className="text-[6px] sm:text-[8px] text-muted-foreground/40 mt-1 uppercase tracking-[0.2em] whitespace-nowrap">EL PUNTO EXACTO DEL SABOR.</p>
             </div>
           </div>
         </div>

@@ -114,9 +114,9 @@ export default function Home() {
                   <div className="bg-card/80 backdrop-blur-md px-2 sm:px-8 py-1.5 sm:py-4 rounded-lg sm:rounded-2xl border border-primary/20 shadow-2xl flex items-center justify-between gap-2 sm:gap-6 animate-in slide-in-from-left-10 duration-500">
                     <div className="flex items-center gap-1 sm:gap-2">
                       <ClipboardCheck className="text-primary h-3 w-3 sm:h-6 sm:w-6" />
-                      <span className="text-[7px] sm:text-xs font-bold text-foreground">{selectedItems.length} MARCADO(S)</span>
+                      <span className="text-[7px] sm:text-xs font-bold text-foreground uppercase tracking-widest">{selectedItems.length} MARCADO(S)</span>
                     </div>
-                    <Button variant="ghost" size="sm" onClick={clearSelection} className="h-6 sm:h-9 text-[7px] sm:text-[10px] font-bold text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-lg">
+                    <Button variant="ghost" size="sm" onClick={clearSelection} className="h-6 sm:h-9 text-[7px] sm:text-[10px] font-bold text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-lg uppercase">
                       <Trash2 className="h-2.5 w-2.5 sm:h-4 sm:w-4 mr-1" /> LIMPIAR
                     </Button>
                   </div>
@@ -175,7 +175,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10">
+        <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10">
           <a 
             href={locationMapUrl}
             target="_blank"
@@ -186,7 +186,7 @@ export default function Home() {
               <MapPin className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />
             </div>
             <h4 className="font-headline text-2xl sm:text-3xl font-bold mb-4 uppercase">UBICACIÓN</h4>
-            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed font-medium mb-4 uppercase">{locationAddress}</p>
+            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed font-medium mb-4 uppercase tracking-wide">{locationAddress}</p>
             <div className="flex items-center gap-2 text-primary text-[10px] sm:text-xs font-black uppercase tracking-widest mt-auto group-hover:gap-4 transition-all">
               VER EN EL MAPA <ExternalLink className="h-4 w-4" />
             </div>
@@ -205,22 +205,22 @@ export default function Home() {
                 { day: "DOMINGO", time: "6PM-11PM" }
               ].map((h) => (
                 <div key={h.day} className="flex justify-between items-center border-b border-white/5 pb-2 sm:pb-3">
-                  <span className="font-bold text-foreground uppercase">{h.day}</span>
-                  <span className="text-primary font-black uppercase">{h.time}</span>
+                  <span className="font-bold text-foreground uppercase tracking-widest">{h.day}</span>
+                  <span className="text-primary font-black uppercase tracking-widest">{h.time}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="bg-card p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] border border-white/5 flex flex-col items-center text-center shadow-2xl hover:border-primary/40 transition-all duration-300 group sm:col-span-2 lg:col-span-1">
+          <div className="bg-card p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] border border-white/5 flex flex-col items-center text-center shadow-2xl hover:border-primary/40 transition-all duration-300 group sm:col-span-2">
             <div className="bg-primary/10 p-4 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] mb-6 sm:mb-8 ring-2 ring-primary/10 group-hover:scale-110 transition-transform">
               <Phone className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />
             </div>
             <h4 className="font-headline text-2xl sm:text-3xl font-bold mb-4 uppercase">CONTACTO</h4>
-            <p className="text-muted-foreground text-lg sm:text-xl font-black mb-2">+{phoneContact}</p>
-            <p className="text-muted-foreground text-[10px] sm:text-base font-medium mb-6 sm:mb-8 opacity-60 uppercase tracking-widest">SALCHICHA DE FULL SABOR</p>
+            <p className="text-muted-foreground text-lg sm:text-xl font-black mb-2 uppercase">+{phoneContact}</p>
+            <p className="text-muted-foreground text-[10px] sm:text-base font-medium mb-6 sm:mb-8 opacity-60 uppercase tracking-[0.2em]">SALCHICHA DE FULL SABOR</p>
             <a href={`https://wa.me/${phoneContact}`} target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="rounded-xl sm:rounded-2xl border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 h-12 sm:h-14 font-headline font-bold uppercase tracking-widest transition-all">
+              <Button variant="outline" className="rounded-xl sm:rounded-2xl border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 h-12 sm:h-14 font-headline font-bold uppercase tracking-[0.3em] transition-all">
                 CHATEAR AHORA
               </Button>
             </a>
@@ -245,8 +245,8 @@ export default function Home() {
               <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all p-3 bg-white/5 rounded-2xl border border-white/5"><Instagram className="h-6 w-6" /></a>
             </div>
             <div className="text-center md:text-right">
-              <p className="text-xs sm:text-base font-bold text-muted-foreground uppercase">© 2024 ESTACIÓN 18 FAST FOOD.</p>
-              <p className="text-[10px] sm:text-sm text-muted-foreground/50 mt-2 uppercase tracking-[0.2em]">EL PUNTO EXACTO DEL SABOR.</p>
+              <p className="text-xs sm:text-base font-bold text-muted-foreground uppercase tracking-widest">© 2024 ESTACIÓN 18 FAST FOOD.</p>
+              <p className="text-[10px] sm:text-sm text-muted-foreground/50 mt-2 uppercase tracking-[0.4em]">EL PUNTO EXACTO DEL SABOR.</p>
             </div>
           </div>
         </div>

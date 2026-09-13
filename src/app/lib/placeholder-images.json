@@ -1,0 +1,155 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "past-pollo",
+      "description": "Pastelito de pollo crujiente",
+      "imageUrl": "https://i.postimg.cc/xd1hYwpn/Chat-GPT-Image-9-sept-2026-13-32-14.png",
+      "imageHint": "chicken pastelito"
+    },
+    {
+      "id": "past-carne",
+      "description": "Pastelito de carne crujiente",
+      "imageUrl": "https://i.postimg.cc/pdVbrhT7/Chat-GPT-Image-9-sept-2026-13-30-44.png",
+      "imageHint": "meat pastelito"
+    },
+    {
+      "id": "past-queso",
+      "description": "Pastelito de queso",
+      "imageUrl": "https://i.postimg.cc/XYrpCdFs/Chat-GPT-Image-9-sept-2026-10-25-16.png",
+      "imageHint": "cheese pastelito"
+    },
+    {
+      "id": "past-papa-queso",
+      "description": "Pastelito de papa con queso",
+      "imageUrl": "https://i.postimg.cc/RhwBcCdG/Chat-GPT-Image-9-sept-2026-10-00-49.png",
+      "imageHint": "fried pastelito"
+    },
+    {
+      "id": "tequenos",
+      "description": "Cheese sticks tequeños",
+      "imageUrl": "https://i.postimg.cc/XvZd4tQw/Chat-GPT-Image-9-sept-2026-10-23-24.png",
+      "imageHint": "cheese sticks"
+    },
+    {
+      "id": "arepa",
+      "description": "Venezuelan arepa con proteína",
+      "imageUrl": "https://i.postimg.cc/6Ts5q7Wb/Chat-GPT-Image-7-sept-2026-13-20-13.png",
+      "imageHint": "venezuelan arepa"
+    },
+    {
+      "id": "burger",
+      "description": "Delicious Whopper Burger",
+      "imageUrl": "https://i.postimg.cc/QC22CLr5/Chat-GPT-Image-9-sept-2026-09-58-08.png",
+      "imageHint": "hamburger meal"
+    },
+    {
+      "id": "burger-junior",
+      "description": "Hamburguesa Junior",
+      "imageUrl": "https://i.postimg.cc/8zxgnr38/imagen-2026-09-09-101514066.png",
+      "imageHint": "junior burger"
+    },
+    {
+      "id": "patacon",
+      "description": "Fried plantain sandwich",
+      "imageUrl": "https://i.postimg.cc/NMwYvh0b/Chat-GPT-Image-7-sept-2026-12-45-00.png",
+      "imageHint": "venezuelan patacon"
+    },
+    {
+      "id": "mini-patacon",
+      "description": "Mini Patacón crujiente",
+      "imageUrl": "https://i.postimg.cc/Nfr320FC/Chat-GPT-Image-9-sept-2026-10-28-54.png",
+      "imageHint": "mini patacon"
+    },
+    {
+      "id": "hotdog",
+      "description": "Salchiqueso especial",
+      "imageUrl": "https://i.postimg.cc/9f2JMmw2/Chat-GPT-Image-9-sept-2026-10-17-03.png",
+      "imageHint": "hot dog"
+    },
+    {
+      "id": "soda",
+      "description": "Vaso de Refresco Estación 18",
+      "imageUrl": "https://i.postimg.cc/9fjwHzRP/Chat-GPT-Image-9-sept-2026-10-37-57.png",
+      "imageHint": "soda glass"
+    },
+    {
+      "id": "soda-litro",
+      "description": "Refresco de Litro Estación 18",
+      "imageUrl": "https://i.postimg.cc/QxxRSqfb/Menu-Estacion-18.png",
+      "imageHint": "soda bottle"
+    },
+    {
+      "id": "soda-1-5",
+      "description": "Refresco de 1.5 Litros Estación 18",
+      "imageUrl": "https://i.postimg.cc/8cyXxqZR/Chat-GPT-Image-9-sept-2026-10-47-27.png",
+      "imageHint": "soda bottle"
+    },
+    {
+      "id": "fries",
+      "description": "Servicio de Papas Fritas",
+      "imageUrl": "https://i.postimg.cc/Prt6TrZq/Chat-GPT-Image-9-sept-2026-10-33-49.png",
+      "imageHint": "french fries"
+    },
+    {
+      "id": "hero-promo",
+      "description": "Imagen Principal Estación 18",
+      "imageUrl": "https://i.postimg.cc/85qhKvf2/Post-Estacion-18.png",
+      "imageHint": "restaurant promo"
+    },
+    {
+      "id": "pan-salchicha",
+      "description": "Pan de salchicha clásico",
+      "imageUrl": "https://i.postimg.cc/kMsw5P7M/Chat-GPT-Image-9-sept-2026-10-04-50.png",
+      "imageHint": "hot dog"
+    },
+    {
+      "id": "combo-especial",
+      "description": "Combo Especial Whopper + Papas",
+      "imageUrl": "https://i.postimg.cc/j2sdMJ1c/Chat-GPT-Image-9-sept-2026-10-53-53.png",
+      "imageHint": "burger combo"
+    },
+    {
+      "id": "combo-duo",
+      "description": "Combo Duo 2 Whoppers Estación 18",
+      "imageUrl": "https://i.postimg.cc/rwN6JFWM/Menu-Estacion-18-(3).png",
+      "imageHint": "burger combo"
+    },
+    {
+      "id": "combo-callejero",
+      "description": "Combo Callejero 4 Panes de Salchicha",
+      "imageUrl": "https://i.postimg.cc/MTxvLG3b/Chat-GPT-Image-9-sept-2026-11-34-46.png",
+      "imageHint": "hot dogs"
+    },
+    {
+      "id": "combo-junior",
+      "description": "Combo Junior 8 Burgers",
+      "imageUrl": "https://i.postimg.cc/KYYBZbXy/Chat-GPT-Image-9-sept-2026-16-10-15.png",
+      "imageHint": "junior burgers"
+    },
+    {
+      "id": "combo-estacion",
+      "description": "Combo Estación Mega Mix",
+      "imageUrl": "https://i.postimg.cc/zv40hBrV/Chat-GPT-Image-9-sept-2026-16-21-35.png",
+      "imageHint": "food combo"
+    },
+    {
+      "id": "combo-personal",
+      "description": "Combo Personal 2 Arepas + Vaso Refresco",
+      "imageUrl": "https://i.postimg.cc/V6qrDtYF/Chat-GPT-Image-9-sept-2026-12-04-32.png",
+      "imageHint": "arepa meal"
+    },
+    {
+      "id": "combo-resuelve",
+      "description": "Combo Resuelve 8 Panes de Salchicha",
+      "imageUrl": "https://i.postimg.cc/tTnQjd1W/Menu-Estacion-18-(4).png",
+      "imageHint": "hot dogs combo"
+    },
+    {
+      "id": "combo-boom",
+      "description": "Combo Boom 3 Whoppers Estación 18",
+      "imageUrl": "https://i.postimg.cc/MZ03jr8V/Chat-GPT-Image-9-sept-2026-12-06-18.png",
+      "imageHint": "burger combo"
+    }
+  ]
+}

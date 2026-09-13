@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -8,7 +9,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2, Square, Info, Ban, Sparkles } from 'lucide-react';
+import { CheckCircle2, Info, Ban, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 
 interface MenuItemCardProps {
@@ -26,7 +27,6 @@ export function MenuItemCard({ item, isSelected, onSelect, exchangeRate }: MenuI
   const placeholder = PlaceHolderImages.find(img => img.id === item.image);
   const priceBs = item.price * exchangeRate;
   const isAvailable = item.isAvailable !== false;
-  const flameLogoUrl = "https://i.postimg.cc/QMSDJgPw/Post-Estacion-18-(1).png";
 
   async function fetchDescription(e: React.MouseEvent) {
     e.stopPropagation();
@@ -41,7 +41,7 @@ export function MenuItemCard({ item, isSelected, onSelect, exchangeRate }: MenuI
       setAiDescription(result.description);
       setHasLoadedAi(true);
     } catch (error) {
-      setAiDescription("¡Sabor inigualable al estilo Estación 18!");
+      setAiDescription("¡SABOR INIGUALABLE AL ESTILO ESTACIÓN 18!");
       setHasLoadedAi(true);
     } finally {
       setLoading(false);
@@ -66,6 +66,8 @@ export function MenuItemCard({ item, isSelected, onSelect, exchangeRate }: MenuI
           src={placeholder?.imageUrl || 'https://picsum.photos/seed/food/600/400'}
           alt={item.name}
           fill
+          unoptimized
+          data-ai-hint={placeholder?.imageHint || "food item"}
           priority={item.isSpecial}
           className={`object-cover transition-transform duration-500 ${isAvailable ? 'group-hover:scale-105' : 'grayscale'} ${isSelected && isAvailable ? 'scale-102 brightness-75' : ''}`}
         />
@@ -79,7 +81,7 @@ export function MenuItemCard({ item, isSelected, onSelect, exchangeRate }: MenuI
           {!isAvailable && (
             <div className="bg-black/70 text-white px-2 py-1 rounded-lg flex items-center gap-1 border border-white/20 backdrop-blur-md">
               < Ban className="h-3 w-3 sm:h-4 sm:w-4 text-red-500" />
-              <span className="font-headline font-bold text-[7px] sm:text-[10px] uppercase tracking-widest">Agotado</span>
+              <span className="font-headline font-bold text-[7px] sm:text-[10px] uppercase tracking-widest">AGOTADO</span>
             </div>
           )}
         </div>
@@ -87,14 +89,14 @@ export function MenuItemCard({ item, isSelected, onSelect, exchangeRate }: MenuI
         <div className="absolute top-2 left-2 flex flex-col gap-1 z-20">
           {isCombo && isAvailable && (
             <Badge className="bg-primary text-white font-headline border-none shadow-xl px-1.5 py-0.5 text-[6px] sm:text-[9px] animate-pulse-subtle uppercase tracking-tight font-bold">
-              Combo
+              COMBO
             </Badge>
           )}
         </div>
         
         <div className="absolute bottom-2 right-2 z-20">
           <div className={`px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg font-headline shadow-2xl border border-white/10 transition-all flex flex-col items-center justify-center ${!isAvailable ? 'bg-muted text-muted-foreground' : isSelected ? 'bg-secondary text-white' : 'bg-primary text-white'}`}>
-            <span className="text-[10px] sm:text-lg font-bold leading-none uppercase tracking-tighter">Ref: {item.price.toFixed(2)}</span>
+            <span className="text-[10px] sm:text-lg font-bold leading-none uppercase tracking-tighter">REF: {item.price.toFixed(2)}</span>
           </div>
         </div>
       </div>
@@ -106,7 +108,7 @@ export function MenuItemCard({ item, isSelected, onSelect, exchangeRate }: MenuI
           </h4>
           <div className="sm:text-right shrink-0">
             <p className="text-[8px] sm:text-sm font-black text-foreground/90 tracking-tighter">
-              Bs. {priceBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })}
+              BS. {priceBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })}
             </p>
           </div>
         </div>
@@ -136,7 +138,7 @@ export function MenuItemCard({ item, isSelected, onSelect, exchangeRate }: MenuI
               disabled={!isAvailable}
               className="h-6 text-[8px] sm:text-[10px] font-bold text-primary hover:bg-primary/5 p-0 sm:px-2 gap-1"
             >
-              <Sparkles className="h-2.5 w-2.5" /> ¿Qué lo hace único?
+              <Sparkles className="h-2.5 w-2.5" /> ¿QUÉ LO HACE ÚNICO?
             </Button>
           )}
         </div>

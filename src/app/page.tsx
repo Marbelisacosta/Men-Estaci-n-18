@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden w-full bg-[#0a0a0a]">
-      {/* Header Fijo - Se mantiene al hacer scroll */}
+      {/* Header Fijo */}
       <header className="fixed top-0 left-0 right-0 z-[100] w-full bg-[#0a0a0a] border-b border-white/5 shadow-2xl backdrop-blur-md">
         <div className="container mx-auto px-4 h-20 sm:h-24 flex items-center justify-between gap-2">
           <div className="flex items-center shrink-0">
@@ -63,6 +63,8 @@ export default function Home() {
               alt="ESTACIÓN 18 LOGO" 
               width={180}
               height={70}
+              unoptimized
+              data-ai-hint="restaurant logo"
               priority
               className="h-10 sm:h-16 w-auto object-contain"
             />
@@ -83,7 +85,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Spacer para el header fijo - Ajustado para evitar que el contenido se tape */}
       <div className="h-20 sm:h-24" />
 
       <main className="flex-1 container mx-auto px-4 sm:px-8 py-8 sm:py-12 overflow-x-hidden">
@@ -131,6 +132,8 @@ export default function Home() {
                     src={heroImageData?.imageUrl || 'https://picsum.photos/seed/station18/800/600'} 
                     alt="ESTACIÓN 18 HERO" 
                     fill
+                    unoptimized
+                    data-ai-hint="food promo"
                     className="object-cover scale-110 group-hover:scale-100 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -228,7 +231,15 @@ export default function Home() {
       <footer className="bg-[#0a0a0a] border-t border-white/5 py-12 sm:py-24 mt-12 sm:mt-20">
         <div className="container mx-auto px-4 sm:px-8 text-center md:text-left">
           <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-            <Image src={logoUrl} alt="ESTACIÓN 18 LOGO" width={200} height={80} className="h-12 sm:h-16 w-auto object-contain" />
+            <Image 
+              src={logoUrl} 
+              alt="ESTACIÓN 18 LOGO" 
+              width={200} 
+              height={80} 
+              unoptimized
+              data-ai-hint="restaurant logo"
+              className="h-12 sm:h-16 w-auto object-contain" 
+            />
             <div className="flex items-center gap-4 sm:gap-8">
               <a href={`mailto:${emailAddress}`} className="text-muted-foreground hover:text-primary transition-all p-3 bg-white/5 rounded-2xl border border-white/5"><Mail className="h-6 w-6" /></a>
               <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all p-3 bg-white/5 rounded-2xl border border-white/5"><Instagram className="h-6 w-6" /></a>

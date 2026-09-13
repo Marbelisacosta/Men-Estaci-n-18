@@ -174,7 +174,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Sección de información reorganizada */}
         <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10">
+          {/* Ubicación */}
           <a 
             href={locationMapUrl}
             target="_blank"
@@ -191,12 +193,28 @@ export default function Home() {
             </div>
           </a>
 
-          <div className="bg-card p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] border border-white/5 flex flex-col items-center shadow-2xl hover:border-primary/40 transition-all duration-300">
+          {/* Contacto */}
+          <div className="bg-card p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] border border-white/5 flex flex-col items-center text-center shadow-2xl hover:border-primary/40 transition-all duration-300 group">
+            <div className="bg-primary/10 p-4 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] mb-6 sm:mb-8 ring-2 ring-primary/10 group-hover:scale-110 transition-transform">
+              <Phone className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />
+            </div>
+            <h4 className="font-headline text-2xl sm:text-3xl font-bold mb-4 uppercase">CONTACTO</h4>
+            <p className="text-muted-foreground text-lg sm:text-xl font-black mb-2 uppercase">+{phoneContact}</p>
+            <p className="text-muted-foreground text-[10px] sm:text-base font-medium mb-6 sm:mb-8 opacity-60 uppercase tracking-[0.2em]">SALCHICHA DE FULL SABOR</p>
+            <a href={`https://wa.me/${phoneContact}`} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="rounded-xl sm:rounded-2xl border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 h-12 sm:h-14 font-headline font-bold uppercase tracking-[0.3em] transition-all">
+                CHATEAR AHORA
+              </Button>
+            </a>
+          </div>
+
+          {/* Horario (Debajo alargado) */}
+          <div className="bg-card p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] border border-white/5 flex flex-col items-center shadow-2xl hover:border-primary/40 transition-all duration-300 sm:col-span-2">
             <div className="bg-primary/10 p-4 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] mb-6 sm:mb-8 ring-2 ring-primary/10">
               <Clock className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />
             </div>
             <h4 className="font-headline text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 uppercase">HORARIO</h4>
-            <div className="text-muted-foreground text-sm sm:text-base flex flex-col gap-3 sm:gap-4 w-full">
+            <div className="text-muted-foreground text-sm sm:text-base flex flex-col gap-3 sm:gap-4 w-full max-w-2xl">
               {[
                 { day: "JUEVES", time: "6PM-11PM" },
                 { day: "VIERNES", time: "6PM-12AM" },
@@ -209,20 +227,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="bg-card p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] border border-white/5 flex flex-col items-center text-center shadow-2xl hover:border-primary/40 transition-all duration-300 group sm:col-span-2">
-            <div className="bg-primary/10 p-4 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] mb-6 sm:mb-8 ring-2 ring-primary/10 group-hover:scale-110 transition-transform">
-              <Phone className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />
-            </div>
-            <h4 className="font-headline text-2xl sm:text-3xl font-bold mb-4 uppercase">CONTACTO</h4>
-            <p className="text-muted-foreground text-lg sm:text-xl font-black mb-2 uppercase">+{phoneContact}</p>
-            <p className="text-muted-foreground text-[10px] sm:text-base font-medium mb-6 sm:mb-8 opacity-60 uppercase tracking-[0.2em]">SALCHICHA DE FULL SABOR</p>
-            <a href={`https://wa.me/${phoneContact}`} target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="rounded-xl sm:rounded-2xl border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 h-12 sm:h-14 font-headline font-bold uppercase tracking-[0.3em] transition-all">
-                CHATEAR AHORA
-              </Button>
-            </a>
           </div>
         </section>
       </main>

@@ -94,8 +94,8 @@
     {
       "id": "hero-promo",
       "description": "Imagen Principal Estación 18",
-      "imageUrl": "https://i.postimg.cc/85qhKvf2/Post-Estacion-18.png",
-      "imageHint": "restaurant promo"
+      "imageUrl": "https://picsum.photos/seed/estacion18hero/1200/600",
+      "imageHint": "food cart"
     },
     {
       "id": "pan-salchicha",

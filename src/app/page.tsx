@@ -202,8 +202,7 @@ export default function Home() {
               <Phone className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />
             </div>
             <h4 className="font-headline text-2xl sm:text-3xl font-bold mb-4 uppercase">CONTACTO</h4>
-            <p className="text-muted-foreground text-lg sm:text-xl font-black mb-2 uppercase">+{phoneContact}</p>
-            <p className="text-muted-foreground text-[10px] sm:text-base font-medium mb-6 sm:mb-8 opacity-60 uppercase tracking-[0.2em]">SALCHICHA DE FULL SABOR</p>
+            <p className="text-muted-foreground text-lg sm:text-xl font-black mb-6 uppercase">+{phoneContact}</p>
             <a href={`https://wa.me/${phoneContact}`} target="_blank" rel="noopener noreferrer" className="mt-auto">
               <Button variant="outline" className="rounded-xl sm:rounded-2xl border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 h-12 sm:h-14 font-headline font-bold uppercase tracking-[0.3em] transition-all">
                 CHATEAR AHORA

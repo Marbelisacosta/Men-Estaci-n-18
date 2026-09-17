@@ -99,8 +99,8 @@ export default function Home() {
                 DEL SABOR
               </h1>
               
-              <p className="text-[8px] xs:text-xs sm:text-xl text-muted-foreground font-medium mb-4 sm:mb-10 leading-relaxed max-w-lg uppercase">
-                DISFRUTA DE LA MEJOR COMIDA RÁPIDA DE LA ZONA. LOS MEJORES PRECIOS, SABOR INIGUALABLE Y ATENCIÓN DE PRIMERA.
+              <p className="text-[8px] xs:text-xs sm:text-xl text-muted-foreground font-medium mb-4 sm:mb-10 leading-relaxed max-w-lg">
+                Disfruta de la mejor comida rápida de la zona. Los mejores precios, sabor inigualable y atención de primera.
               </p>
               
               <div className="flex flex-wrap gap-2 sm:gap-6 items-center">

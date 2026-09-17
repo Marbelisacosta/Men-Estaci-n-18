@@ -219,6 +219,7 @@ export default function Home() {
             <h4 className="font-headline text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 uppercase">HORARIO</h4>
             <div className="text-muted-foreground text-sm sm:text-base flex flex-col gap-3 sm:gap-4 w-full max-w-2xl">
               {[
+                { day: "MIÉRCOLES", time: "6PM-11PM" },
                 { day: "JUEVES", time: "6PM-11PM" },
                 { day: "VIERNES", time: "6PM-12AM" },
                 { day: "SÁBADO", time: "6PM-12AM" },

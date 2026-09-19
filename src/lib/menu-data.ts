@@ -138,6 +138,15 @@ export const menuItems: MenuItem[] = [
     isAvailable: true
   },
   {
+    id: 'drink-litro',
+    name: 'REFRESCO DE LITRO',
+    description: 'REFRESCO IDEAL PARA COMPARTIR',
+    price: 1.50,
+    category: 'drinks',
+    image: 'soda-litro',
+    isAvailable: true
+  },
+  {
     id: 'drink-2',
     name: 'REFRESCO 1.5 Lts',
     description: 'SABOR TRADICIONAL DE LA COCA-COLA',

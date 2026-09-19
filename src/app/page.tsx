@@ -44,7 +44,7 @@ export default function Home() {
   }
 
   const locationAddress = "Estado Zulia. Municipio, San Francisco. Parroquia Domitila Flores. AV 49E B/24 de Julio";
-  const locationMapUrl = "https://maps.app.goo.gl/HdFyew635z7VvkAR6";
+  const locationMapUrl = "https://maps.app.goo.gl/Sm7Q5itKdG16iA959";
   const phoneContact = "584143683914";
   const emailAddress = "ESTACION18@GMAIL.COM";
   const instagramUrl = "https://www.instagram.com/estacion18fastfood?igsh=NTkwamhkbTA0dHc5";
@@ -100,7 +100,7 @@ export default function Home() {
               </h1>
               
               <p className="text-[10px] xs:text-xs sm:text-xl text-muted-foreground font-medium mb-4 sm:mb-10 leading-relaxed max-w-lg normal-case">
-                Disfruta de la mejor comida rápida de la zona. Los mejores precios, sabor inigualable y atención de primera.
+                disfruta de la mejor comida rápida de la zona. los mejores precios, sabor inigualable y atención de primera.
               </p>
               
               <div className="flex flex-wrap gap-2 sm:gap-6 items-center">
@@ -177,7 +177,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Info Section - Location, Contact and Hours (Movido al final) */}
+        {/* Info Section - Location, Contact and Hours (Al Final) */}
         <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 mb-20">
           {/* Ubicación */}
           <a 
@@ -210,7 +210,7 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Horario (Debajo alargado) */}
+          {/* Horario (Alargado) */}
           <div className="bg-card p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] border border-white/5 flex flex-col items-center shadow-2xl hover:border-primary/40 transition-all duration-300 sm:col-span-2">
             <div className="bg-primary/10 p-4 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] mb-6 sm:mb-8 ring-2 ring-primary/10">
               <Clock className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />

@@ -106,7 +106,7 @@ export const menuItems: MenuItem[] = [
     id: 'fast-6',
     name: 'MINI PATACÓN',
     description: 'MINI PATACÓN CRUJIENTE',
-    price: 3.00,
+    price: 1.50,
     category: 'fast-food',
     image: 'mini-patacon',
     isAvailable: true

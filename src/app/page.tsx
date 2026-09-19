@@ -43,7 +43,7 @@ export default function Home() {
     setSelectedItems([]);
   }
 
-  const locationAddress = "SANTA RITA, AV. PEDRO LUCAS URRIBARRI, SECTOR LOS ANDES, AL LADO DE LA FARMACIA.";
+  const locationAddress = "Estado Zulia. Municipio, San Francisco. Parroquia Domitila Flores. AV 49E B/24 de Julio";
   const locationMapUrl = "https://maps.app.goo.gl/HdFyew635z7VvkAR6";
   const phoneContact = "584143683914";
   const emailAddress = "ESTACION18@GMAIL.COM";
@@ -99,7 +99,7 @@ export default function Home() {
                 DEL SABOR
               </h1>
               
-              <p className="text-[8px] xs:text-xs sm:text-xl text-muted-foreground font-medium mb-4 sm:mb-10 leading-relaxed max-w-lg">
+              <p className="text-[10px] xs:text-xs sm:text-xl text-muted-foreground font-medium mb-4 sm:mb-10 leading-relaxed max-w-lg normal-case">
                 Disfruta de la mejor comida rápida de la zona. Los mejores precios, sabor inigualable y atención de primera.
               </p>
               
@@ -139,40 +139,6 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Menu Section */}
-        <section id="menu" className="mb-20 sm:mb-28 scroll-mt-28">
-          <div className="text-center mb-12">
-            <h3 className="font-headline text-3xl sm:text-6xl font-bold mb-4 uppercase tracking-tighter">NUESTRO MENÚ</h3>
-            <div className="w-16 sm:w-24 h-1.5 sm:h-2.5 bg-primary mx-auto rounded-full mb-8 sm:mb-12" />
-            <CategoryTabs onCategoryChange={setSelectedCategory} />
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-12">
-            {filteredItems.map((item) => (
-              <MenuItemCard 
-                key={item.id} 
-                item={item} 
-                isSelected={selectedItems.some(i => i.id === item.id)}
-                onSelect={() => toggleItemSelection(item)}
-                exchangeRate={currentRate}
-              />
-            ))}
-          </div>
-        </section>
-
-        {/* Order Section */}
-        <section id="order-section" className="mb-20 sm:mb-28 scroll-mt-28">
-          <div className="bg-card rounded-[2rem] sm:rounded-[5rem] p-6 sm:p-20 border border-white/5 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary/10 blur-[80px] sm:blur-[120px] -mr-32 -mt-32 sm:-mr-48 sm:-mt-48 rounded-full" />
-            <div className="text-center mb-10 sm:mb-16 relative z-10">
-              <h3 className="font-headline text-3xl sm:text-6xl font-bold mb-4 uppercase tracking-tighter">TU SELECCIÓN</h3>
-            </div>
-            <div className="max-w-2xl mx-auto">
-              <OrderForm selectedItems={selectedItems} exchangeRate={currentRate} />
             </div>
           </div>
         </section>
@@ -229,6 +195,40 @@ export default function Home() {
                   <span className="text-primary font-black uppercase tracking-widest">{h.time}</span>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Menu Section */}
+        <section id="menu" className="mb-20 sm:mb-28 scroll-mt-28">
+          <div className="text-center mb-12">
+            <h3 className="font-headline text-3xl sm:text-6xl font-bold mb-4 uppercase tracking-tighter">NUESTRO MENÚ</h3>
+            <div className="w-16 sm:w-24 h-1.5 sm:h-2.5 bg-primary mx-auto rounded-full mb-8 sm:mb-12" />
+            <CategoryTabs onCategoryChange={setSelectedCategory} />
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 sm:gap-12">
+            {filteredItems.map((item) => (
+              <MenuItemCard 
+                key={item.id} 
+                item={item} 
+                isSelected={selectedItems.some(i => i.id === item.id)}
+                onSelect={() => toggleItemSelection(item)}
+                exchangeRate={currentRate}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Order Section */}
+        <section id="order-section" className="mb-20 sm:mb-28 scroll-mt-28">
+          <div className="bg-card rounded-[2rem] sm:rounded-[5rem] p-6 sm:p-20 border border-white/5 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary/10 blur-[80px] sm:blur-[120px] -mr-32 -mt-32 sm:-mr-48 sm:-mt-48 rounded-full" />
+            <div className="text-center mb-10 sm:mb-16 relative z-10">
+              <h3 className="font-headline text-3xl sm:text-6xl font-bold mb-4 uppercase tracking-tighter">TU SELECCIÓN</h3>
+            </div>
+            <div className="max-w-2xl mx-auto">
+              <OrderForm selectedItems={selectedItems} exchangeRate={currentRate} />
             </div>
           </div>
         </section>

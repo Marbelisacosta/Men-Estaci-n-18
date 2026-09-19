@@ -79,7 +79,7 @@ export const menuItems: MenuItem[] = [
     id: 'fast-3',
     name: 'SALCHIQUESO',
     description: 'SALCHICHA MAS QUESO CEBÚ',
-    price: 3.00,
+    price: 2.00,
     category: 'fast-food',
     image: 'hotdog',
     isAvailable: true

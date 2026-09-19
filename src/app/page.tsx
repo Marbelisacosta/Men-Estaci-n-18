@@ -129,7 +129,7 @@ export default function Home() {
                 <div className="absolute -inset-5 sm:-inset-10 bg-primary/20 rounded-full blur-[20px] sm:blur-[100px] opacity-40 animate-pulse-subtle" />
                 <div className="relative aspect-square sm:aspect-video rounded-lg sm:rounded-[3rem] overflow-hidden border sm:border-4 border-white/10 shadow-2xl rotate-2 group-hover:rotate-0 transition-all duration-700">
                   <Image 
-                    src={heroImageData?.imageUrl || 'https://picsum.photos/seed/station18/800/600'} 
+                    src={heroImageData?.imageUrl || 'https://i.postimg.cc/85qhKvf2/Post-Estacion-18.png'} 
                     alt="ESTACIÓN 18 HERO" 
                     fill
                     unoptimized

@@ -143,7 +143,41 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Info Section - Location, Contact and Hours */}
+        {/* Menu Section */}
+        <section id="menu" className="mb-20 sm:mb-28 scroll-mt-28">
+          <div className="text-center mb-12">
+            <h3 className="font-headline text-3xl sm:text-6xl font-bold mb-4 uppercase tracking-tighter">NUESTRO MENÚ</h3>
+            <div className="w-16 sm:w-24 h-1.5 sm:h-2.5 bg-primary mx-auto rounded-full mb-8 sm:mb-12" />
+            <CategoryTabs onCategoryChange={setSelectedCategory} />
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 sm:gap-12">
+            {filteredItems.map((item) => (
+              <MenuItemCard 
+                key={item.id} 
+                item={item} 
+                isSelected={selectedItems.some(i => i.id === item.id)}
+                onSelect={() => toggleItemSelection(item)}
+                exchangeRate={currentRate}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Order Section */}
+        <section id="order-section" className="mb-20 sm:mb-28 scroll-mt-28">
+          <div className="bg-card rounded-[2rem] sm:rounded-[5rem] p-6 sm:p-20 border border-white/5 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary/10 blur-[80px] sm:blur-[120px] -mr-32 -mt-32 sm:-mr-48 sm:-mt-48 rounded-full" />
+            <div className="text-center mb-10 sm:mb-16 relative z-10">
+              <h3 className="font-headline text-3xl sm:text-6xl font-bold mb-4 uppercase tracking-tighter">TU SELECCIÓN</h3>
+            </div>
+            <div className="max-w-2xl mx-auto">
+              <OrderForm selectedItems={selectedItems} exchangeRate={currentRate} />
+            </div>
+          </div>
+        </section>
+
+        {/* Info Section - Location, Contact and Hours (Movido al final) */}
         <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 mb-20">
           {/* Ubicación */}
           <a 
@@ -195,40 +229,6 @@ export default function Home() {
                   <span className="text-primary font-black uppercase tracking-widest">{h.time}</span>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Menu Section */}
-        <section id="menu" className="mb-20 sm:mb-28 scroll-mt-28">
-          <div className="text-center mb-12">
-            <h3 className="font-headline text-3xl sm:text-6xl font-bold mb-4 uppercase tracking-tighter">NUESTRO MENÚ</h3>
-            <div className="w-16 sm:w-24 h-1.5 sm:h-2.5 bg-primary mx-auto rounded-full mb-8 sm:mb-12" />
-            <CategoryTabs onCategoryChange={setSelectedCategory} />
-          </div>
-
-          <div className="grid grid-cols-2 gap-3 sm:gap-12">
-            {filteredItems.map((item) => (
-              <MenuItemCard 
-                key={item.id} 
-                item={item} 
-                isSelected={selectedItems.some(i => i.id === item.id)}
-                onSelect={() => toggleItemSelection(item)}
-                exchangeRate={currentRate}
-              />
-            ))}
-          </div>
-        </section>
-
-        {/* Order Section */}
-        <section id="order-section" className="mb-20 sm:mb-28 scroll-mt-28">
-          <div className="bg-card rounded-[2rem] sm:rounded-[5rem] p-6 sm:p-20 border border-white/5 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary/10 blur-[80px] sm:blur-[120px] -mr-32 -mt-32 sm:-mr-48 sm:-mt-48 rounded-full" />
-            <div className="text-center mb-10 sm:mb-16 relative z-10">
-              <h3 className="font-headline text-3xl sm:text-6xl font-bold mb-4 uppercase tracking-tighter">TU SELECCIÓN</h3>
-            </div>
-            <div className="max-w-2xl mx-auto">
-              <OrderForm selectedItems={selectedItems} exchangeRate={currentRate} />
             </div>
           </div>
         </section>

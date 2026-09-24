@@ -1,3 +1,4 @@
+
 export interface MenuItem {
   id: string;
   name: string;
@@ -197,7 +198,7 @@ export const menuItems: MenuItem[] = [
     description: '10 HAMBURGUESAS SENCILLAS PERFECTAS PARA COMPARTIR',
     price: 10.00,
     category: 'combo',
-    image: 'hamburguesa-sencilla-img',
+    image: 'combo-familiar-img',
     isSpecial: true,
     isAvailable: true
   },

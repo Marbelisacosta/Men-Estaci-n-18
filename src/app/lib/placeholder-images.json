@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -173,6 +174,12 @@
       "description": "Pan con Proteína Estación 18",
       "imageUrl": "https://i.postimg.cc/hjTJQHVK/Whats-App-Image-2026-09-24-at-5-05-25-PM.jpg",
       "imageHint": "stuffed sandwich"
+    },
+    {
+      "id": "combo-familiar-img",
+      "description": "Combo Familiar Estación 18",
+      "imageUrl": "https://i.postimg.cc/fk4Bf4rX/Whats-App-Image-2026-09-24-at-5-18-33-PM.jpg",
+      "imageHint": "burger combo"
     }
   ]
 }

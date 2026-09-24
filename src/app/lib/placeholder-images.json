@@ -1,4 +1,3 @@
-
 {
   "placeholderImages": [
     {
@@ -168,6 +167,12 @@
       "description": "Hamburguesa Sencilla Estación 18",
       "imageUrl": "https://i.postimg.cc/qM8LH5YV/Whats-App-Image-2026-09-24-at-4-59-54-PM.jpg",
       "imageHint": "street burger"
+    },
+    {
+      "id": "pan-proteina-img",
+      "description": "Pan con Proteína Estación 18",
+      "imageUrl": "https://i.postimg.cc/hjTJQHVK/Whats-App-Image-2026-09-24-at-5-05-25-PM.jpg",
+      "imageHint": "stuffed sandwich"
     }
   ]
 }

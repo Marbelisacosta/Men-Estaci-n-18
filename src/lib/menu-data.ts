@@ -1,4 +1,3 @@
-
 export interface MenuItem {
   id: string;
   name: string;
@@ -81,7 +80,7 @@ export const menuItems: MenuItem[] = [
     description: 'PAN ESPECIAL CON RELLENO DE PROTEÍNA AL GUSTO',
     price: 2.50,
     category: 'fast-food',
-    image: 'salchipapa-tradicional-img',
+    image: 'pan-proteina-img',
     isAvailable: true
   },
   {

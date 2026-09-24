@@ -18,7 +18,7 @@ export const menuItems: MenuItem[] = [
     price: 0.50,
     category: 'individual',
     image: 'past-pollo',
-    isAvailable: false
+    isAvailable: true
   },
   {
     id: 'past-2',
@@ -27,7 +27,7 @@ export const menuItems: MenuItem[] = [
     price: 0.50,
     category: 'individual',
     image: 'past-carne',
-    isAvailable: false
+    isAvailable: true
   },
   {
     id: 'past-3',
@@ -36,7 +36,7 @@ export const menuItems: MenuItem[] = [
     price: 0.50,
     category: 'individual',
     image: 'past-queso',
-    isAvailable: false
+    isAvailable: true
   },
   {
     id: 'past-4',
@@ -45,7 +45,7 @@ export const menuItems: MenuItem[] = [
     price: 0.50,
     category: 'individual',
     image: 'past-papa-queso',
-    isAvailable: false
+    isAvailable: true
   },
   {
     id: 'past-6',
@@ -54,7 +54,7 @@ export const menuItems: MenuItem[] = [
     price: 0.50,
     category: 'individual',
     image: 'tequenos',
-    isAvailable: false
+    isAvailable: true
   },
   {
     id: 'fast-salchipapa-tradicional',

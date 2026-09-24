@@ -67,8 +67,8 @@ export function OrderForm({ selectedItems = [], exchangeRate }: OrderFormProps) 
 
             <div className="p-6 space-y-4">
               <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">Productos Marcados</h4>
-              {selectedItems.map((item) => (
-                <div key={`${item.id}-${Math.random()}`} className="flex items-center justify-between group animate-in fade-in slide-in-from-left-2">
+              {selectedItems.map((item, idx) => (
+                <div key={`${item.id}-${idx}`} className="flex items-center justify-between group animate-in fade-in slide-in-from-left-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-primary/10 text-primary p-1.5 rounded-lg border border-primary/20">
                       <CheckCircle2 className="h-5 w-5" />

@@ -1,4 +1,3 @@
-
 export interface MenuItem {
   id: string;
   name: string;
@@ -69,7 +68,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-salchipapa-proteina',
     name: 'SALCHIPAPA CON PROTEINA',
-    description: 'NUESTRA EXQUISITA SALCHIPAPA REFORZADA CON LA CARNE DE TU PREFERENCIA',
+    description: 'NUESTRA EXQUISITA SALCHIPAPA CON LA MEJOR PROTEINA',
     price: 5.00,
     category: 'fast-food',
     image: 'salchipapa-proteina-img',
@@ -157,7 +156,7 @@ export const menuItems: MenuItem[] = [
     isAvailable: true
   },
   {
-    id: 'fast-pan-salchicha',
+    id: 'fast-pipe-salchicha',
     name: 'PAN DE SALCHICHA',
     description: 'SALCHICHA DE FULL SABOR',
     price: 1.50,

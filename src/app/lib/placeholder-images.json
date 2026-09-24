@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -151,16 +152,16 @@
       "imageHint": "burger combo"
     },
     {
-      "id": "salchipapa",
-      "description": "Salchipapa crujiente especial",
-      "imageUrl": "https://picsum.photos/seed/salchipapa/600/400",
+      "id": "salchipapa-tradicional-img",
+      "description": "Salchipapa Tradicional",
+      "imageUrl": "https://i.postimg.cc/hGsNrjgq/Whats-App-Image-2026-09-24-at-4-22-46-PM.jpg",
       "imageHint": "salchipapa fries"
     },
     {
-      "id": "burger-sencilla",
-      "description": "Hamburguesa sencilla tradicional",
-      "imageUrl": "https://picsum.photos/seed/sencilla/600/400",
-      "imageHint": "classic burger"
+      "id": "salchipapa-proteina-img",
+      "description": "Salchipapa con Proteína",
+      "imageUrl": "https://i.postimg.cc/GpMdpz4Z/Whats-App-Image-2026-09-24-at-4-25-56-PM.jpg",
+      "imageHint": "salchipapa meat"
     }
   ]
 }

@@ -1,3 +1,4 @@
+
 export interface MenuItem {
   id: string;
   name: string;
@@ -62,7 +63,7 @@ export const menuItems: MenuItem[] = [
     description: 'PAPAS FRITAS CRUJIENTES CON SALCHICHA Y SALSAS',
     price: 3.00,
     category: 'fast-food',
-    image: 'salchipapa',
+    image: 'salchipapa-tradicional-img',
     isAvailable: true
   },
   {
@@ -71,7 +72,7 @@ export const menuItems: MenuItem[] = [
     description: 'NUESTRA EXQUISITA SALCHIPAPA REFORZADA CON LA CARNE DE TU PREFERENCIA',
     price: 5.00,
     category: 'fast-food',
-    image: 'salchipapa',
+    image: 'salchipapa-proteina-img',
     isAvailable: true
   },
   {
@@ -80,7 +81,7 @@ export const menuItems: MenuItem[] = [
     description: 'PAN ESPECIAL CON RELLENO DE PROTEÍNA AL GUSTO',
     price: 2.50,
     category: 'fast-food',
-    image: 'pan-salchicha',
+    image: 'salchipapa-tradicional-img',
     isAvailable: true
   },
   {
@@ -89,7 +90,7 @@ export const menuItems: MenuItem[] = [
     description: 'EL CLÁSICO INIGUALABLE CON EL VERDADERO SABOR CALLEJERO',
     price: 1.00,
     category: 'fast-food',
-    image: 'burger-sencilla',
+    image: 'salchipapa-tradicional-img',
     isAvailable: true
   },
   {
@@ -197,7 +198,7 @@ export const menuItems: MenuItem[] = [
     description: '10 HAMBURGUESAS SENCILLAS PERFECTAS PARA COMPARTIR',
     price: 10.00,
     category: 'combo',
-    image: 'combo-junior',
+    image: 'salchipapa-tradicional-img',
     isSpecial: true,
     isAvailable: true
   },
@@ -207,7 +208,7 @@ export const menuItems: MenuItem[] = [
     description: 'HAMBURGUESA SENCILLA + PAPAS FRITAS',
     price: 1.50,
     category: 'combo',
-    image: 'combo-especial',
+    image: 'salchipapa-tradicional-img',
     isSpecial: true,
     isAvailable: true
   },

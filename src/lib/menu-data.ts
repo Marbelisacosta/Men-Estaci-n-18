@@ -1,4 +1,3 @@
-
 export interface MenuItem {
   id: string;
   name: string;
@@ -208,7 +207,7 @@ export const menuItems: MenuItem[] = [
     description: 'HAMBURGUESA SENCILLA + PAPAS FRITAS',
     price: 1.50,
     category: 'combo',
-    image: 'hamburguesa-sencilla-img',
+    image: 'combo-sencillo-img',
     isSpecial: true,
     isAvailable: true
   },

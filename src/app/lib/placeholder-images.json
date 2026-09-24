@@ -1,4 +1,3 @@
-
 {
   "placeholderImages": [
     {
@@ -180,6 +179,12 @@
       "description": "Combo Familiar Estación 18",
       "imageUrl": "https://i.postimg.cc/fk4Bf4rX/Whats-App-Image-2026-09-24-at-5-18-33-PM.jpg",
       "imageHint": "burger combo"
+    },
+    {
+      "id": "combo-sencillo-img",
+      "description": "Combo Sencillo Estación 18",
+      "imageUrl": "https://i.postimg.cc/6Q5JvRRQ/Whats-App-Image-2026-09-24-at-5-19-48-PM.jpg",
+      "imageHint": "burger fries combo"
     }
   ]
 }

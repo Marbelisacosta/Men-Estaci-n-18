@@ -57,6 +57,51 @@ export const menuItems: MenuItem[] = [
     isAvailable: false
   },
   {
+    id: 'fast-salchipapa-tradicional',
+    name: 'SALCHIPAPA TRADICIONAL',
+    description: 'PAPAS FRITAS CRUJIENTES CON SALCHICHA Y SALSAS',
+    price: 3.00,
+    category: 'fast-food',
+    image: 'salchipapa',
+    isAvailable: true
+  },
+  {
+    id: 'fast-salchipapa-proteina',
+    name: 'SALCHIPAPA CON PROTEINA',
+    description: 'NUESTRA EXQUISITA SALCHIPAPA REFORZADA CON LA CARNE DE TU PREFERENCIA',
+    price: 5.00,
+    category: 'fast-food',
+    image: 'salchipapa',
+    isAvailable: true
+  },
+  {
+    id: 'fast-pan-proteina',
+    name: 'PAN CON PROTEINA',
+    description: 'PAN ESPECIAL CON RELLENO DE PROTEÍNA AL GUSTO',
+    price: 2.50,
+    category: 'fast-food',
+    image: 'pan-salchicha',
+    isAvailable: true
+  },
+  {
+    id: 'fast-hamburguesa-sencilla',
+    name: 'HAMBURGUESA SENCILLA',
+    description: 'EL CLÁSICO INIGUALABLE CON EL VERDADERO SABOR CALLEJERO',
+    price: 1.00,
+    category: 'fast-food',
+    image: 'burger-sencilla',
+    isAvailable: true
+  },
+  {
+    id: 'fast-servicio-papas',
+    name: 'SERVICIO DE PAPAS',
+    description: 'PORCIÓN DE PAPAS FRITAS DORADAS Y CRUJIENTES',
+    price: 1.00,
+    category: 'fast-food',
+    image: 'fries',
+    isAvailable: true
+  },
+  {
     id: 'fast-1',
     name: 'AREPA CON PROTEÍNA',
     description: 'AREPA FRITA RELLENA CON SABOR',
@@ -120,15 +165,6 @@ export const menuItems: MenuItem[] = [
     isAvailable: true
   },
   {
-    id: 'fast-papas',
-    name: 'SERVICIO DE PAPAS FRITAS',
-    description: 'SERVICIO DE PAPAS FRITAS + SALSA DE TOMATE',
-    price: 1.00,
-    category: 'fast-food',
-    image: 'fries',
-    isAvailable: true
-  },
-  {
     id: 'drink-1',
     name: 'VASO DE REFRESCO',
     description: 'SABOR TRADICIONAL DE LA COCA-COLA',
@@ -153,6 +189,26 @@ export const menuItems: MenuItem[] = [
     price: 2.00,
     category: 'drinks',
     image: 'soda-1-5',
+    isAvailable: true
+  },
+  {
+    id: 'combo-familiar-sencillo',
+    name: 'COMBO FAMILIAR',
+    description: '10 HAMBURGUESAS SENCILLAS PERFECTAS PARA COMPARTIR',
+    price: 10.00,
+    category: 'combo',
+    image: 'combo-junior',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-sencillo-papas',
+    name: 'COMBO SENCILLO',
+    description: 'HAMBURGUESA SENCILLA + PAPAS FRITAS',
+    price: 1.50,
+    category: 'combo',
+    image: 'combo-especial',
+    isSpecial: true,
     isAvailable: true
   },
   {

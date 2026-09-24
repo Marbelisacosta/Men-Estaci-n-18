@@ -149,6 +149,18 @@
       "description": "Combo Boom 3 Whoppers Estación 18",
       "imageUrl": "https://i.postimg.cc/MZ03jr8V/Chat-GPT-Image-9-sept-2026-12-06-18.png",
       "imageHint": "burger combo"
+    },
+    {
+      "id": "salchipapa",
+      "description": "Salchipapa crujiente especial",
+      "imageUrl": "https://picsum.photos/seed/salchipapa/600/400",
+      "imageHint": "salchipapa fries"
+    },
+    {
+      "id": "burger-sencilla",
+      "description": "Hamburguesa sencilla tradicional",
+      "imageUrl": "https://picsum.photos/seed/sencilla/600/400",
+      "imageHint": "classic burger"
     }
   ]
 }

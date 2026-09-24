@@ -59,7 +59,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fast-salchipapa-tradicional',
     name: 'SALCHIPAPA TRADICIONAL',
-    description: 'PAPAS FRITAS CRUJIENTES CON SALCHICHA Y SALSAS',
+    description: 'PAPAS FRITAS CON SALCHICHA, CEBÚ, JAMON, VEGETALES Y SALSAS',
     price: 3.00,
     category: 'fast-food',
     image: 'salchipapa-tradicional-img',

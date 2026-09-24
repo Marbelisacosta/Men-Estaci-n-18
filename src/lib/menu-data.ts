@@ -197,7 +197,7 @@ export const menuItems: MenuItem[] = [
     description: '10 HAMBURGUESAS SENCILLAS PERFECTAS PARA COMPARTIR',
     price: 10.00,
     category: 'combo',
-    image: 'salchipapa-tradicional-img',
+    image: 'hamburguesa-sencilla-img',
     isSpecial: true,
     isAvailable: true
   },
@@ -207,7 +207,7 @@ export const menuItems: MenuItem[] = [
     description: 'HAMBURGUESA SENCILLA + PAPAS FRITAS',
     price: 1.50,
     category: 'combo',
-    image: 'salchipapa-tradicional-img',
+    image: 'hamburguesa-sencilla-img',
     isSpecial: true,
     isAvailable: true
   },

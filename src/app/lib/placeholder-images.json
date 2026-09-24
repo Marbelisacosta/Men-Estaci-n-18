@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -161,6 +162,12 @@
       "description": "Salchipapa con Proteína",
       "imageUrl": "https://i.postimg.cc/GpMdpz4Z/Whats-App-Image-2026-09-24-at-4-25-56-PM.jpg",
       "imageHint": "salchipapa meat"
+    },
+    {
+      "id": "hamburguesa-sencilla-img",
+      "description": "Hamburguesa Sencilla Estación 18",
+      "imageUrl": "https://i.postimg.cc/qM8LH5YV/Whats-App-Image-2026-09-24-at-4-59-54-PM.jpg",
+      "imageHint": "street burger"
     }
   ]
 }

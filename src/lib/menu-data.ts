@@ -1,3 +1,4 @@
+
 export interface MenuItem {
   id: string;
   name: string;
@@ -89,7 +90,7 @@ export const menuItems: MenuItem[] = [
     description: 'EL CLÁSICO INIGUALABLE CON EL VERDADERO SABOR CALLEJERO',
     price: 1.00,
     category: 'fast-food',
-    image: 'salchipapa-tradicional-img',
+    image: 'hamburguesa-sencilla-img',
     isAvailable: true
   },
   {

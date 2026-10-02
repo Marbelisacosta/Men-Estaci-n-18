@@ -100,7 +100,7 @@ export default function Home() {
               </h1>
               
               <p className="text-[8px] xs:text-xs sm:text-xl text-muted-foreground font-medium mb-3 sm:mb-10 leading-tight sm:leading-relaxed max-w-lg normal-case">
-                disfruta de la mejor comida rápida de la zona. los mejores precios, sabor inigualable y atención de primera.
+                Disfruta de la mejor comida rápida de la zona. los mejores precios, sabor inigualable y atención de primera.
               </p>
               
               <div className="flex flex-wrap gap-2 sm:gap-6 items-center">

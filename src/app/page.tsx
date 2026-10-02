@@ -7,7 +7,7 @@ import { CategoryTabs } from '@/components/menu/CategoryTabs';
 import { OrderForm } from '@/components/menu/OrderForm';
 import { menuItems, MenuItem, EXCHANGE_RATE as FALLBACK_RATE } from '@/lib/menu-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { MapPin, Clock, Phone, Instagram, Mail, ClipboardCheck, Trash2, ExternalLink } from 'lucide-react';
+import { MapPin, Clock, Phone, Instagram, Mail, ClipboardCheck, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { doc } from 'firebase/firestore';
@@ -87,7 +87,7 @@ export default function Home() {
       <div className="h-20 sm:h-24" />
 
       <main className="flex-1 container mx-auto px-4 sm:px-8 py-8 sm:py-12 overflow-x-hidden">
-        {/* Hero Section - Mantiene estructura horizontal en computadora y teléfono */}
+        {/* Hero Section */}
         <section className="relative rounded-[1.5rem] sm:rounded-[4rem] bg-card overflow-hidden mb-12 sm:mb-20 shadow-2xl border border-white/5">
           <div className="absolute inset-0 bg-texture opacity-20" />
           
@@ -143,7 +143,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Menu Section - Siempre mantiene 2 columnas tanto en PC como en Móvil */}
+        {/* Menu Section - Siempre 2 columnas */}
         <section id="menu" className="mb-20 sm:mb-28 scroll-mt-28">
           <div className="text-center mb-12">
             <h3 className="font-headline text-3xl sm:text-6xl font-bold mb-4 uppercase tracking-tighter">NUESTRO MENÚ</h3>
@@ -177,7 +177,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Info Section - Forzada a mantener exactamente 2 columnas simétricas en PC y Teléfono */}
+        {/* Info Section - Forzada a 2 columnas simétricas en PC y Teléfono */}
         <section className="grid grid-cols-2 gap-3 sm:gap-10 mb-20">
           {/* Ubicación */}
           <a 
@@ -210,7 +210,7 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Horario (Alineación unificada a pantalla completa) */}
+          {/* Horario */}
           <div className="bg-card p-4 sm:p-10 rounded-[1.2rem] sm:rounded-[3rem] border border-white/5 flex flex-col items-center shadow-2xl hover:border-primary/40 transition-all duration-300 col-span-2">
             <div className="bg-primary/10 p-2.5 sm:p-6 rounded-[1rem] sm:rounded-[2rem] mb-3 sm:mb-8 ring-2 ring-primary/10">
               <Clock className="h-5 w-5 sm:h-10 sm:w-10 text-primary" />

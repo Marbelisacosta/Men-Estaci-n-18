@@ -185,6 +185,12 @@
       "description": "Combo Sencillo Estación 18",
       "imageUrl": "https://i.postimg.cc/6Q5JvRRQ/Whats-App-Image-2026-09-24-at-5-19-48-PM.jpg",
       "imageHint": "burger fries combo"
+    },
+    {
+      "id": "franela-dryfit-img",
+      "description": "Franela Dryfit con estampado total",
+      "imageUrl": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
+      "imageHint": "dryfit t-shirt"
     }
   ]
 }

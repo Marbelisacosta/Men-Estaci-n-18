@@ -2,7 +2,7 @@
 "use client";
 
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Zap, Package, Flame, CupSoda as Cup } from 'lucide-react';
+import { Zap, Package, Flame, CupSoda as Cup, Shirt } from 'lucide-react';
 import Image from 'next/image';
 
 interface CategoryTabsProps {
@@ -58,6 +58,13 @@ export function CategoryTabs({ onCategoryChange }: CategoryTabsProps) {
           >
             <Cup className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-2" />
             BEBIDAS
+          </TabsTrigger>
+          <TabsTrigger 
+            value="merch" 
+            className="rounded-lg sm:rounded-xl px-4 sm:px-6 h-full data-[state=active]:bg-primary data-[state=active]:text-white transition-all font-headline whitespace-nowrap text-xs sm:text-sm uppercase font-bold"
+          >
+            <Shirt className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-2" />
+            FRANELAS
           </TabsTrigger>
         </TabsList>
       </Tabs>

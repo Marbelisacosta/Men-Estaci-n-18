@@ -149,6 +149,48 @@
       "description": "Combo Boom 3 Whoppers Estación 18",
       "imageUrl": "https://i.postimg.cc/MZ03jr8V/Chat-GPT-Image-9-sept-2026-12-06-18.png",
       "imageHint": "burger combo"
+    },
+    {
+      "id": "salchipapa-tradicional-img",
+      "description": "Salchipapa Tradicional",
+      "imageUrl": "https://i.postimg.cc/hGsNrjgq/Whats-App-Image-2026-09-24-at-4-22-46-PM.jpg",
+      "imageHint": "salchipapa fries"
+    },
+    {
+      "id": "salchipapa-proteina-img",
+      "description": "Salchipapa con Proteína",
+      "imageUrl": "https://i.postimg.cc/GpMdpz4Z/Whats-App-Image-2026-09-24-at-4-25-56-PM.jpg",
+      "imageHint": "salchipapa meat"
+    },
+    {
+      "id": "hamburguesa-sencilla-img",
+      "description": "Hamburguesa Sencilla Estación 18",
+      "imageUrl": "https://i.postimg.cc/qM8LH5YV/Whats-App-Image-2026-09-24-at-4-59-54-PM.jpg",
+      "imageHint": "street burger"
+    },
+    {
+      "id": "pan-proteina-img",
+      "description": "Pan con Proteína Estación 18",
+      "imageUrl": "https://i.postimg.cc/hjTJQHVK/Whats-App-Image-2026-09-24-at-5-05-25-PM.jpg",
+      "imageHint": "stuffed sandwich"
+    },
+    {
+      "id": "combo-familiar-img",
+      "description": "Combo Familiar Estación 18",
+      "imageUrl": "https://i.postimg.cc/fk4Bf4rX/Whats-App-Image-2026-09-24-at-5-18-33-PM.jpg",
+      "imageHint": "burger combo"
+    },
+    {
+      "id": "combo-sencillo-img",
+      "description": "Combo Sencillo Estación 18",
+      "imageUrl": "https://i.postimg.cc/6Q5JvRRQ/Whats-App-Image-2026-09-24-at-5-19-48-PM.jpg",
+      "imageHint": "burger fries combo"
+    },
+    {
+      "id": "franela-dryfit-img",
+      "description": "Franela Dryfit con estampado total",
+      "imageUrl": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
+      "imageHint": "dryfit t-shirt"
     }
   ]
 }

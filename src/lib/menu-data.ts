@@ -2,7 +2,7 @@ export interface MenuItem {
   id: string;
   name: string;
   price: number;
-  category: 'individual' | 'combo' | 'fast-food' | 'drinks';
+  category: 'individual' | 'combo' | 'fast-food' | 'drinks' | 'merch';
   image: string;
   isSpecial?: boolean;
   pieces?: number;
@@ -288,6 +288,36 @@ export const menuItems: MenuItem[] = [
     price: 10.00,
     category: 'combo',
     image: 'combo-resuelve',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'merch-franela-sml',
+    name: 'FRANELA DRYFIT (S - M - L)',
+    description: 'ESTAMPADO TOTAL DE ALTA CALIDAD',
+    price: 14.00,
+    category: 'merch',
+    image: 'franela-dryfit-img',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'merch-franela-xl',
+    name: 'FRANELA DRYFIT (XL)',
+    description: 'ESTAMPADO TOTAL DE ALTA CALIDAD',
+    price: 15.00,
+    category: 'merch',
+    image: 'franela-dryfit-img',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'merch-franela-xxl',
+    name: 'FRANELA DRYFIT (XXL)',
+    description: 'ESTAMPADO TOTAL DE ALTA CALIDAD',
+    price: 16.00,
+    category: 'merch',
+    image: 'franela-dryfit-img',
     isSpecial: true,
     isAvailable: true
   }

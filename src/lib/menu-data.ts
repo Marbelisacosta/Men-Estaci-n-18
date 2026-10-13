@@ -165,6 +165,15 @@ export const menuItems: MenuItem[] = [
     isAvailable: true
   },
   {
+    id: 'fast-perros-calientes',
+    name: 'PERROS CALIENTES',
+    description: 'DELICIOSO PERRO CALIENTE AL ESTILO ESTACIÓN 18',
+    price: 1.00,
+    category: 'fast-food',
+    image: 'sin-imagen',
+    isAvailable: true
+  },
+  {
     id: 'drink-1',
     name: 'VASO DE REFRESCO',
     description: 'SABOR TRADICIONAL DE LA COCA-COLA',
@@ -288,6 +297,66 @@ export const menuItems: MenuItem[] = [
     price: 10.00,
     category: 'combo',
     image: 'combo-resuelve',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-callejero-express',
+    name: 'COMBO CALLEJERO EXPRESS',
+    description: '2 PANES DE SALCHICHA + PAPAS FRITAS',
+    price: 2.50,
+    category: 'combo',
+    image: 'sin-imagen',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-street-burger',
+    name: 'COMBO STREET BURGER',
+    description: '2 HAMBURGUESAS SENCILLAS + PAPAS FRITAS',
+    price: 2.50,
+    category: 'combo',
+    image: 'sin-imagen',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-maracuchito',
+    name: 'COMBO MARACUCHITO',
+    description: '2 MINI PATACÓN + VASO REFRESCO',
+    price: 3.00,
+    category: 'combo',
+    image: 'sin-imagen',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-pana',
+    name: 'COMBO PANA',
+    description: '2 HAMBURGUESAS JUNIOR + PAPAS FRITAS + 2 VASOS DE REFRESCO',
+    price: 5.00,
+    category: 'combo',
+    image: 'sin-imagen',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-full',
+    name: 'COMBO FULL',
+    description: '2 WHOPPER + SERVICIO DE PAPAS + TEQUEÑOS + REFRESCO DE LITRO',
+    price: 10.00,
+    category: 'combo',
+    image: 'sin-imagen',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-callejero-familiar',
+    name: 'COMBO CALLEJERO FAMILIAR',
+    description: '10 PERROS CALIENTES SENCILLOS + REFRESCO DE LITRO',
+    price: 10.00,
+    category: 'combo',
+    image: 'sin-imagen',
     isSpecial: true,
     isAvailable: true
   }

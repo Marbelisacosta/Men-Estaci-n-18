@@ -191,6 +191,12 @@
       "description": "Franela Dryfit con estampado total",
       "imageUrl": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
       "imageHint": "dryfit t-shirt"
+    },
+    {
+      "id": "sin-imagen",
+      "description": "Sin Imagen Estación 18",
+      "imageUrl": "https://i.postimg.cc/hGsNrjgq/Whats-App-Image-2026-09-24-at-4-22-46-PM.jpg",
+      "imageHint": "sin imagen"
     }
   ]
 }

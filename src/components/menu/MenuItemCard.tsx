@@ -62,7 +62,7 @@ export function MenuItemCard({ item, isSelected, onSelect, exchangeRate }: MenuI
     >
       <div className="relative aspect-square sm:aspect-[16/10] overflow-hidden bg-muted">
         <Image 
-          src={placeholder?.imageUrl || 'https://picsum.photos/seed/food/600/400'}
+          src={placeholder?.imageUrl || (item.image?.startsWith('http') ? item.image : 'https://picsum.photos/seed/food/600/400')}
           alt={item.name}
           fill
           unoptimized

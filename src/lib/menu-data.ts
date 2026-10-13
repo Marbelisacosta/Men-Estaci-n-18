@@ -292,26 +292,6 @@ export const menuItems: MenuItem[] = [
     isAvailable: true
   },
   {
-    id: 'merch-franela-sml',
-    name: 'FRANELA DRYFIT (S - M - L)',
-    description: 'ESTAMPADO TOTAL DE ALTA CALIDAD',
-    price: 14.00,
-    category: 'merch',
-    image: 'franela-dryfit-img',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'merch-franela-xl',
-    name: 'FRANELA DRYFIT (XL)',
-    description: 'ESTAMPADO TOTAL DE ALTA CALIDAD',
-    price: 15.00,
-    category: 'merch',
-    image: 'franela-dryfit-img',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
     id: 'merch-franela-xxl',
     name: 'FRANELA DRYFIT (XXL)',
     description: 'ESTAMPADO TOTAL DE ALTA CALIDAD',

@@ -27,7 +27,8 @@ export function OrderForm({ selectedItems = [], exchangeRate }: OrderFormProps) 
       `*Cliente:* ${userName || 'No especificado'}%0A` +
       `*Productos:*%0A${itemsList}%0A%0A` +
       `*Total a Pagar:*%0ARef: ${totalPrice.toFixed(2)} (Bs. ${totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2 })})%0A%0A` +
-      `¡Hola! Estos son los productos que marqué en el menú digital.`;
+      `¡Hola! Estos son los productos que marqué en el menú digital.%0A%0A` +
+      `*¡Muchas gracias por preferirnos!* Esperamos poder servirte nuevamente.`;
     
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
@@ -118,6 +119,9 @@ export function OrderForm({ selectedItems = [], exchangeRate }: OrderFormProps) 
           >
             <Send className="h-6 w-6" /> ENVIAR POR WHATSAPP
           </Button>
+          <p className="text-center text-xs text-muted-foreground font-medium">
+            <span className="font-bold text-foreground">¡Muchas gracias por preferirnos!</span> Esperamos poder servirte nuevamente.
+          </p>
         </CardFooter>
       )}
     </Card>

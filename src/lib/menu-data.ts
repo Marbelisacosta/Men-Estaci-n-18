@@ -203,7 +203,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'combo-familiar-sencillo',
     name: 'COMBO FAMILIAR',
-    description: '10 HAMBURGUESAS SENCILLAS PERFECTAS PARA COMPARTIR',
+    description: '10 HAMBURGUESAS SENCILLAS + REFRESCO DE LITRO',
     price: 10.00,
     category: 'combo',
     image: 'combo-familiar-img',
@@ -273,8 +273,8 @@ export const menuItems: MenuItem[] = [
   {
     id: 'combo-personal',
     name: 'COMBO PERSONAL',
-    description: '2 AREPAS + VASO DE REFRESCO',
-    price: 3.50,
+    description: '2 AREPAS CON PROTEÍNA + VASO DE REFRESCO',
+    price: 3.00,
     category: 'combo',
     image: 'combo-personal',
     isSpecial: true,

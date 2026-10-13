@@ -347,7 +347,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'combo-estacion',
     name: 'COMBO ESTACIÓN',
-    description: '2 JUNIOR + 2 PANES DE SALCHICHA + PAPAS + REFRESCO 1.5L',
+    description: '2 AREPAS CON PROTEINA + 2 JUNIOR + 2 PERROS CALIENTES + REFRESCO 1L',
     price: 10.00,
     category: 'combos-familiares',
     image: 'combo-estacion',

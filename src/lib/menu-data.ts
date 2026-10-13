@@ -216,7 +216,7 @@ export const menuItems: MenuItem[] = [
     description: '2 PANES DE SALCHICHA + PAPAS FRITAS',
     price: 2.50,
     category: 'combos-personales',
-    image: 'sin-imagen',
+    image: 'combo-callejero-express-img',
     isSpecial: true,
     isAvailable: true
   },

@@ -197,6 +197,12 @@
       "description": "Sin Imagen Estación 18",
       "imageUrl": "https://i.postimg.cc/hGsNrjgq/Whats-App-Image-2026-09-24-at-4-22-46-PM.jpg",
       "imageHint": "sin imagen"
+    },
+    {
+      "id": "combo-callejero-express-img",
+      "description": "Combo Callejero Express - Hot Dogs con Papas Fritas",
+      "imageUrl": "https://i.postimg.cc/02jvNXgj/Hot-Dogs-con-Patatas-Crujientes-y-Fritas.png",
+      "imageHint": "hot dogs fries combo"
     }
   ]
 }

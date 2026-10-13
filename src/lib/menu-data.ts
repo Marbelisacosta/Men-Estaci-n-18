@@ -211,16 +211,6 @@ export const menuItems: MenuItem[] = [
   // 6. COMBOS PERSONALES Y DE PAREJA
   // ==========================================
   {
-    id: 'combo-sencillo-papas',
-    name: 'COMBO SENCILLO',
-    description: 'HAMBURGUESA SENCILLA + PAPAS FRITAS',
-    price: 1.50,
-    category: 'combos-personales',
-    image: 'combo-sencillo-img',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
     id: 'combo-callejero-express',
     name: 'COMBO CALLEJERO EXPRESS',
     description: '2 PANES DE SALCHICHA + PAPAS FRITAS',
@@ -261,16 +251,6 @@ export const menuItems: MenuItem[] = [
     isAvailable: true
   },
   {
-    id: 'combo-especial',
-    name: 'COMBO ESPECIAL',
-    description: 'WHOPPER + SERVICIO DE PAPAS',
-    price: 5.00,
-    category: 'combos-personales',
-    image: 'combo-especial',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
     id: 'combo-pana',
     name: 'COMBO PANA',
     description: '2 HAMBURGUESAS JUNIOR + PAPAS FRITAS + 2 VASOS DE REFRESCO',
@@ -294,16 +274,6 @@ export const menuItems: MenuItem[] = [
   // ==========================================
   // 7. COMBOS FAMILIARES Y GRUPALES
   // ==========================================
-  {
-    id: 'combo-callejero',
-    name: 'COMBO CALLEJERO',
-    description: '4 PANES DE SALCHICHA',
-    price: 5.00,
-    category: 'combos-familiares',
-    image: 'combo-callejero',
-    isSpecial: true,
-    isAvailable: true
-  },
   {
     id: 'combo-full',
     name: 'COMBO FULL',
@@ -335,32 +305,12 @@ export const menuItems: MenuItem[] = [
     isAvailable: true
   },
   {
-    id: 'combo-resuelve',
-    name: 'COMBO RESUELVE',
-    description: '8 PANES DE SALCHICHA',
-    price: 10.00,
-    category: 'combos-familiares',
-    image: 'combo-resuelve',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
     id: 'combo-estacion',
     name: 'COMBO ESTACIÓN',
     description: '2 AREPAS CON PROTEINA + 2 JUNIOR + 2 PERROS CALIENTES + REFRESCO 1L',
     price: 10.00,
     category: 'combos-familiares',
     image: 'combo-estacion',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-junior',
-    name: 'COMBO JUNIOR',
-    description: "8 JUNIOR'S",
-    price: 12.00,
-    category: 'combos-familiares',
-    image: 'combo-junior',
     isSpecial: true,
     isAvailable: true
   },

@@ -203,6 +203,12 @@
       "description": "Combo Callejero Express - Hot Dogs con Papas Fritas",
       "imageUrl": "https://i.postimg.cc/02jvNXgj/Hot-Dogs-con-Patatas-Crujientes-y-Fritas.png",
       "imageHint": "hot dogs fries combo"
+    },
+    {
+      "id": "combo-street-burger-img",
+      "description": "Combo Street Burger - 2 Hamburguesas con Papas Doradas",
+      "imageUrl": "https://i.postimg.cc/Sxb8Wv6J/Doble-hamburguesa-con-patatas-doradas.png",
+      "imageHint": "double burger fries combo"
     }
   ]
 }

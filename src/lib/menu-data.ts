@@ -226,7 +226,7 @@ export const menuItems: MenuItem[] = [
     description: '2 HAMBURGUESAS SENCILLAS + PAPAS FRITAS',
     price: 2.50,
     category: 'combos-personales',
-    image: 'sin-imagen',
+    image: 'combo-street-burger-img',
     isSpecial: true,
     isAvailable: true
   },

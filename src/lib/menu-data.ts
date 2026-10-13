@@ -79,7 +79,7 @@ export const menuItems: MenuItem[] = [
   // ==========================================
   {
     id: 'fast-perros-calientes',
-    name: 'PERROS CALIENTES',
+    name: 'PERRO CALIENTE SENCILLO',
     description: 'DELICIOSO PERRO CALIENTE AL ESTILO ESTACIÓN 18',
     price: 1.00,
     category: 'perros-panes',
@@ -88,7 +88,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'fast-pipe-salchicha',
-    name: 'PAN DE SALCHICHA',
+    name: 'PERRO CALIENTE',
     description: 'SALCHICHA DE FULL SABOR',
     price: 1.50,
     category: 'perros-panes',

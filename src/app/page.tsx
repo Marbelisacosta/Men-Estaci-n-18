@@ -5,7 +5,7 @@ import { MenuItemCard } from '@/components/menu/MenuItemCard';
 import { BCVRate } from '@/components/menu/BCVRate';
 import { CategoryTabs } from '@/components/menu/CategoryTabs';
 import { OrderForm } from '@/components/menu/OrderForm';
-import { menuItems, MenuItem, EXCHANGE_RATE as FALLBACK_RATE } from '@/lib/menu-data';
+import { menuItems, MenuItem, MENU_CATEGORIES, EXCHANGE_RATE as FALLBACK_RATE } from '@/lib/menu-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { MapPin, Clock, Phone, Instagram, Mail, ClipboardCheck, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -25,6 +25,8 @@ export default function Home() {
 
   const filteredItems = selectedCategory === 'all' 
     ? menuItems 
+    : selectedCategory === 'combos'
+    ? menuItems.filter(item => item.category === 'combos-personales' || item.category === 'combos-familiares')
     : menuItems.filter(item => item.category === selectedCategory);
 
   function toggleItemSelection(item: MenuItem) {
@@ -152,15 +154,71 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 gap-3 sm:gap-12">
-            {filteredItems.map((item) => (
-              <MenuItemCard 
-                key={item.id} 
-                item={item} 
-                isSelected={selectedItems.some(i => i.id === item.id)}
-                onSelect={() => toggleItemSelection(item)}
-                exchangeRate={currentRate}
-              />
-            ))}
+            {selectedCategory === 'all' ? (
+              MENU_CATEGORIES.map((cat) => {
+                const items = menuItems.filter(i => i.category === cat.id);
+                if (items.length === 0) return null;
+                return (
+                  <div key={cat.id} className="contents">
+                    <div className="col-span-2 pt-6 pb-2 sm:pt-10 sm:pb-4 first:pt-0">
+                      <div className="flex items-center gap-3">
+                        <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-primary/40" />
+                        <h4 className="font-headline font-black text-xs sm:text-2xl uppercase tracking-wider text-primary text-center">
+                          {cat.name}
+                        </h4>
+                        <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-primary/40" />
+                      </div>
+                    </div>
+                    {items.map((item) => (
+                      <MenuItemCard 
+                        key={item.id} 
+                        item={item} 
+                        isSelected={selectedItems.some(i => i.id === item.id)}
+                        onSelect={() => toggleItemSelection(item)}
+                        exchangeRate={currentRate}
+                      />
+                    ))}
+                  </div>
+                );
+              })
+            ) : selectedCategory === 'combos' ? (
+              MENU_CATEGORIES.filter(c => c.id === 'combos-personales' || c.id === 'combos-familiares').map((cat) => {
+                const items = menuItems.filter(i => i.category === cat.id);
+                if (items.length === 0) return null;
+                return (
+                  <div key={cat.id} className="contents">
+                    <div className="col-span-2 pt-6 pb-2 sm:pt-10 sm:pb-4 first:pt-0">
+                      <div className="flex items-center gap-3">
+                        <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-primary/40" />
+                        <h4 className="font-headline font-black text-xs sm:text-2xl uppercase tracking-wider text-primary text-center">
+                          {cat.name}
+                        </h4>
+                        <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-primary/40" />
+                      </div>
+                    </div>
+                    {items.map((item) => (
+                      <MenuItemCard 
+                        key={item.id} 
+                        item={item} 
+                        isSelected={selectedItems.some(i => i.id === item.id)}
+                        onSelect={() => toggleItemSelection(item)}
+                        exchangeRate={currentRate}
+                      />
+                    ))}
+                  </div>
+                );
+              })
+            ) : (
+              filteredItems.map((item) => (
+                <MenuItemCard 
+                  key={item.id} 
+                  item={item} 
+                  isSelected={selectedItems.some(i => i.id === item.id)}
+                  onSelect={() => toggleItemSelection(item)}
+                  exchangeRate={currentRate}
+                />
+              ))
+            )}
           </div>
         </section>
 

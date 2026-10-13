@@ -1,8 +1,23 @@
+export type MenuCategory = 
+  | 'hamburguesas' 
+  | 'perros-panes' 
+  | 'arepas-patacones' 
+  | 'papas-fritas' 
+  | 'bebidas' 
+  | 'combos'
+  | 'combos-personales' 
+  | 'combos-familiares' 
+  | 'individual'
+  | 'combo'
+  | 'fast-food'
+  | 'drinks'
+  | 'merch';
+
 export interface MenuItem {
   id: string;
   name: string;
   price: number;
-  category: 'individual' | 'combo' | 'fast-food' | 'drinks' | 'merch';
+  category: MenuCategory;
   image: string;
   isSpecial?: boolean;
   pieces?: number;
@@ -10,7 +25,359 @@ export interface MenuItem {
   isAvailable?: boolean;
 }
 
+export interface CategorySection {
+  id: MenuCategory;
+  name: string;
+  shortName?: string;
+  iconName?: string;
+}
+
+export const MENU_CATEGORIES: CategorySection[] = [
+  { id: 'hamburguesas', name: 'Hamburguesas' },
+  { id: 'perros-panes', name: 'Perros & Panes' },
+  { id: 'arepas-patacones', name: 'Arepas & Patacones' },
+  { id: 'papas-fritas', name: 'Papas Fritas' },
+  { id: 'bebidas', name: 'Bebidas' },
+  { id: 'combos-personales', name: 'Combos Personales y de Pareja', shortName: 'Combos Personales' },
+  { id: 'combos-familiares', name: 'Combos Familiares y Grupales', shortName: 'Combos Familiares' },
+];
+
 export const menuItems: MenuItem[] = [
+  // ==========================================
+  // 1. HAMBURGUESAS
+  // ==========================================
+  {
+    id: 'fast-hamburguesa-sencilla',
+    name: 'HAMBURGUESA SENCILLA',
+    description: 'EL CLÁSICO INIGUALABLE CON EL VERDADERO SABOR CALLEJERO',
+    price: 1.00,
+    category: 'hamburguesas',
+    image: 'hamburguesa-sencilla-img',
+    isAvailable: true
+  },
+  {
+    id: 'fast-4',
+    name: 'JUNIOR',
+    description: 'VEGETALES FRESCOS',
+    price: 2.00,
+    category: 'hamburguesas',
+    image: 'burger-junior',
+    isAvailable: true
+  },
+  {
+    id: 'fast-2',
+    name: 'WHOPPER',
+    description: 'PROTEINA DE TU PREFERENCIA',
+    price: 4.00,
+    category: 'hamburguesas',
+    image: 'burger',
+    isAvailable: true
+  },
+
+  // ==========================================
+  // 2. PERROS & PANES
+  // ==========================================
+  {
+    id: 'fast-perros-calientes',
+    name: 'PERROS CALIENTES',
+    description: 'DELICIOSO PERRO CALIENTE AL ESTILO ESTACIÓN 18',
+    price: 1.00,
+    category: 'perros-panes',
+    image: 'sin-imagen',
+    isAvailable: true
+  },
+  {
+    id: 'fast-pipe-salchicha',
+    name: 'PAN DE SALCHICHA',
+    description: 'SALCHICHA DE FULL SABOR',
+    price: 1.50,
+    category: 'perros-panes',
+    image: 'pan-salchicha',
+    isAvailable: true
+  },
+  {
+    id: 'fast-3',
+    name: 'SALCHIQUESO',
+    description: 'SALCHICHA MAS QUESO CEBÚ',
+    price: 2.00,
+    category: 'perros-panes',
+    image: 'hotdog',
+    isAvailable: true
+  },
+  {
+    id: 'fast-pan-proteina',
+    name: 'PAN CON PROTEINA',
+    description: 'PAN ESPECIAL CON RELLENO DE PROTEÍNA AL GUSTO',
+    price: 2.50,
+    category: 'perros-panes',
+    image: 'pan-proteina-img',
+    isAvailable: true
+  },
+
+  // ==========================================
+  // 3. AREPAS & PATACONES
+  // ==========================================
+  {
+    id: 'fast-1',
+    name: 'AREPA CON PROTEÍNA',
+    description: 'AREPA FRITA RELLENA CON SABOR',
+    price: 1.50,
+    category: 'arepas-patacones',
+    image: 'arepa',
+    isAvailable: true
+  },
+  {
+    id: 'fast-6',
+    name: 'MINI PATACÓN',
+    description: 'MINI PATACÓN CRUJIENTE',
+    price: 1.50,
+    category: 'arepas-patacones',
+    image: 'mini-patacon',
+    isAvailable: true
+  },
+  {
+    id: 'fast-5',
+    name: 'PATACON PERSONAL',
+    description: 'PLÁTANO FRITO CON TODO EL SABOR',
+    price: 3.00,
+    category: 'arepas-patacones',
+    image: 'patacon',
+    isAvailable: true
+  },
+
+  // ==========================================
+  // 4. PAPAS FRITAS
+  // ==========================================
+  {
+    id: 'fast-servicio-papas',
+    name: 'SERVICIO DE PAPAS',
+    description: 'PORCIÓN DE PAPAS FRITAS DORADAS Y CRUJIENTES',
+    price: 1.00,
+    category: 'papas-fritas',
+    image: 'fries',
+    isAvailable: true
+  },
+  {
+    id: 'fast-salchipapa-tradicional',
+    name: 'SALCHIPAPA TRADICIONAL',
+    description: 'PAPAS FRITAS CON SALCHICHA Y SALSAS',
+    price: 3.00,
+    category: 'papas-fritas',
+    image: 'salchipapa-tradicional-img',
+    isAvailable: true
+  },
+  {
+    id: 'fast-salchipapa-proteina',
+    name: 'SALCHIPAPA CON PROTEINA',
+    description: 'NUESTRA EXQUISITA SALCHIPAPA CON LA MEJOR PROTEINA',
+    price: 5.00,
+    category: 'papas-fritas',
+    image: 'salchipapa-proteina-img',
+    isAvailable: true
+  },
+
+  // ==========================================
+  // 5. BEBIDAS
+  // ==========================================
+  {
+    id: 'drink-1',
+    name: 'VASO DE REFRESCO',
+    description: 'SABOR TRADICIONAL DE LA COCA-COLA',
+    price: 0.50,
+    category: 'bebidas',
+    image: 'soda',
+    isAvailable: true
+  },
+  {
+    id: 'drink-litro',
+    name: 'REFRESCO DE LITRO',
+    description: 'REFRESCO IDEAL PARA COMPARTIR',
+    price: 1.50,
+    category: 'bebidas',
+    image: 'soda-litro',
+    isAvailable: true
+  },
+  {
+    id: 'drink-2',
+    name: 'REFRESCO 1.5 Lts',
+    description: 'SABOR TRADICIONAL DE LA COCA-COLA',
+    price: 2.00,
+    category: 'bebidas',
+    image: 'soda-1-5',
+    isAvailable: true
+  },
+
+  // ==========================================
+  // 6. COMBOS PERSONALES Y DE PAREJA
+  // ==========================================
+  {
+    id: 'combo-sencillo-papas',
+    name: 'COMBO SENCILLO',
+    description: 'HAMBURGUESA SENCILLA + PAPAS FRITAS',
+    price: 1.50,
+    category: 'combos-personales',
+    image: 'combo-sencillo-img',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-callejero-express',
+    name: 'COMBO CALLEJERO EXPRESS',
+    description: '2 PANES DE SALCHICHA + PAPAS FRITAS',
+    price: 2.50,
+    category: 'combos-personales',
+    image: 'sin-imagen',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-street-burger',
+    name: 'COMBO STREET BURGER',
+    description: '2 HAMBURGUESAS SENCILLAS + PAPAS FRITAS',
+    price: 2.50,
+    category: 'combos-personales',
+    image: 'sin-imagen',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-maracuchito',
+    name: 'COMBO MARACUCHITO',
+    description: '2 MINI PATACÓN + VASO REFRESCO',
+    price: 3.00,
+    category: 'combos-personales',
+    image: 'sin-imagen',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-personal',
+    name: 'COMBO PERSONAL',
+    description: '2 AREPAS CON PROTEÍNA + VASO DE REFRESCO',
+    price: 3.00,
+    category: 'combos-personales',
+    image: 'combo-personal',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-especial',
+    name: 'COMBO ESPECIAL',
+    description: 'WHOPPER + SERVICIO DE PAPAS',
+    price: 5.00,
+    category: 'combos-personales',
+    image: 'combo-especial',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-pana',
+    name: 'COMBO PANA',
+    description: '2 HAMBURGUESAS JUNIOR + PAPAS FRITAS + 2 VASOS DE REFRESCO',
+    price: 5.00,
+    category: 'combos-personales',
+    image: 'sin-imagen',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-duo',
+    name: 'COMBO DUO',
+    description: '2 WHOPPER + 2 VASO REFRESCO',
+    price: 7.00,
+    category: 'combos-personales',
+    image: 'combo-duo',
+    isSpecial: true,
+    isAvailable: true
+  },
+
+  // ==========================================
+  // 7. COMBOS FAMILIARES Y GRUPALES
+  // ==========================================
+  {
+    id: 'combo-callejero',
+    name: 'COMBO CALLEJERO',
+    description: '4 PANES DE SALCHICHA',
+    price: 5.00,
+    category: 'combos-familiares',
+    image: 'combo-callejero',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-full',
+    name: 'COMBO FULL',
+    description: '2 WHOPPER + SERVICIO DE PAPAS + TEQUEÑOS + REFRESCO DE LITRO',
+    price: 10.00,
+    category: 'combos-familiares',
+    image: 'sin-imagen',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-callejero-familiar',
+    name: 'COMBO CALLEJERO FAMILIAR',
+    description: '10 PERROS CALIENTES SENCILLOS + REFRESCO DE LITRO',
+    price: 10.00,
+    category: 'combos-familiares',
+    image: 'sin-imagen',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-familiar-sencillo',
+    name: 'COMBO FAMILIAR',
+    description: '10 HAMBURGUESAS SENCILLAS + REFRESCO DE LITRO',
+    price: 10.00,
+    category: 'combos-familiares',
+    image: 'combo-familiar-img',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-resuelve',
+    name: 'COMBO RESUELVE',
+    description: '8 PANES DE SALCHICHA',
+    price: 10.00,
+    category: 'combos-familiares',
+    image: 'combo-resuelve',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-estacion',
+    name: 'COMBO ESTACIÓN',
+    description: '2 JUNIOR + 2 PANES DE SALCHICHA + PAPAS + REFRESCO 1.5L',
+    price: 10.00,
+    category: 'combos-familiares',
+    image: 'combo-estacion',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-junior',
+    name: 'COMBO JUNIOR',
+    description: "8 JUNIOR'S",
+    price: 12.00,
+    category: 'combos-familiares',
+    image: 'combo-junior',
+    isSpecial: true,
+    isAvailable: true
+  },
+  {
+    id: 'combo-boom',
+    name: 'COMBO BOOM',
+    description: '3 WHOPPER + REFRESCO DE LITRO',
+    price: 12.00,
+    category: 'combos-familiares',
+    image: 'combo-boom',
+    isSpecial: true,
+    isAvailable: true
+  },
+
+  // ==========================================
+  // 8. PASTELITOS Y TEQUEÑOS (NO DISPONIBLES)
+  // ==========================================
   {
     id: 'past-1',
     name: 'PASTELITO DE POLLO',
@@ -55,310 +422,6 @@ export const menuItems: MenuItem[] = [
     category: 'individual',
     image: 'tequenos',
     isAvailable: false
-  },
-  {
-    id: 'fast-salchipapa-tradicional',
-    name: 'SALCHIPAPA TRADICIONAL',
-    description: 'PAPAS FRITAS CON SALCHICHA Y SALSAS',
-    price: 3.00,
-    category: 'fast-food',
-    image: 'salchipapa-tradicional-img',
-    isAvailable: true
-  },
-  {
-    id: 'fast-salchipapa-proteina',
-    name: 'SALCHIPAPA CON PROTEINA',
-    description: 'NUESTRA EXQUISITA SALCHIPAPA CON LA MEJOR PROTEINA',
-    price: 5.00,
-    category: 'fast-food',
-    image: 'salchipapa-proteina-img',
-    isAvailable: true
-  },
-  {
-    id: 'fast-pan-proteina',
-    name: 'PAN CON PROTEINA',
-    description: 'PAN ESPECIAL CON RELLENO DE PROTEÍNA AL GUSTO',
-    price: 2.50,
-    category: 'fast-food',
-    image: 'pan-proteina-img',
-    isAvailable: true
-  },
-  {
-    id: 'fast-hamburguesa-sencilla',
-    name: 'HAMBURGUESA SENCILLA',
-    description: 'EL CLÁSICO INIGUALABLE CON EL VERDADERO SABOR CALLEJERO',
-    price: 1.00,
-    category: 'fast-food',
-    image: 'hamburguesa-sencilla-img',
-    isAvailable: true
-  },
-  {
-    id: 'fast-servicio-papas',
-    name: 'SERVICIO DE PAPAS',
-    description: 'PORCIÓN DE PAPAS FRITAS DORADAS Y CRUJIENTES',
-    price: 1.00,
-    category: 'fast-food',
-    image: 'fries',
-    isAvailable: true
-  },
-  {
-    id: 'fast-1',
-    name: 'AREPA CON PROTEÍNA',
-    description: 'AREPA FRITA RELLENA CON SABOR',
-    price: 1.50,
-    category: 'fast-food',
-    image: 'arepa',
-    isAvailable: true
-  },
-  {
-    id: 'fast-2',
-    name: 'WHOPPER',
-    description: 'PROTEINA DE TU PREFERENCIA',
-    price: 4.00,
-    category: 'fast-food',
-    image: 'burger',
-    isAvailable: true
-  },
-  {
-    id: 'fast-3',
-    name: 'SALCHIQUESO',
-    description: 'SALCHICHA MAS QUESO CEBÚ',
-    price: 2.00,
-    category: 'fast-food',
-    image: 'hotdog',
-    isAvailable: true
-  },
-  {
-    id: 'fast-4',
-    name: 'JUNIOR',
-    description: 'VEGETALES FRESCOS',
-    price: 2.00,
-    category: 'fast-food',
-    image: 'burger-junior',
-    isAvailable: true
-  },
-  {
-    id: 'fast-5',
-    name: 'PATACON PERSONAL',
-    description: 'PLÁTANO FRITO CON TODO EL SABOR',
-    price: 3.00,
-    category: 'fast-food',
-    image: 'patacon',
-    isAvailable: true
-  },
-  {
-    id: 'fast-6',
-    name: 'MINI PATACÓN',
-    description: 'MINI PATACÓN CRUJIENTE',
-    price: 1.50,
-    category: 'fast-food',
-    image: 'mini-patacon',
-    isAvailable: true
-  },
-  {
-    id: 'fast-pipe-salchicha',
-    name: 'PAN DE SALCHICHA',
-    description: 'SALCHICHA DE FULL SABOR',
-    price: 1.50,
-    category: 'fast-food',
-    image: 'pan-salchicha',
-    isAvailable: true
-  },
-  {
-    id: 'fast-perros-calientes',
-    name: 'PERROS CALIENTES',
-    description: 'DELICIOSO PERRO CALIENTE AL ESTILO ESTACIÓN 18',
-    price: 1.00,
-    category: 'fast-food',
-    image: 'sin-imagen',
-    isAvailable: true
-  },
-  {
-    id: 'drink-1',
-    name: 'VASO DE REFRESCO',
-    description: 'SABOR TRADICIONAL DE LA COCA-COLA',
-    price: 0.50,
-    category: 'drinks',
-    image: 'soda',
-    isAvailable: true
-  },
-  {
-    id: 'drink-litro',
-    name: 'REFRESCO DE LITRO',
-    description: 'REFRESCO IDEAL PARA COMPARTIR',
-    price: 1.50,
-    category: 'drinks',
-    image: 'soda-litro',
-    isAvailable: true
-  },
-  {
-    id: 'drink-2',
-    name: 'REFRESCO 1.5 Lts',
-    description: 'SABOR TRADICIONAL DE LA COCA-COLA',
-    price: 2.00,
-    category: 'drinks',
-    image: 'soda-1-5',
-    isAvailable: true
-  },
-  {
-    id: 'combo-familiar-sencillo',
-    name: 'COMBO FAMILIAR',
-    description: '10 HAMBURGUESAS SENCILLAS + REFRESCO DE LITRO',
-    price: 10.00,
-    category: 'combo',
-    image: 'combo-familiar-img',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-sencillo-papas',
-    name: 'COMBO SENCILLO',
-    description: 'HAMBURGUESA SENCILLA + PAPAS FRITAS',
-    price: 1.50,
-    category: 'combo',
-    image: 'combo-sencillo-img',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-especial',
-    name: 'COMBO ESPECIAL',
-    description: 'WHOPPER + SERVICIO DE PAPAS',
-    price: 5.00,
-    category: 'combo',
-    image: 'combo-especial',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-duo',
-    name: 'COMBO DUO',
-    description: '2 WHOPPER + 2 VASO REFRESCO',
-    price: 7.00,
-    category: 'combo',
-    image: 'combo-duo',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-callejero',
-    name: 'COMBO CALLEJERO',
-    description: '4 PANES DE SALCHICHA',
-    price: 5.00,
-    category: 'combo',
-    image: 'combo-callejero',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-junior',
-    name: 'COMBO JUNIOR',
-    description: "8 JUNIOR'S",
-    price: 12.00,
-    category: 'combo',
-    image: 'combo-junior',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-estacion',
-    name: 'COMBO ESTACIÓN',
-    description: '2 JUNIOR + 2 PANES DE SALCHICHA + PAPAS + REFRESCO 1.5L',
-    price: 10.00,
-    category: 'combo',
-    image: 'combo-estacion',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-personal',
-    name: 'COMBO PERSONAL',
-    description: '2 AREPAS CON PROTEÍNA + VASO DE REFRESCO',
-    price: 3.00,
-    category: 'combo',
-    image: 'combo-personal',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-boom',
-    name: 'COMBO BOOM',
-    description: '3 WHOPPER + REFRESCO DE LITRO',
-    price: 12.00,
-    category: 'combo',
-    image: 'combo-boom',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-resuelve',
-    name: 'COMBO RESUELVE',
-    description: '8 PANES DE SALCHICHA',
-    price: 10.00,
-    category: 'combo',
-    image: 'combo-resuelve',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-callejero-express',
-    name: 'COMBO CALLEJERO EXPRESS',
-    description: '2 PANES DE SALCHICHA + PAPAS FRITAS',
-    price: 2.50,
-    category: 'combo',
-    image: 'sin-imagen',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-street-burger',
-    name: 'COMBO STREET BURGER',
-    description: '2 HAMBURGUESAS SENCILLAS + PAPAS FRITAS',
-    price: 2.50,
-    category: 'combo',
-    image: 'sin-imagen',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-maracuchito',
-    name: 'COMBO MARACUCHITO',
-    description: '2 MINI PATACÓN + VASO REFRESCO',
-    price: 3.00,
-    category: 'combo',
-    image: 'sin-imagen',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-pana',
-    name: 'COMBO PANA',
-    description: '2 HAMBURGUESAS JUNIOR + PAPAS FRITAS + 2 VASOS DE REFRESCO',
-    price: 5.00,
-    category: 'combo',
-    image: 'sin-imagen',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-full',
-    name: 'COMBO FULL',
-    description: '2 WHOPPER + SERVICIO DE PAPAS + TEQUEÑOS + REFRESCO DE LITRO',
-    price: 10.00,
-    category: 'combo',
-    image: 'sin-imagen',
-    isSpecial: true,
-    isAvailable: true
-  },
-  {
-    id: 'combo-callejero-familiar',
-    name: 'COMBO CALLEJERO FAMILIAR',
-    description: '10 PERROS CALIENTES SENCILLOS + REFRESCO DE LITRO',
-    price: 10.00,
-    category: 'combo',
-    image: 'sin-imagen',
-    isSpecial: true,
-    isAvailable: true
   }
 ];
 

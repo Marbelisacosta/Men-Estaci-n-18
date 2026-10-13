@@ -47,7 +47,7 @@ export function MenuItemCard({ item, isSelected, onSelect, exchangeRate }: MenuI
     }
   }
 
-  const isCombo = item.category === 'combo';
+  const isCombo = item.category === 'combo' || item.category === 'combos' || item.category.startsWith('combos-');
 
   const handleCardClick = () => {
     if (onSelect && isAvailable) {
